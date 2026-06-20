@@ -2961,7 +2961,7 @@ onerror="this.style.display='none'">
 
 </div>
 
-<div style="margin-bottom:20px;">
+<div style="margin-bottom:20px;display:flex;gap:10px;flex-wrap:wrap;">
 
 <a
 id="raButton"
@@ -2979,8 +2979,21 @@ font-weight:bold;
 🏆 RetroAchievements
 </a>
 
-</div>
+<a
+id="requestButton"
+href="#"
+style="
+background:#28a745;
+color:white;
+padding:10px 16px;
+border-radius:8px;
+text-decoration:none;
+font-weight:bold;
+">
+📥 Request This Game
+</a>
 
+</div>
 <div class="modal-notes" id="modalNotes"></div>
 
 </div>
@@ -3008,6 +3021,70 @@ function showGame(link) {
 
     document.getElementById("modalNotes").textContent =
         link.dataset.notes;
+const requestButton =
+    document.getElementById(
+        "requestButton"
+    );
+
+requestButton.onclick =
+    async function(event){
+
+    event.preventDefault();
+
+    let user =
+        localStorage.getItem(
+            "discord_name"
+        );
+
+    if(!user){
+
+        user = prompt(
+            "Enter your Discord username"
+        );
+
+        if(!user){
+            return;
+        }
+
+        localStorage.setItem(
+            "discord_name",
+            user
+        );
+    }
+
+    try{
+
+        await fetch(
+            "https://discord-requests.mydefposse.workers.dev",
+            {
+                method:"POST",
+                headers:{
+                    "Content-Type":
+                        "application/json"
+                },
+                body:JSON.stringify({
+                    user:user,
+                    game:link.dataset.title,
+                    platform:
+                        document.querySelector("h1")
+                        .textContent,
+                    url:
+                        window.location.href
+                })
+            }
+        );
+
+        alert(
+            "Request sent successfully!"
+        );
+
+    }catch(error){
+
+        alert(
+            "Failed to send request."
+        );
+    }
+};
 const raButton =
     document.getElementById(
         "raButton"
