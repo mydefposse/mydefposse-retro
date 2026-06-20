@@ -11,6 +11,14 @@
 
 <style>
 
+th[data-sort] {
+    cursor: pointer;
+    user-select: none;
+}
+
+th[data-sort]:hover {
+    color: #7fb7ff;
+}
 .game-link {
     color: #7fb7ff;
     text-decoration: none;
@@ -96,14 +104,13 @@ Released: 1995
 <thead>
 <tr>
 <th>Cover</th>
-<th>Title</th>
-<th>Year</th>
-<th>Genre</th>
-<th>Publisher</th>
-<th>Developer</th>
+<th data-sort="title">Title</th>
+<th data-sort="year">Year</th>
+<th data-sort="genre">Genre</th>
+<th data-sort="publisher">Publisher</th>
+<th data-sort="developer">Developer</th>
 </tr>
 </thead>
-
 <tbody>
 
 
@@ -959,6 +966,88 @@ document.addEventListener("click", function(event) {
 function closeGame() {
     document.getElementById("gameModal").style.display = "none";
 }
+
+let currentSort = "";
+let ascending = true;
+
+document
+.querySelectorAll("th[data-sort]")
+.forEach(header => {
+
+    header.addEventListener(
+        "click",
+        function(){
+
+            const key =
+                this.dataset.sort;
+
+            const tbody =
+                document.querySelector(
+                    ".games-table tbody"
+                );
+
+            const rows =
+                Array.from(
+                    tbody.querySelectorAll("tr")
+                );
+
+            if(currentSort === key){
+                ascending = !ascending;
+            }else{
+                ascending = true;
+                currentSort = key;
+            }
+
+            const columnMap = {
+                title: 1,
+                year: 2,
+                genre: 3,
+                publisher: 4,
+                developer: 5
+            };
+
+            const column =
+                columnMap[key];
+
+            rows.sort((a,b) => {
+
+                let aVal =
+                    a.children[column]
+                    .innerText
+                    .trim();
+
+                let bVal =
+                    b.children[column]
+                    .innerText
+                    .trim();
+
+                if(key === "year"){
+
+                    aVal =
+                        parseInt(aVal) || 0;
+
+                    bVal =
+                        parseInt(bVal) || 0;
+
+                    return ascending
+                        ? aVal - bVal
+                        : bVal - aVal;
+                }
+
+                return ascending
+                    ? aVal.localeCompare(bVal)
+                    : bVal.localeCompare(aVal);
+
+            });
+
+            rows.forEach(row =>
+                tbody.appendChild(row)
+            );
+
+        }
+    );
+
+});
 
 window.onclick = function(event) {
 
