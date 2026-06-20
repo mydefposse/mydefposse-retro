@@ -1,0 +1,278 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="utf-8">
+
+<title>Commodore Amiga CD32</title>
+
+<link rel="stylesheet" href="../assets/style.css">
+
+<style>
+
+.game-link {
+    color: #7fb7ff;
+    text-decoration: none;
+}
+
+.game-link:hover {
+    text-decoration: underline;
+}
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    z-index: 9999;
+}
+
+.modal-content {
+    width: min(900px, 95vw);
+    max-height: 90vh;
+    overflow-y: auto;
+    margin: 40px auto;
+    background: #202020;
+    border-radius: 12px;
+    padding: 25px;
+}
+
+.modal-close {
+    float: right;
+    cursor: pointer;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.modal-thumb {
+    max-width: 250px;
+    max-height: 350px;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.modal-meta {
+    margin-bottom: 20px;
+}
+
+.modal-meta p {
+    margin: 8px 0;
+}
+
+.modal-notes {
+    line-height: 1.6;
+    white-space: pre-wrap;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<a href="../index.html">← Home</a>
+
+<h1>Commodore Amiga CD32</h1>
+
+
+<p class="platform-release">
+Released: 1993
+</p>
+
+
+<p>1 games</p>
+
+
+<div class="platform-notes">
+<p>The Amiga CD32, styled "CD32" and code-named "Spellbound", is the first 32-bit home video game console released in western Europe, Australia, Canada and Brazil. It was first announced at the Science Museum in London on July 16, 1993, and was released in September of the same year. The CD32 uses CD-ROM media, and was developed by Commodore, creator of the Commodore Amiga computer. It was based on Commodore's Advanced Graphics Architecture chipset, and is of similar specification to the Amiga 1200 computer. Using third party devices, it is possible to upgrade the CD32 with keyboard, floppy drive, hard drive, RAM and mouse, turning it into the equivalent of an Amiga 1200 personal computer. A hardware MPEG decompression module for playing Video CD was also released. In the Christmas period following its launch, the CD32 accounted for 38% of all CD-ROM drive sales in the UK, exceeding sales of the Mega-CD; however, it was soon overshadowed by CD-ROM based games consoles from other companies, and was discontinued as Commodore went into bankruptcy.</p>
+</div>
+
+
+<table class="games-table">
+
+<thead>
+<tr>
+<th>Cover</th>
+<th>Title</th>
+<th>Year</th>
+<th>Genre</th>
+<th>Publisher</th>
+<th>Developer</th>
+</tr>
+</thead>
+
+<tbody>
+
+
+<tr id="dark-seed">
+<td>
+<img
+class="thumb"
+src="../thumbs/commodore-amiga-cd32/dark seed.jpg"
+loading="lazy"
+onerror="this.style.display='none'">
+</td>
+
+<td>
+<a href="#"
+class="game-link"
+data-title="Dark Seed"
+data-year="1994"
+data-genre="Adventure •  Horror"
+data-publisher="Cyberdreams"
+data-developer="Cyberdreams"
+data-ra=""
+data-notes="Dark Seed is an adventure game which capitalizes on the drawings of famous horror designer H. R. Giger as a source of background artwork and inspiration.\n\nYou play Mike Dawson, an ad company manager who, in pursuit of his goal in life to become a writer, purchases a solitary mansion in a small town called Woodland Hills. Although the low cost and hush-hush transactions when purchasing the house do raise your suspicion, the solitary environment and sheer beauty of the house crush common sense and you decide to buy the house. That's when trouble begin. Upon reaching the house, you suddenly feel tired. You find a bed and fall asleep...\n\n... and wake up from a terrible dream, only to find out that your life has just become a worse nightmare: an unknown source has implanted a seed of darkness in your mind, and you only have three days to find a way to stop it."
+data-thumb="../thumbs/commodore-amiga-cd32/dark seed.jpg">
+Dark Seed
+</a>
+</td>
+
+<td>1994</td>
+<td>Adventure •  Horror</td>
+<td>Cyberdreams</td>
+<td>Cyberdreams</td>
+
+</tr>
+
+
+</tbody>
+
+</table>
+
+</div>
+
+<div id="gameModal" class="modal-overlay">
+
+<div class="modal-content">
+
+<span class="modal-close" onclick="closeGame()">&times;</span>
+
+<h2 id="modalTitle"></h2>
+
+<img
+id="modalThumb"
+class="modal-thumb"
+src=""
+onerror="this.style.display='none'">
+
+<div class="modal-meta">
+
+<p><strong>Year:</strong> <span id="modalYear"></span></p>
+
+<p><strong>Genre:</strong> <span id="modalGenre"></span></p>
+
+<p><strong>Publisher:</strong> <span id="modalPublisher"></span></p>
+
+<p><strong>Developer:</strong> <span id="modalDeveloper"></span></p>
+
+</div>
+
+<div style="margin-bottom:20px;">
+
+<a
+id="raButton"
+href="#"
+target="_blank"
+style="
+display:none;
+background:#2f6fed;
+color:white;
+padding:10px 16px;
+border-radius:8px;
+text-decoration:none;
+font-weight:bold;
+">
+🏆 RetroAchievements
+</a>
+
+</div>
+
+<div class="modal-notes" id="modalNotes"></div>
+
+</div>
+
+</div>
+
+<script>
+
+function showGame(link) {
+
+    document.getElementById("modalTitle").textContent =
+        link.dataset.title;
+
+    document.getElementById("modalYear").textContent =
+        link.dataset.year;
+
+    document.getElementById("modalGenre").textContent =
+        link.dataset.genre;
+
+    document.getElementById("modalPublisher").textContent =
+        link.dataset.publisher;
+
+    document.getElementById("modalDeveloper").textContent =
+        link.dataset.developer;
+
+    document.getElementById("modalNotes").textContent =
+        link.dataset.notes;
+const raButton =
+    document.getElementById(
+        "raButton"
+    );
+
+if(link.dataset.ra){
+
+    raButton.href =
+        "https://retroachievements.org/game/" +
+        link.dataset.ra;
+
+    raButton.style.display =
+        "inline-block";
+
+}else{
+
+    raButton.style.display =
+        "none";
+}
+
+    const img = document.getElementById("modalThumb");
+
+    img.src = link.dataset.thumb;
+    img.style.display = "block";
+
+    document.getElementById("gameModal").style.display = "block";
+}
+
+document.addEventListener("click", function(event) {
+
+    const link = event.target.closest(".game-link");
+
+    if (!link) {
+        return;
+    }
+
+    event.preventDefault();
+    showGame(link);
+
+})
+
+function closeGame() {
+    document.getElementById("gameModal").style.display = "none";
+}
+
+window.onclick = function(event) {
+
+    const modal = document.getElementById("gameModal");
+
+    if(event.target === modal) {
+        closeGame();
+    }
+}
+
+</script>
+
+</body>
+</html>

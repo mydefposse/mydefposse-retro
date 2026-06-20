@@ -1,0 +1,363 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="utf-8">
+
+<title>Sega Advanced Pico Beena</title>
+
+<link rel="stylesheet" href="../assets/style.css">
+
+<style>
+
+.game-link {
+    color: #7fb7ff;
+    text-decoration: none;
+}
+
+.game-link:hover {
+    text-decoration: underline;
+}
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    z-index: 9999;
+}
+
+.modal-content {
+    width: min(900px, 95vw);
+    max-height: 90vh;
+    overflow-y: auto;
+    margin: 40px auto;
+    background: #202020;
+    border-radius: 12px;
+    padding: 25px;
+}
+
+.modal-close {
+    float: right;
+    cursor: pointer;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.modal-thumb {
+    max-width: 250px;
+    max-height: 350px;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.modal-meta {
+    margin-bottom: 20px;
+}
+
+.modal-meta p {
+    margin: 8px 0;
+}
+
+.modal-notes {
+    line-height: 1.6;
+    white-space: pre-wrap;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<a href="../index.html">← Home</a>
+
+<h1>Sega Advanced Pico Beena</h1>
+
+
+
+<p>4 games</p>
+
+
+
+<table class="games-table">
+
+<thead>
+<tr>
+<th>Cover</th>
+<th>Title</th>
+<th>Year</th>
+<th>Genre</th>
+<th>Publisher</th>
+<th>Developer</th>
+</tr>
+</thead>
+
+<tbody>
+
+
+<tr id="pocket-monsters-advanced-generation-pokemon-suuji-battle!!">
+<td>
+<img
+class="thumb"
+src="../thumbs/sega-advanced-pico-beena/pocket monsters advanced generation pokemon suuji battle.jpg"
+loading="lazy"
+onerror="this.style.display='none'">
+</td>
+
+<td>
+<a href="#"
+class="game-link"
+data-title="Pocket Monsters Advanced Generation Pokemon Suuji Battle!!"
+data-year="Unknown"
+data-genre=""
+data-publisher="-"
+data-developer="-"
+data-ra=""
+data-notes=""
+data-thumb="../thumbs/sega-advanced-pico-beena/pocket monsters advanced generation pokemon suuji battle.jpg">
+Pocket Monsters Advanced Generation Pokemon Suuji Battle!!
+</a>
+</td>
+
+<td>Unknown</td>
+<td></td>
+<td>-</td>
+<td>-</td>
+
+</tr>
+
+<tr id="pocket-monsters-best-wishes!-chinou-ikusei-pokemon-daiundoukai">
+<td>
+<img
+class="thumb"
+src="../thumbs/sega-advanced-pico-beena/pocket monsters best wishes chinou ikusei pokemon daiundoukai.jpg"
+loading="lazy"
+onerror="this.style.display='none'">
+</td>
+
+<td>
+<a href="#"
+class="game-link"
+data-title="Pocket Monsters Best Wishes! Chinou Ikusei Pokemon Daiundoukai"
+data-year="Unknown"
+data-genre=""
+data-publisher="-"
+data-developer="-"
+data-ra=""
+data-notes=""
+data-thumb="../thumbs/sega-advanced-pico-beena/pocket monsters best wishes chinou ikusei pokemon daiundoukai.jpg">
+Pocket Monsters Best Wishes! Chinou Ikusei Pokemon Daiundoukai
+</a>
+</td>
+
+<td>Unknown</td>
+<td></td>
+<td>-</td>
+<td>-</td>
+
+</tr>
+
+<tr id="pocket-monsters-diamond--pearl-pokemon-o-sagase!-meiro-de-daibouken!">
+<td>
+<img
+class="thumb"
+src="../thumbs/sega-advanced-pico-beena/pocket monsters diamond pearl pokemon o sagase meiro de daibouken.jpg"
+loading="lazy"
+onerror="this.style.display='none'">
+</td>
+
+<td>
+<a href="#"
+class="game-link"
+data-title="Pocket Monsters Diamond & Pearl Pokemon o Sagase! Meiro de Daibouken!"
+data-year="Unknown"
+data-genre=""
+data-publisher="-"
+data-developer="-"
+data-ra=""
+data-notes=""
+data-thumb="../thumbs/sega-advanced-pico-beena/pocket monsters diamond pearl pokemon o sagase meiro de daibouken.jpg">
+Pocket Monsters Diamond & Pearl Pokemon o Sagase! Meiro de Daibouken!
+</a>
+</td>
+
+<td>Unknown</td>
+<td></td>
+<td>-</td>
+<td>-</td>
+
+</tr>
+
+<tr id="pocket-monsters-diamond--pearl-pokemon-o-sagase!-meiro-de-daibouken!">
+<td>
+<img
+class="thumb"
+src="../thumbs/sega-advanced-pico-beena/pocket monsters diamond pearl pokemon o sagase meiro de daibouken.jpg"
+loading="lazy"
+onerror="this.style.display='none'">
+</td>
+
+<td>
+<a href="#"
+class="game-link"
+data-title="Pocket Monsters Diamond & Pearl: Pokemon o Sagase! Meiro de Daibouken!"
+data-year="Unknown"
+data-genre=""
+data-publisher="-"
+data-developer="-"
+data-ra=""
+data-notes=""
+data-thumb="../thumbs/sega-advanced-pico-beena/pocket monsters diamond pearl pokemon o sagase meiro de daibouken.jpg">
+Pocket Monsters Diamond & Pearl: Pokemon o Sagase! Meiro de Daibouken!
+</a>
+</td>
+
+<td>Unknown</td>
+<td></td>
+<td>-</td>
+<td>-</td>
+
+</tr>
+
+
+</tbody>
+
+</table>
+
+</div>
+
+<div id="gameModal" class="modal-overlay">
+
+<div class="modal-content">
+
+<span class="modal-close" onclick="closeGame()">&times;</span>
+
+<h2 id="modalTitle"></h2>
+
+<img
+id="modalThumb"
+class="modal-thumb"
+src=""
+onerror="this.style.display='none'">
+
+<div class="modal-meta">
+
+<p><strong>Year:</strong> <span id="modalYear"></span></p>
+
+<p><strong>Genre:</strong> <span id="modalGenre"></span></p>
+
+<p><strong>Publisher:</strong> <span id="modalPublisher"></span></p>
+
+<p><strong>Developer:</strong> <span id="modalDeveloper"></span></p>
+
+</div>
+
+<div style="margin-bottom:20px;">
+
+<a
+id="raButton"
+href="#"
+target="_blank"
+style="
+display:none;
+background:#2f6fed;
+color:white;
+padding:10px 16px;
+border-radius:8px;
+text-decoration:none;
+font-weight:bold;
+">
+🏆 RetroAchievements
+</a>
+
+</div>
+
+<div class="modal-notes" id="modalNotes"></div>
+
+</div>
+
+</div>
+
+<script>
+
+function showGame(link) {
+
+    document.getElementById("modalTitle").textContent =
+        link.dataset.title;
+
+    document.getElementById("modalYear").textContent =
+        link.dataset.year;
+
+    document.getElementById("modalGenre").textContent =
+        link.dataset.genre;
+
+    document.getElementById("modalPublisher").textContent =
+        link.dataset.publisher;
+
+    document.getElementById("modalDeveloper").textContent =
+        link.dataset.developer;
+
+    document.getElementById("modalNotes").textContent =
+        link.dataset.notes;
+const raButton =
+    document.getElementById(
+        "raButton"
+    );
+
+if(link.dataset.ra){
+
+    raButton.href =
+        "https://retroachievements.org/game/" +
+        link.dataset.ra;
+
+    raButton.style.display =
+        "inline-block";
+
+}else{
+
+    raButton.style.display =
+        "none";
+}
+
+    const img = document.getElementById("modalThumb");
+
+    img.src = link.dataset.thumb;
+    img.style.display = "block";
+
+    document.getElementById("gameModal").style.display = "block";
+}
+
+document.addEventListener("click", function(event) {
+
+    const link = event.target.closest(".game-link");
+
+    if (!link) {
+        return;
+    }
+
+    event.preventDefault();
+    showGame(link);
+
+})
+
+function closeGame() {
+    document.getElementById("gameModal").style.display = "none";
+}
+
+window.onclick = function(event) {
+
+    const modal = document.getElementById("gameModal");
+
+    if(event.target === modal) {
+        closeGame();
+    }
+}
+
+</script>
+
+</body>
+</html>
