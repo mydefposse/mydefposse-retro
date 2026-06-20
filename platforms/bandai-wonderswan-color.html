@@ -120,7 +120,7 @@ Released: 2000
 class="thumb"
 src="../thumbs/bandai-wonderswan-color/final fantasy.jpg"
 loading="lazy"
-onerror="this.style.display='none'">
+onerror="this.onerror=null;this.src='../assets/no-boxart.png';">
 </td>
 
 <td>
@@ -133,7 +133,9 @@ data-publisher="Squaresoft"
 data-developer="Squaresoft"
 data-ra="15580"
 data-notes="An evil shroud covers the world in darkness. You must restore the powers of earth, wind, fire and water to the Four Orbs. Create your own band of 4 Light Warriors from fighters, thieves, martial artists, and magicians. You'll need all their skills to triumph in this massive role-playing adventure. Your treaterous journey takes you to all parts of a strange new world. Explore dangerous castles and dark caverns where dadly perils and great rewards, await at every turn. Hundreds of ferocious monsters block your path. With patience, skill, and cunning, you can defeat them."
-data-thumb="../thumbs/bandai-wonderswan-color/final fantasy.jpg">
+data-thumb="../thumbs/bandai-wonderswan-color/final fantasy.jpg"
+data-media="ul"
+data-screenshot="ul">
 Final Fantasy
 </a>
 </td>
@@ -151,7 +153,7 @@ Final Fantasy
 class="thumb"
 src="../thumbs/bandai-wonderswan-color/final fantasy ii.jpg"
 loading="lazy"
-onerror="this.style.display='none'">
+onerror="this.onerror=null;this.src='../assets/no-boxart.png';">
 </td>
 
 <td>
@@ -164,7 +166,9 @@ data-publisher="Squaresoft"
 data-developer="Squaresoft"
 data-ra="15581"
 data-notes="FINAL FANTASY II is highly anticipated follow-up to the original FINAL FANTASY, released in Japan in 1988. The game features the bitter and beautiful tale of four war-orphaned heroes who become embroiled in a conflict between the hostile Empire of Palamecia and the rebel resistance. By eschewing conventional leveling for a proficiency system that allows players to tailor their characters' growth and incorporating a key term memory system that makes dialogue integral to gameplay, this game sparked the spirit of innovation for which the series has become known. This release also contains the bonus dungeons added to later editions of the game--the Soul of Rebirth and the Arcane Labyrinth."
-data-thumb="../thumbs/bandai-wonderswan-color/final fantasy ii.jpg">
+data-thumb="../thumbs/bandai-wonderswan-color/final fantasy ii.jpg"
+data-media="ul"
+data-screenshot="ul">
 Final Fantasy II
 </a>
 </td>
@@ -182,7 +186,7 @@ Final Fantasy II
 class="thumb"
 src="../thumbs/bandai-wonderswan-color/final fantasy iv.jpg"
 loading="lazy"
-onerror="this.style.display='none'">
+onerror="this.onerror=null;this.src='../assets/no-boxart.png';">
 </td>
 
 <td>
@@ -195,7 +199,9 @@ data-publisher="Squaresoft"
 data-developer="Sting"
 data-ra="15582"
 data-notes="The military country of Baron is one of the strongest in the land, with a proud army and a majestic air force known as the Red Wings. However, the recent actions of the king make even the most loyal of his subordinates doubt his judgment. The captain of the Red Wings, Cecil, is ordered to attack the city of Mysidia and take the Water Crystal from innocent magicians who protect it. When Cecil questions the king's orders, he is immediately thrown out of the country and sent off to deliver a package to the village of Mist, accompanied by his best friend Kain, the captain of the dragoons. Little does he realize that the king's inexplicable behavior is but a part of a much larger picture, which he is yet to reveal.\n\nThe fourth entry in the Final Fantasy series was released as Final Fantasy II in the West, because the second and the third games were not released there at the time. The game is a Japanese-style RPG with top-down world map navigation, automatic leveling up, and random enemy encounters.\n\nThe game introduces a system called ATB (active-time battle). While combat is turn-based in its core, the game does not pause when the player accesses the battle menu. Enemies continue to act in real time regardless of the actions of the player-controlled party. The turns of the participants are calculated depending on their agility rating. Each player-controlled character has a special bar that gradually refills itself; said character may act when the bar is full.\n\nUnlike all the previous Final Fantasy games, the fourth installment does not allow the player to customize the characters' abilities and classes. Each character belongs to a specific, clearly defined class: dragoon, white mage, black mage, summoner, ninja, etc. Each of these classes has distinct special abilities or magic spells. New abilities are learned automatically when a character reaches a pre-determined level. Characters join and leave the party as dictated by the game's plot events. The active party includes up to five combatants."
-data-thumb="../thumbs/bandai-wonderswan-color/final fantasy iv.jpg">
+data-thumb="../thumbs/bandai-wonderswan-color/final fantasy iv.jpg"
+data-media="Images/Bandai WonderSwan Color/Cart - Front/Japan/Final Fantasy IV-01.png"
+data-screenshot="ul">
 Final Fantasy IV
 </a>
 </td>
@@ -222,12 +228,44 @@ Final Fantasy IV
 
 <h2 id="modalTitle"></h2>
 
+<div
+id="modalImages"
+style="
+display:flex;
+gap:15px;
+align-items:flex-start;
+flex-wrap:wrap;
+margin-bottom:20px;
+">
+
 <img
 id="modalThumb"
 class="modal-thumb"
 src=""
-onerror="this.style.display='none'">
+onerror="this.onerror=null;this.src='../assets/no-boxart.jpg';">
 
+<img
+id="modalMedia"
+class="modal-thumb"
+style="
+max-width:180px;
+display:none;
+"
+src=""
+onerror="this.style.display='none';">
+
+<img
+id="modalScreenshot"
+style="
+max-width:400px;
+max-height:350px;
+display:none;
+border-radius:6px;
+"
+src=""
+onerror="this.style.display='none';">
+
+</div>
 <div class="modal-meta">
 
 <p><strong>Year:</strong> <span id="modalYear"></span></p>
@@ -384,11 +422,56 @@ if(link.dataset.ra){
         "none";
 }
 
-    const img = document.getElementById("modalThumb");
+const img =
+    document.getElementById(
+        "modalThumb"
+    );
 
-    img.src = link.dataset.thumb;
-    img.style.display = "block";
+img.src =
+    link.dataset.thumb;
 
+img.style.display =
+    "block";
+
+const media =
+    document.getElementById(
+        "modalMedia"
+    );
+
+if(link.dataset.media){
+
+    media.src =
+        "../" +
+        link.dataset.media;
+
+    media.style.display =
+        "block";
+
+}else{
+
+    media.style.display =
+        "none";
+}
+
+const screenshot =
+    document.getElementById(
+        "modalScreenshot"
+    );
+
+if(link.dataset.screenshot){
+
+    screenshot.src =
+        "../" +
+        link.dataset.screenshot;
+
+    screenshot.style.display =
+        "block";
+
+}else{
+
+    screenshot.style.display =
+        "none";
+}
     document.getElementById("gameModal").style.display = "block";
 }
 

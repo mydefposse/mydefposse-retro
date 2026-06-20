@@ -120,7 +120,7 @@ Released: 2017
 class="thumb"
 src="../thumbs/nintendo-switch/pokemon violet.jpg"
 loading="lazy"
-onerror="this.style.display='none'">
+onerror="this.onerror=null;this.src='../assets/no-boxart.png';">
 </td>
 
 <td>
@@ -133,7 +133,9 @@ data-publisher="Nintendo"
 data-developer="Gamefreak"
 data-ra=""
 data-notes="Welcome to the wide-open world of the Paldea region!\n\nCatch, battle, and train Pok\u00e9mon in the Paldea Region, a vast land filled with lakes, towering peaks, wastelands, small towns, and sprawling cities. Explore a wide-open world at your own pace and traverse land, water, and air by riding on a form-shifting Legendary Pok\u00e9mon\u2014Koraidon in Pok\u00e9mon Scarlet and Miraidon in Pok\u00e9mon Violet. Choose either Sprigatito, Fuecoco, or Quaxly, to be your first partner Pok\u00e9mon before setting off on your journey through Paldea."
-data-thumb="../thumbs/nintendo-switch/pokemon violet.jpg">
+data-thumb="../thumbs/nintendo-switch/pokemon violet.jpg"
+data-media="ul"
+data-screenshot="ul">
 Pokemon Violet
 </a>
 </td>
@@ -160,12 +162,44 @@ Pokemon Violet
 
 <h2 id="modalTitle"></h2>
 
+<div
+id="modalImages"
+style="
+display:flex;
+gap:15px;
+align-items:flex-start;
+flex-wrap:wrap;
+margin-bottom:20px;
+">
+
 <img
 id="modalThumb"
 class="modal-thumb"
 src=""
-onerror="this.style.display='none'">
+onerror="this.onerror=null;this.src='../assets/no-boxart.jpg';">
 
+<img
+id="modalMedia"
+class="modal-thumb"
+style="
+max-width:180px;
+display:none;
+"
+src=""
+onerror="this.style.display='none';">
+
+<img
+id="modalScreenshot"
+style="
+max-width:400px;
+max-height:350px;
+display:none;
+border-radius:6px;
+"
+src=""
+onerror="this.style.display='none';">
+
+</div>
 <div class="modal-meta">
 
 <p><strong>Year:</strong> <span id="modalYear"></span></p>
@@ -322,11 +356,56 @@ if(link.dataset.ra){
         "none";
 }
 
-    const img = document.getElementById("modalThumb");
+const img =
+    document.getElementById(
+        "modalThumb"
+    );
 
-    img.src = link.dataset.thumb;
-    img.style.display = "block";
+img.src =
+    link.dataset.thumb;
 
+img.style.display =
+    "block";
+
+const media =
+    document.getElementById(
+        "modalMedia"
+    );
+
+if(link.dataset.media){
+
+    media.src =
+        "../" +
+        link.dataset.media;
+
+    media.style.display =
+        "block";
+
+}else{
+
+    media.style.display =
+        "none";
+}
+
+const screenshot =
+    document.getElementById(
+        "modalScreenshot"
+    );
+
+if(link.dataset.screenshot){
+
+    screenshot.src =
+        "../" +
+        link.dataset.screenshot;
+
+    screenshot.style.display =
+        "block";
+
+}else{
+
+    screenshot.style.display =
+        "none";
+}
     document.getElementById("gameModal").style.display = "block";
 }
 

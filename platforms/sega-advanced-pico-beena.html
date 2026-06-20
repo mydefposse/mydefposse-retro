@@ -112,7 +112,7 @@ th[data-sort]:hover {
 class="thumb"
 src="../thumbs/sega-advanced-pico-beena/pocket monsters advanced generation pokemon suuji battle.jpg"
 loading="lazy"
-onerror="this.style.display='none'">
+onerror="this.onerror=null;this.src='../assets/no-boxart.png';">
 </td>
 
 <td>
@@ -125,7 +125,9 @@ data-publisher="-"
 data-developer="-"
 data-ra=""
 data-notes=""
-data-thumb="../thumbs/sega-advanced-pico-beena/pocket monsters advanced generation pokemon suuji battle.jpg">
+data-thumb="../thumbs/sega-advanced-pico-beena/pocket monsters advanced generation pokemon suuji battle.jpg"
+data-media="ul"
+data-screenshot="ul">
 Pocket Monsters Advanced Generation Pokemon Suuji Battle!!
 </a>
 </td>
@@ -143,7 +145,7 @@ Pocket Monsters Advanced Generation Pokemon Suuji Battle!!
 class="thumb"
 src="../thumbs/sega-advanced-pico-beena/pocket monsters best wishes chinou ikusei pokemon daiundoukai.jpg"
 loading="lazy"
-onerror="this.style.display='none'">
+onerror="this.onerror=null;this.src='../assets/no-boxart.png';">
 </td>
 
 <td>
@@ -156,7 +158,9 @@ data-publisher="-"
 data-developer="-"
 data-ra=""
 data-notes=""
-data-thumb="../thumbs/sega-advanced-pico-beena/pocket monsters best wishes chinou ikusei pokemon daiundoukai.jpg">
+data-thumb="../thumbs/sega-advanced-pico-beena/pocket monsters best wishes chinou ikusei pokemon daiundoukai.jpg"
+data-media="ul"
+data-screenshot="ul">
 Pocket Monsters Best Wishes! Chinou Ikusei Pokemon Daiundoukai
 </a>
 </td>
@@ -174,7 +178,7 @@ Pocket Monsters Best Wishes! Chinou Ikusei Pokemon Daiundoukai
 class="thumb"
 src="../thumbs/sega-advanced-pico-beena/pocket monsters diamond pearl pokemon o sagase meiro de daibouken.jpg"
 loading="lazy"
-onerror="this.style.display='none'">
+onerror="this.onerror=null;this.src='../assets/no-boxart.png';">
 </td>
 
 <td>
@@ -187,7 +191,9 @@ data-publisher="-"
 data-developer="-"
 data-ra=""
 data-notes=""
-data-thumb="../thumbs/sega-advanced-pico-beena/pocket monsters diamond pearl pokemon o sagase meiro de daibouken.jpg">
+data-thumb="../thumbs/sega-advanced-pico-beena/pocket monsters diamond pearl pokemon o sagase meiro de daibouken.jpg"
+data-media="ul"
+data-screenshot="ul">
 Pocket Monsters Diamond & Pearl Pokemon o Sagase! Meiro de Daibouken!
 </a>
 </td>
@@ -205,7 +211,7 @@ Pocket Monsters Diamond & Pearl Pokemon o Sagase! Meiro de Daibouken!
 class="thumb"
 src="../thumbs/sega-advanced-pico-beena/pocket monsters diamond pearl pokemon o sagase meiro de daibouken.jpg"
 loading="lazy"
-onerror="this.style.display='none'">
+onerror="this.onerror=null;this.src='../assets/no-boxart.png';">
 </td>
 
 <td>
@@ -218,7 +224,9 @@ data-publisher="-"
 data-developer="-"
 data-ra=""
 data-notes=""
-data-thumb="../thumbs/sega-advanced-pico-beena/pocket monsters diamond pearl pokemon o sagase meiro de daibouken.jpg">
+data-thumb="../thumbs/sega-advanced-pico-beena/pocket monsters diamond pearl pokemon o sagase meiro de daibouken.jpg"
+data-media="ul"
+data-screenshot="ul">
 Pocket Monsters Diamond & Pearl: Pokemon o Sagase! Meiro de Daibouken!
 </a>
 </td>
@@ -245,12 +253,44 @@ Pocket Monsters Diamond & Pearl: Pokemon o Sagase! Meiro de Daibouken!
 
 <h2 id="modalTitle"></h2>
 
+<div
+id="modalImages"
+style="
+display:flex;
+gap:15px;
+align-items:flex-start;
+flex-wrap:wrap;
+margin-bottom:20px;
+">
+
 <img
 id="modalThumb"
 class="modal-thumb"
 src=""
-onerror="this.style.display='none'">
+onerror="this.onerror=null;this.src='../assets/no-boxart.jpg';">
 
+<img
+id="modalMedia"
+class="modal-thumb"
+style="
+max-width:180px;
+display:none;
+"
+src=""
+onerror="this.style.display='none';">
+
+<img
+id="modalScreenshot"
+style="
+max-width:400px;
+max-height:350px;
+display:none;
+border-radius:6px;
+"
+src=""
+onerror="this.style.display='none';">
+
+</div>
 <div class="modal-meta">
 
 <p><strong>Year:</strong> <span id="modalYear"></span></p>
@@ -407,11 +447,56 @@ if(link.dataset.ra){
         "none";
 }
 
-    const img = document.getElementById("modalThumb");
+const img =
+    document.getElementById(
+        "modalThumb"
+    );
 
-    img.src = link.dataset.thumb;
-    img.style.display = "block";
+img.src =
+    link.dataset.thumb;
 
+img.style.display =
+    "block";
+
+const media =
+    document.getElementById(
+        "modalMedia"
+    );
+
+if(link.dataset.media){
+
+    media.src =
+        "../" +
+        link.dataset.media;
+
+    media.style.display =
+        "block";
+
+}else{
+
+    media.style.display =
+        "none";
+}
+
+const screenshot =
+    document.getElementById(
+        "modalScreenshot"
+    );
+
+if(link.dataset.screenshot){
+
+    screenshot.src =
+        "../" +
+        link.dataset.screenshot;
+
+    screenshot.style.display =
+        "block";
+
+}else{
+
+    screenshot.style.display =
+        "none";
+}
     document.getElementById("gameModal").style.display = "block";
 }
 
