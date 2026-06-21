@@ -309,3 +309,14 @@ h2 {
 .stats-breakdown li{
     padding:4px 0;
 }
+
+.hero-banner{
+    margin-bottom:20px;
+}
+
+.hero-banner img{
+    width:100%;
+    max-width:1600px;
+    display:block;
+    border-radius:12px;
+}
