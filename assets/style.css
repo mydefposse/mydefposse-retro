@@ -286,3 +286,22 @@ h2 {
 
     margin-bottom: 20px;
 }
+
+.stats-breakdown{
+    display:flex;
+    gap:40px;
+    flex-wrap:wrap;
+}
+
+.stats-breakdown div{
+    min-width:250px;
+}
+
+.stats-breakdown ul{
+    list-style:none;
+    padding:0;
+}
+
+.stats-breakdown li{
+    padding:4px 0;
+}

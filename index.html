@@ -31,17 +31,17 @@ My personal curated collection of 16,241 retro games across 100 different platfo
 </div>
 
 <div class="stat">
-<h2>1509</h2>
+<h2>1380</h2>
 <span>Publishers</span>
 </div>
 
 <div class="stat">
-<h2>3,191</h2>
+<h2>3,116</h2>
 <span>Developers</span>
 </div>
 
 <div class="stat">
-<h2>50</h2>
+<h2>28</h2>
 <span>Genres</span>
 </div>
 
@@ -358,6 +358,48 @@ alt="Exophase Gamercard">
 <div class="stat">
 <h2>7</h2>
 <span>Completed (Softcore)</span>
+</div>
+
+</div>
+
+</details>
+
+<details class="homepage-section">
+
+<summary>
+📊 Collection Breakdown
+</summary>
+
+<div class="stats-breakdown">
+
+<div>
+
+<h3>Top Publishers</h3>
+
+<ul>
+<li><a href="#" onclick="showPublisher('Sega');return false;">Sega (914)</a></li><li><a href="#" onclick="showPublisher('Nintendo');return false;">Nintendo (820)</a></li><li><a href="#" onclick="showPublisher('Electronic Arts');return false;">Electronic Arts (520)</a></li><li><a href="#" onclick="showPublisher('Activision');return false;">Activision (486)</a></li><li><a href="#" onclick="showPublisher('Atari');return false;">Atari (472)</a></li><li><a href="#" onclick="showPublisher('Konami');return false;">Konami (447)</a></li><li><a href="#" onclick="showPublisher('THQ');return false;">THQ (432)</a></li><li><a href="#" onclick="showPublisher('Ubisoft');return false;">Ubisoft (405)</a></li><li><a href="#" onclick="showPublisher('Capcom');return false;">Capcom (326)</a></li><li><a href="#" onclick="showPublisher('SNK');return false;">SNK (280)</a></li>
+</ul>
+
+</div>
+
+<div>
+
+<h3>Top Developers</h3>
+
+<ul>
+<li><a href="#" onclick="showDeveloper('Sega');return false;">Sega (423)</a></li><li><a href="#" onclick="showDeveloper('Konami');return false;">Konami (355)</a></li><li><a href="#" onclick="showDeveloper('Capcom');return false;">Capcom (261)</a></li><li><a href="#" onclick="showDeveloper('Nintendo');return false;">Nintendo (245)</a></li><li><a href="#" onclick="showDeveloper('SNK');return false;">SNK (169)</a></li><li><a href="#" onclick="showDeveloper('Hudson Soft');return false;">Hudson Soft (141)</a></li><li><a href="#" onclick="showDeveloper('Atari');return false;">Atari (132)</a></li><li><a href="#" onclick="showDeveloper('Ubisoft');return false;">Ubisoft (130)</a></li><li><a href="#" onclick="showDeveloper('TOSE');return false;">TOSE (118)</a></li><li><a href="#" onclick="showDeveloper('Namco');return false;">Namco (114)</a></li>
+</ul>
+
+</div>
+
+<div>
+
+<h3>Top Genres</h3>
+
+<ul>
+<li><a href="#" onclick="showGenre('Action');return false;">Action (3,826)</a></li><li><a href="#" onclick="showGenre('Platform');return false;">Platform (2,594)</a></li><li><a href="#" onclick="showGenre('Shooter');return false;">Shooter (2,256)</a></li><li><a href="#" onclick="showGenre('Sports');return false;">Sports (1,764)</a></li><li><a href="#" onclick="showGenre('Puzzle');return false;">Puzzle (1,718)</a></li><li><a href="#" onclick="showGenre('Adventure');return false;">Adventure (1,237)</a></li><li><a href="#" onclick="showGenre('Role-Playing');return false;">Role-Playing (1,083)</a></li><li><a href="#" onclick="showGenre('Racing');return false;">Racing (1,037)</a></li><li><a href="#" onclick="showGenre('Fighting');return false;">Fighting (777)</a></li><li><a href="#" onclick="showGenre('Strategy');return false;">Strategy (697)</a></li>
+</ul>
+
 </div>
 
 </div>
@@ -1424,5 +1466,97 @@ Last updated: 21 June 2026
 
 <script src="assets/search.js"></script>
 
+<div id="filterModal" class="modal">
+
+    <div class="modal-content">
+
+        <span
+            class="close"
+            onclick="closeFilterModal()">
+            &times;
+        </span>
+
+        <h2 id="filterTitle"></h2>
+
+        <div id="filterResults"></div>
+
+    </div>
+
+</div>
+<script>
+
+let allGames = null;
+
+async function loadGames(){
+
+    if(allGames)
+        return allGames;
+
+    const response =
+        await fetch(
+            "data/all_games.json"
+        );
+
+    allGames =
+        await response.json();
+
+    return allGames;
+}
+
+async function showPublisher(
+    name
+){
+
+    const games =
+        (await loadGames())
+        .filter(
+            g => g.publisher === name
+        );
+
+alert(
+    name + "
+" +
+    games.length +
+    " games"
+);
+}
+
+async function showDeveloper(
+    name
+){
+
+    const games =
+        (await loadGames())
+        .filter(
+            g => g.developer === name
+        );
+
+alert(
+    name + "
+" +
+    games.length +
+    " games"
+);
+}
+
+async function showGenre(
+    name
+){
+
+    const games =
+        (await loadGames())
+        .filter(
+            g => g.genre.includes(name)
+        );
+
+alert(
+    name + "
+" +
+    games.length +
+    " games"
+);
+}
+
+</script>
 </body>
 </html>
