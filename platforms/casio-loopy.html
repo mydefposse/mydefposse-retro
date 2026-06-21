@@ -19,6 +19,44 @@ th[data-sort] {
 th[data-sort]:hover {
     color: #7fb7ff;
 }
+.platform-hero {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    min-height: 250px;
+}
+
+.platform-hero-bg {
+    position: absolute;
+    inset: 0;
+
+    background-size: cover;
+    background-position: center;
+
+    filter: blur(12px);
+    transform: scale(1.1);
+
+    opacity: 0.35;
+}
+
+.platform-hero-content {
+    position: relative;
+    z-index: 1;
+
+    text-align: center;
+
+    padding: 40px 20px;
+}
+
+.platform-logo {
+    max-height: 90px;
+    max-width: 500px;
+
+    object-fit: contain;
+
+    margin-bottom: 15px;
+}
 .game-link {
     color: #7fb7ff;
     text-decoration: none;
@@ -37,6 +75,9 @@ th[data-sort]:hover {
 }
 
 .modal-content {
+    position: relative;
+    overflow: hidden;
+
     width: min(900px, 95vw);
     max-height: 90vh;
     overflow-y: auto;
@@ -45,7 +86,21 @@ th[data-sort]:hover {
     border-radius: 12px;
     padding: 25px;
 }
+#modalBackground {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.15;
+    filter: blur(12px);
+    transform: scale(1.1);
+    pointer-events: none;
+}
 
+#modalInner {
+    position: relative;
+    z-index: 1;
+}
 .modal-close {
     float: right;
     cursor: pointer;
@@ -54,10 +109,12 @@ th[data-sort]:hover {
 }
 
 .modal-thumb {
-    max-width: 250px;
-    max-height: 350px;
+    width: 250px;
+    height: 350px;
+    object-fit: contain;
+    background: rgba(255,255,255,0.05);
+    border-radius: 8px;
     display: block;
-    margin-bottom: 20px;
 }
 
 .modal-meta {
@@ -83,6 +140,22 @@ th[data-sort]:hover {
 
 <a href="../index.html">← Home</a>
 
+<div class="platform-hero">
+
+<div
+class="platform-hero-bg"
+style="
+background-image:url('../platform-fanart/casio-loopy.jpg');
+">
+</div>
+
+<div class="platform-hero-content">
+
+<img
+class="platform-logo"
+src="../platform-logos/casio-loopy.png"
+onerror="this.style.display='none';">
+
 <h1>Casio Loopy</h1>
 
 
@@ -93,6 +166,9 @@ Released: 1995
 
 <p>9 games</p>
 
+</div>
+
+</div>
 
 <div class="platform-notes">
 <p>The Casio Loopy, subtitled My Seal Computer SV-100, is a fifth generation (1993–2005) video game console developed and distributed by Casio. It was released on October 19, 1995 in Japan at a retail price believed to be 25,000¥. The console was not released outside Japan. The Loopy was marketed to a female audience, and included a built-in thermal color printer that could be used to create stickers from game screenshots. The console was discontinued in October 1996.</p>
@@ -133,8 +209,8 @@ data-developer="Casio Computer"
 data-ra=""
 data-notes="This game is an art tool, in which players can create their own anime girls or boys and print them as stickers. Before starting on the design, the player selects the framework characteristics such as body shape. After establishing the character build, the player proceeds to make cosmetic changes to the face including hair, eyes, brows, nose, mouth, and head shape as well as facial expressions, accessories, clothes, screen backgrounds and patterns, and speech bubbles. In addition to a custom character, the player can also create a custom anime animal or object."
 data-thumb="../thumbs/casio-loopy/anime land.jpg"
-data-media="Images/Casio Loopy/Cart - Front/Japan/Anime Land-01.png"
-data-screenshot="Images/Casio Loopy/Screenshot - Game Title/Anime Land.png">
+data-media="../media/casio-loopy/anime land.jpg"
+data-screenshot="../screenshots/casio-loopy/anime land.jpg">
 Anime Land
 </a>
 </td>
@@ -165,8 +241,8 @@ data-developer="Armat"
 data-ra=""
 data-notes="Based on the manga Magic Cat Chakra-kun, this game contains a number of activities made up of picture puzzles, fortune telling in the form of a slot machine, trivial quizzes, and coloring pages, which can be printed into stickers."
 data-thumb="../thumbs/casio-loopy/chakrakun no omajinai paradise.jpg"
-data-media="Images/Casio Loopy/Cart - Front/Japan/Chakrakun no Omajinai Paradise-01.png"
-data-screenshot="">
+data-media="../media/casio-loopy/chakrakun no omajinai paradise.jpg"
+data-screenshot="../screenshots/casio-loopy/chakrakun no omajinai paradise.jpg">
 Chakrakun no Omajinai Paradise
 </a>
 </td>
@@ -197,8 +273,8 @@ data-developer="Casio Computer"
 data-ra=""
 data-notes="Dream Change: Kogane-chan no Fashion Party is a Miscellaneous game, developed and published by Casio, which was released in Japan in 1995."
 data-thumb="../thumbs/casio-loopy/dor muchenji kokinchanno fasshonp t.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/casio-loopy/dor muchenji kokinchanno fasshonp t.jpg"
+data-screenshot="../screenshots/casio-loopy/dor muchenji kokinchanno fasshonp t.jpg">
 Dorīmuchenji Kokinchanno Fasshonpātī
 </a>
 </td>
@@ -229,8 +305,8 @@ data-developer="Casio Computer"
 data-ra=""
 data-notes="The player joins Harihari and her friends in this sticker activity game, which includes animated sticker pages, special occasions stickers, greetings stickers, poster stickers, and a music session. Players can also make their own custom stickers, changing the proportions of objects, selecting the background, adding borders, and implementing some animations with a variety of art tools."
 data-thumb="../thumbs/casio-loopy/harihari sh ru paradaisu.jpg"
-data-media=""
-data-screenshot="Images/Casio Loopy/Screenshot - Game Title/HARIHARI Seal Paradise.png">
+data-media="../media/casio-loopy/harihari sh ru paradaisu.jpg"
+data-screenshot="../screenshots/casio-loopy/harihari sh ru paradaisu.jpg">
 HARIHARI Shīru Paradaisu
 </a>
 </td>
@@ -261,8 +337,8 @@ data-developer="Casio Computer"
 data-ra=""
 data-notes="Little Romance is a Simulation game, developed and published by Casio, which was released in Japan in 1996."
 data-thumb="../thumbs/casio-loopy/little romance.jpg"
-data-media="Images/Casio Loopy/Cart - Front/Japan/Little Romance-01.png"
-data-screenshot="Images/Casio Loopy/Screenshot - Game Title/Little Romance.png">
+data-media="../media/casio-loopy/little romance.jpg"
+data-screenshot="../screenshots/casio-loopy/little romance.jpg">
 Little Romance
 </a>
 </td>
@@ -293,8 +369,8 @@ data-developer="Casio Computer"
 data-ra=""
 data-notes="Lupiton no Wonder Palette is a Miscellaneous game, developed by Axes Art Amuse and published by Casio, which was released in Japan in 1996."
 data-thumb="../thumbs/casio-loopy/lupiton no wonder palette.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/casio-loopy/lupiton no wonder palette.jpg"
+data-screenshot="../screenshots/casio-loopy/lupiton no wonder palette.jpg">
 Lupiton no Wonder Palette
 </a>
 </td>
@@ -325,8 +401,8 @@ data-developer="Casio Computer"
 data-ra=""
 data-notes="This game is designed as an art tool to create caricatures and facial impressions. First the player picks an avatar of a gender and age group. Using the selected avatar as a template, the player can customize the hairstyle, brows, eyes, nose, mouth, head shape and clothes. The parts of the face can be repositioned and resized. Additionally, paint tools can be used to further accessorize the caricature with colors, objects and speech bubbles. To finish off, the caricature can be placed in one of many sceneries provided. The player also has the option to paint their own pictures from scratch or make use of one of the ready made caricatures."
 data-thumb="../thumbs/casio-loopy/nigaoe artist.jpg"
-data-media="Images/Casio Loopy/Cart - Front/Japan/Nigaoe Artist-01.png"
-data-screenshot="Images/Casio Loopy/Screenshot - Game Title/Nigaoe Artist.png">
+data-media="../media/casio-loopy/nigaoe artist.jpg"
+data-screenshot="../screenshots/casio-loopy/nigaoe artist.jpg">
 Nigaoe Artist
 </a>
 </td>
@@ -357,8 +433,8 @@ data-developer="Casio Computer"
 data-ra=""
 data-notes="This game is a small collection of ten different mini-game activities. Those activities include a word processor, a paint and illustration program, a music composer, a fortune-telling screen with printable charms, a simple fashion designer, jigsaw puzzles, a crane machine game, animal dress up, a calendar, and an address book. The game came packaged with the Loopy Mouse."
 data-thumb="../thumbs/casio-loopy/pc collection.jpg"
-data-media="Images/Casio Loopy/Cart - Front/Japan/PC Collection-01.png"
-data-screenshot="">
+data-media="../media/casio-loopy/pc collection.jpg"
+data-screenshot="../screenshots/casio-loopy/pc collection.jpg">
 PC Collection
 </a>
 </td>
@@ -389,8 +465,8 @@ data-developer="Casio Computer"
 data-ra=""
 data-notes=""
 data-thumb="../thumbs/casio-loopy/r p taun no o heya ga hoshii.jpg"
-data-media="Images/Casio Loopy/Cart - Front/Japan/Loopy Town no Oheya ga Hoshii!-01.png"
-data-screenshot="Images/Casio Loopy/Screenshot - Game Title/Loopy Town no Oheya ga Hoshii.png">
+data-media="../media/casio-loopy/r p taun no o heya ga hoshii.jpg"
+data-screenshot="../screenshots/casio-loopy/r p taun no o heya ga hoshii.jpg">
 Rūpī Taun no O-heya ga Hoshii!
 </a>
 </td>
@@ -412,7 +488,8 @@ Rūpī Taun no O-heya ga Hoshii!
 <div id="gameModal" class="modal-overlay">
 
 <div class="modal-content">
-
+<div id="modalBackground"></div>
+<div id="modalInner">
 <span class="modal-close" onclick="closeGame()">&times;</span>
 
 <h2 id="modalTitle"></h2>
@@ -437,7 +514,11 @@ onerror="this.onerror=null;this.src='../assets/no-boxart.png';">
 id="modalMedia"
 class="modal-thumb"
 style="
-max-width:180px;
+width:250px;
+height:350px;
+object-fit:contain;
+background:rgba(255,255,255,0.05);
+border-radius:8px;
 display:none;
 "
 src=""
@@ -446,8 +527,11 @@ onerror="this.style.display='none';">
 <img
 id="modalScreenshot"
 style="
-max-width:400px;
-max-height:350px;
+width:250px;
+height:350px;
+object-fit:contain;
+background:rgba(255,255,255,0.05);
+border-radius:8px;
 display:none;
 border-radius:6px;
 "
@@ -501,7 +585,7 @@ font-weight:bold;
 
 </div>
 <div class="modal-notes" id="modalNotes"></div>
-
+</div>
 </div>
 
 </div>
@@ -616,21 +700,24 @@ const img =
         "modalThumb"
     );
 
-img.src =
-    link.dataset.thumb;
-
 img.style.display =
     "block";
 
+img.onerror = function() {
+    this.onerror = null;
+    this.src = "../assets/no-boxart.png";
+};
+
+img.src =
+    link.dataset.thumb;
 const media =
     document.getElementById(
         "modalMedia"
     );
 
-if(link.dataset.media){
+if(link.dataset.media && link.dataset.media !== ""){
 
     media.src =
-        "../" +
         link.dataset.media;
 
     media.style.display =
@@ -647,10 +734,9 @@ const screenshot =
         "modalScreenshot"
     );
 
-if(link.dataset.screenshot){
+if(link.dataset.screenshot && link.dataset.screenshot !== ""){
 
     screenshot.src =
-        "../" +
         link.dataset.screenshot;
 
     screenshot.style.display =

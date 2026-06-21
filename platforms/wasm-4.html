@@ -19,6 +19,44 @@ th[data-sort] {
 th[data-sort]:hover {
     color: #7fb7ff;
 }
+.platform-hero {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    min-height: 250px;
+}
+
+.platform-hero-bg {
+    position: absolute;
+    inset: 0;
+
+    background-size: cover;
+    background-position: center;
+
+    filter: blur(12px);
+    transform: scale(1.1);
+
+    opacity: 0.35;
+}
+
+.platform-hero-content {
+    position: relative;
+    z-index: 1;
+
+    text-align: center;
+
+    padding: 40px 20px;
+}
+
+.platform-logo {
+    max-height: 90px;
+    max-width: 500px;
+
+    object-fit: contain;
+
+    margin-bottom: 15px;
+}
 .game-link {
     color: #7fb7ff;
     text-decoration: none;
@@ -37,6 +75,9 @@ th[data-sort]:hover {
 }
 
 .modal-content {
+    position: relative;
+    overflow: hidden;
+
     width: min(900px, 95vw);
     max-height: 90vh;
     overflow-y: auto;
@@ -45,7 +86,21 @@ th[data-sort]:hover {
     border-radius: 12px;
     padding: 25px;
 }
+#modalBackground {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.15;
+    filter: blur(12px);
+    transform: scale(1.1);
+    pointer-events: none;
+}
 
+#modalInner {
+    position: relative;
+    z-index: 1;
+}
 .modal-close {
     float: right;
     cursor: pointer;
@@ -54,10 +109,12 @@ th[data-sort]:hover {
 }
 
 .modal-thumb {
-    max-width: 250px;
-    max-height: 350px;
+    width: 250px;
+    height: 350px;
+    object-fit: contain;
+    background: rgba(255,255,255,0.05);
+    border-radius: 8px;
     display: block;
-    margin-bottom: 20px;
 }
 
 .modal-meta {
@@ -83,6 +140,22 @@ th[data-sort]:hover {
 
 <a href="../index.html">← Home</a>
 
+<div class="platform-hero">
+
+<div
+class="platform-hero-bg"
+style="
+background-image:url('../platform-fanart/wasm-4.jpg');
+">
+</div>
+
+<div class="platform-hero-content">
+
+<img
+class="platform-logo"
+src="../platform-logos/wasm-4.png"
+onerror="this.style.display='none';">
+
 <h1>WASM-4</h1>
 
 
@@ -93,6 +166,9 @@ Released: 2021
 
 <p>63 games</p>
 
+</div>
+
+</div>
 
 <div class="platform-notes">
 <p>WASM-4 is a fantasy game console designed for creating small, retro-style games using WebAssembly. Launched in 2021, it provides a minimal virtual hardware platform featuring a 160x160 resolution display, 4-button input, and simple audio and sprite capabilities. Developers can write games in a variety of languages—including C, Rust, AssemblyScript, and more—then compile them to WebAssembly for cross-platform compatibility. WASM-4 games run directly in modern web browsers or via native runtimes, making it a popular choice for game jams, prototyping, and experimenting with low-level game development.</p>
@@ -133,8 +209,8 @@ data-developer="-"
 data-ra="19291"
 data-notes=""
 data-thumb="../thumbs/wasm-4/2048.jpg"
-data-media=""
-data-screenshot="Images/WASM-4/Screenshot - Game Title/2048 (World) (Peter Hellberg).jpg">
+data-media="../media/wasm-4/2048.jpg"
+data-screenshot="../screenshots/wasm-4/2048.jpg">
 2048
 </a>
 </td>
@@ -165,8 +241,8 @@ data-developer="-"
 data-ra="19292"
 data-notes=""
 data-thumb="../thumbs/wasm-4/antcopter.jpg"
-data-media=""
-data-screenshot="Images/WASM-4/Screenshot - Game Title/Antcopter (World) (Eduwardo Bart).jpg">
+data-media="../media/wasm-4/antcopter.jpg"
+data-screenshot="../screenshots/wasm-4/antcopter.jpg">
 Antcopter
 </a>
 </td>
@@ -197,8 +273,8 @@ data-developer="Quic5"
 data-ra="19293"
 data-notes="Assemblio is a factory automation game for the WASM-4 fantasy game console. It is written in Zig and highly inspired by the great Factorio and shapez.io.\n\nThe goal of the game is to complete levels by producing the required items. Everything will start with a Miner which extracts Items that are transported on Belts to a Hub. On their way items may be transformed using machines."
 data-thumb="../thumbs/wasm-4/assemblio.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/wasm-4/assemblio.jpg"
+data-screenshot="../screenshots/wasm-4/assemblio.jpg">
 Assemblio
 </a>
 </td>
@@ -229,8 +305,8 @@ data-developer="-"
 data-ra="24476"
 data-notes=""
 data-thumb="../thumbs/wasm-4/break it.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/wasm-4/break it.jpg"
+data-screenshot="../screenshots/wasm-4/break it.jpg">
 Break-It
 </a>
 </td>
@@ -261,8 +337,8 @@ data-developer="-"
 data-ra="35649"
 data-notes=""
 data-thumb="../thumbs/wasm-4/comic sans.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/wasm-4/comic sans.jpg"
+data-screenshot="../screenshots/wasm-4/comic sans.jpg">
 Comic-Sans
 </a>
 </td>
@@ -293,8 +369,8 @@ data-developer="samX500"
 data-ra="24229"
 data-notes="Dashy Dango a wave fighting game made with WASM-4 by @samX500 and @willGuimont.\n\nHelp the Dango survive by fighting waves of enemies. Dash into enemies to eliminate them."
 data-thumb="../thumbs/wasm-4/dashy dango.jpg"
-data-media=""
-data-screenshot="Images/WASM-4/Screenshot - Game Title/Dashy Dango (World) (samX500).jpg">
+data-media="../media/wasm-4/dashy dango.jpg"
+data-screenshot="../screenshots/wasm-4/dashy dango.jpg">
 Dashy Dango
 </a>
 </td>
@@ -325,8 +401,8 @@ data-developer="-"
 data-ra="21395"
 data-notes=""
 data-thumb="../thumbs/wasm-4/disk 0 madness.jpg"
-data-media=""
-data-screenshot="Images/WASM-4/Screenshot - Game Title/disk-0 MADNESS (World) (Max Curzi).jpg">
+data-media="../media/wasm-4/disk 0 madness.jpg"
+data-screenshot="../screenshots/wasm-4/disk 0 madness.jpg">
 disk-0 MADNESS
 </a>
 </td>
@@ -357,8 +433,8 @@ data-developer="Sander in 't Velt"
 data-ra="19295"
 data-notes=""
 data-thumb="../thumbs/wasm-4/dodgeball.jpg"
-data-media=""
-data-screenshot="Images/WASM-4/Screenshot - Game Title/Dodgeball (World) (Sander in 't Veld).jpg">
+data-media="../media/wasm-4/dodgeball.jpg"
+data-screenshot="../screenshots/wasm-4/dodgeball.jpg">
 Dodgeball
 </a>
 </td>
@@ -389,8 +465,8 @@ data-developer="-"
 data-ra="19331"
 data-notes=""
 data-thumb="../thumbs/wasm-4/don t smash into obstacles.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/wasm-4/don t smash into obstacles.jpg"
+data-screenshot="../screenshots/wasm-4/don t smash into obstacles.jpg">
 Don't Smash into Obstacles
 </a>
 </td>
@@ -421,8 +497,8 @@ data-developer="-"
 data-ra="19314"
 data-notes=""
 data-thumb="../thumbs/wasm-4/endless runner.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/wasm-4/endless runner.jpg"
+data-screenshot="../screenshots/wasm-4/endless runner.jpg">
 Endless Runner
 </a>
 </td>
@@ -453,8 +529,8 @@ data-developer="-"
 data-ra="19313"
 data-notes=""
 data-thumb="../thumbs/wasm-4/explore the grotto.jpg"
-data-media=""
-data-screenshot="Images/WASM-4/Screenshot - Game Title/Explore the Grotto (World) (Donatien Rabiller).jpg">
+data-media="../media/wasm-4/explore the grotto.jpg"
+data-screenshot="../screenshots/wasm-4/explore the grotto.jpg">
 Explore the Grotto
 </a>
 </td>
@@ -485,8 +561,8 @@ data-developer="-"
 data-ra="21394"
 data-notes=""
 data-thumb="../thumbs/wasm-4/first flight.jpg"
-data-media=""
-data-screenshot="Images/WASM-4/Screenshot - Game Title/First Flight (World) (bootra).jpg">
+data-media="../media/wasm-4/first flight.jpg"
+data-screenshot="../screenshots/wasm-4/first flight.jpg">
 First Flight
 </a>
 </td>
@@ -517,8 +593,8 @@ data-developer="-"
 data-ra="34167"
 data-notes=""
 data-thumb="../thumbs/wasm-4/formula 1.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/wasm-4/formula 1.jpg"
+data-screenshot="../screenshots/wasm-4/formula 1.jpg">
 Formula 1
 </a>
 </td>
@@ -549,8 +625,8 @@ data-developer="-"
 data-ra="19335"
 data-notes=""
 data-thumb="../thumbs/wasm-4/future avoid.jpg"
-data-media=""
-data-screenshot="Images/WASM-4/Screenshot - Game Title/Future Avoid (World) (Proto) (Joakim Hentula).jpg">
+data-media="../media/wasm-4/future avoid.jpg"
+data-screenshot="../screenshots/wasm-4/future avoid.jpg">
 Future Avoid
 </a>
 </td>
@@ -581,8 +657,8 @@ data-developer="-"
 data-ra="22550"
 data-notes=""
 data-thumb="../thumbs/wasm-4/fuzzy world cup.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/wasm-4/fuzzy world cup.jpg"
+data-screenshot="../screenshots/wasm-4/fuzzy world cup.jpg">
 Fuzzy World Cup
 </a>
 </td>
@@ -613,8 +689,8 @@ data-developer="-"
 data-ra="27651"
 data-notes=""
 data-thumb="../thumbs/wasm-4/galdr.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/wasm-4/galdr.jpg"
+data-screenshot="../screenshots/wasm-4/galdr.jpg">
 GALDR
 </a>
 </td>
@@ -645,8 +721,8 @@ data-developer="-"
 data-ra="19324"
 data-notes=""
 data-thumb="../thumbs/wasm-4/hammer joe.jpg"
-data-media=""
-data-screenshot="Images/WASM-4/Screenshot - Game Title/Hammer Joe (World) (Proto) (MFauzan26).jpg">
+data-media="../media/wasm-4/hammer joe.jpg"
+data-screenshot="../screenshots/wasm-4/hammer joe.jpg">
 Hammer Joe
 </a>
 </td>
@@ -677,8 +753,8 @@ data-developer="-"
 data-ra="19322"
 data-notes=""
 data-thumb="../thumbs/wasm-4/hills in the moonlight.jpg"
-data-media=""
-data-screenshot="Images/WASM-4/Screenshot - Game Title/Hills in the Moonlight (World) (Samarth Hattangady).jpg">
+data-media="../media/wasm-4/hills in the moonlight.jpg"
+data-screenshot="../screenshots/wasm-4/hills in the moonlight.jpg">
 Hills in the Moonlight
 </a>
 </td>
@@ -709,8 +785,8 @@ data-developer="SLiV"
 data-ra="21491"
 data-notes="It's Corn! is a Racing game for the WASM-4, developed and released in 2022 by SLiV.\n\nMy entry for GBJam 10. Made in a little over a day using my own esoteric programming language, Penne, for the WASM-4 fantasy console.\nControls: arrow keys, X for a boost."
 data-thumb="../thumbs/wasm-4/it s corn.jpg"
-data-media=""
-data-screenshot="Images/WASM-4/Screenshot - Game Title/It's Corn! (World) (Sander in 't Veld).jpg">
+data-media="../media/wasm-4/it s corn.jpg"
+data-screenshot="../screenshots/wasm-4/it s corn.jpg">
 It's Corn!
 </a>
 </td>
@@ -741,8 +817,8 @@ data-developer="-"
 data-ra="20392"
 data-notes=""
 data-thumb="../thumbs/wasm-4/journey to entorus.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/wasm-4/journey to entorus.jpg"
+data-screenshot="../screenshots/wasm-4/journey to entorus.jpg">
 Journey to Entorus
 </a>
 </td>
@@ -773,8 +849,8 @@ data-developer="-"
 data-ra="19325"
 data-notes=""
 data-thumb="../thumbs/wasm-4/legend of geml the awakening.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/wasm-4/legend of geml the awakening.jpg"
+data-screenshot="../screenshots/wasm-4/legend of geml the awakening.jpg">
 Legend of GEML, The: Awakening
 </a>
 </td>
@@ -805,8 +881,8 @@ data-developer="-"
 data-ra="19336"
 data-notes=""
 data-thumb="../thumbs/wasm-4/lime volleyball.jpg"
-data-media=""
-data-screenshot="Images/WASM-4/Screenshot - Game Title/Lime Volleyball (World) (Bruno Garcia).jpg">
+data-media="../media/wasm-4/lime volleyball.jpg"
+data-screenshot="../screenshots/wasm-4/lime volleyball.jpg">
 Lime Volleyball
 </a>
 </td>
@@ -837,8 +913,8 @@ data-developer="-"
 data-ra="19302"
 data-notes=""
 data-thumb="../thumbs/wasm-4/lingword.jpg"
-data-media=""
-data-screenshot="Images/WASM-4/Screenshot - Game Title/Lingword (World) (Jonathan Derque).jpg">
+data-media="../media/wasm-4/lingword.jpg"
+data-screenshot="../screenshots/wasm-4/lingword.jpg">
 Lingword
 </a>
 </td>
@@ -869,8 +945,8 @@ data-developer="-"
 data-ra="19301"
 data-notes=""
 data-thumb="../thumbs/wasm-4/meteoroids.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/wasm-4/meteoroids.jpg"
+data-screenshot="../screenshots/wasm-4/meteoroids.jpg">
 Meteoroids
 </a>
 </td>
@@ -901,8 +977,8 @@ data-developer="-"
 data-ra="19304"
 data-notes=""
 data-thumb="../thumbs/wasm-4/micro quest.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/wasm-4/micro quest.jpg"
+data-screenshot="../screenshots/wasm-4/micro quest.jpg">
 Micro Quest
 </a>
 </td>
@@ -933,8 +1009,8 @@ data-developer="Mr.Rafael"
 data-ra="19315"
 data-notes="This is a simple 15-Puzzle, with images of Hatsune MIku. You have to sort all the pieces until you get the final image.\n\n\u2022 On title screen, Press Z or X to start the game.\n\u2022 Use arrow keys to move the pieces.\n\u2022 Press X to open the game's menu, and Z to select an option."
 data-thumb="../thumbs/wasm-4/miku 15.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/wasm-4/miku 15.jpg"
+data-screenshot="../screenshots/wasm-4/miku 15.jpg">
 MIKU-15
 </a>
 </td>
@@ -965,8 +1041,8 @@ data-developer="-"
 data-ra="19321"
 data-notes=""
 data-thumb="../thumbs/wasm-4/mind palace.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/wasm-4/mind palace.jpg"
+data-screenshot="../screenshots/wasm-4/mind palace.jpg">
 Mind Palace
 </a>
 </td>
@@ -997,8 +1073,8 @@ data-developer="-"
 data-ra="19294"
 data-notes=""
 data-thumb="../thumbs/wasm-4/minesweeper.jpg"
-data-media=""
-data-screenshot="Images/WASM-4/Screenshot - Game Title/Minesweeper (World) (Claudio Mattera).jpg">
+data-media="../media/wasm-4/minesweeper.jpg"
+data-screenshot="../screenshots/wasm-4/minesweeper.jpg">
 Minesweeper
 </a>
 </td>
@@ -1029,8 +1105,8 @@ data-developer="-"
 data-ra="24122"
 data-notes=""
 data-thumb="../thumbs/wasm-4/minigolf.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/wasm-4/minigolf.jpg"
+data-screenshot="../screenshots/wasm-4/minigolf.jpg">
 Minigolf
 </a>
 </td>
@@ -1061,8 +1137,8 @@ data-developer="-"
 data-ra="21393"
 data-notes=""
 data-thumb="../thumbs/wasm-4/ninja vs knights.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/wasm-4/ninja vs knights.jpg"
+data-screenshot="../screenshots/wasm-4/ninja vs knights.jpg">
 Ninja vs Knights
 </a>
 </td>
@@ -1093,8 +1169,8 @@ data-developer="-"
 data-ra="24193"
 data-notes=""
 data-thumb="../thumbs/wasm-4/one slime army.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/wasm-4/one slime army.jpg"
+data-screenshot="../screenshots/wasm-4/one slime army.jpg">
 One Slime Army
 </a>
 </td>
@@ -1125,8 +1201,8 @@ data-developer="-"
 data-ra="25681"
 data-notes=""
 data-thumb="../thumbs/wasm-4/phantom shift.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/wasm-4/phantom shift.jpg"
+data-screenshot="../screenshots/wasm-4/phantom shift.jpg">
 Phantom Shift
 </a>
 </td>
@@ -1157,8 +1233,8 @@ data-developer="-"
 data-ra="24472"
 data-notes=""
 data-thumb="../thumbs/wasm-4/ping.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/wasm-4/ping.jpg"
+data-screenshot="../screenshots/wasm-4/ping.jpg">
 PING
 </a>
 </td>
@@ -1189,8 +1265,8 @@ data-developer="-"
 data-ra="34384"
 data-notes=""
 data-thumb="../thumbs/wasm-4/pixel vs zombies.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/wasm-4/pixel vs zombies.jpg"
+data-screenshot="../screenshots/wasm-4/pixel vs zombies.jpg">
 Pixel vs Zombies
 </a>
 </td>
@@ -1221,8 +1297,8 @@ data-developer="-"
 data-ra="19309"
 data-notes=""
 data-thumb="../thumbs/wasm-4/plctfarmer.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/wasm-4/plctfarmer.jpg"
+data-screenshot="../screenshots/wasm-4/plctfarmer.jpg">
 Plctfarmer
 </a>
 </td>
@@ -1253,8 +1329,8 @@ data-developer="Fabrizio Vitale"
 data-ra="19316"
 data-notes="A port of the classic arcade game Pong for the WASM-4.\n\nP1 controls: Arrows, X, Z / P2 controls: ESDF, Tab, Q"
 data-thumb="../thumbs/wasm-4/pong.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/wasm-4/pong.jpg"
+data-screenshot="../screenshots/wasm-4/pong.jpg">
 Pong
 </a>
 </td>
@@ -1285,8 +1361,8 @@ data-developer="-"
 data-ra="19308"
 data-notes=""
 data-thumb="../thumbs/wasm-4/presents to the metal.jpg"
-data-media=""
-data-screenshot="Images/WASM-4/Screenshot - Game Title/Presents to the Metal (World) (errorStream).jpg">
+data-media="../media/wasm-4/presents to the metal.jpg"
+data-screenshot="../screenshots/wasm-4/presents to the metal.jpg">
 Presents to the Metal
 </a>
 </td>
@@ -1317,8 +1393,8 @@ data-developer="-"
 data-ra="25680"
 data-notes=""
 data-thumb="../thumbs/wasm-4/punch em up.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/wasm-4/punch em up.jpg"
+data-screenshot="../screenshots/wasm-4/punch em up.jpg">
 Punch-Em-Up
 </a>
 </td>
@@ -1349,8 +1425,8 @@ data-developer="-"
 data-ra="27644"
 data-notes=""
 data-thumb="../thumbs/wasm-4/racer.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/wasm-4/racer.jpg"
+data-screenshot="../screenshots/wasm-4/racer.jpg">
 Racer
 </a>
 </td>
@@ -1381,8 +1457,8 @@ data-developer="-"
 data-ra="19311"
 data-notes=""
 data-thumb="../thumbs/wasm-4/rolly dango.jpg"
-data-media=""
-data-screenshot="Images/WASM-4/Screenshot - Game Title/Rolly Dango (World) (William Gulmont-Martin).jpg">
+data-media="../media/wasm-4/rolly dango.jpg"
+data-screenshot="../screenshots/wasm-4/rolly dango.jpg">
 Rolly Dango
 </a>
 </td>
@@ -1413,8 +1489,8 @@ data-developer="Krylan & Dominik Koperkiewicz"
 data-ra="20458"
 data-notes="Game for WASM-4 Game Jam #2. Earn the highest score in this endless-destroying game driven by greed of revenge."
 data-thumb="../thumbs/wasm-4/samurai revenge.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/wasm-4/samurai revenge.jpg"
+data-screenshot="../screenshots/wasm-4/samurai revenge.jpg">
 Samurai Revenge
 </a>
 </td>
@@ -1445,8 +1521,8 @@ data-developer="-"
 data-ra="19312"
 data-notes=""
 data-thumb="../thumbs/wasm-4/skipahead.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/wasm-4/skipahead.jpg"
+data-screenshot="../screenshots/wasm-4/skipahead.jpg">
 Skipahead
 </a>
 </td>
@@ -1477,8 +1553,8 @@ data-developer="-"
 data-ra="19300"
 data-notes=""
 data-thumb="../thumbs/wasm-4/snake.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/wasm-4/snake.jpg"
+data-screenshot="../screenshots/wasm-4/snake.jpg">
 Snake
 </a>
 </td>
@@ -1509,8 +1585,8 @@ data-developer="chemecse"
 data-ra="19542"
 data-notes="A sokoban game built for the WASM-4 fantasy console in the WASM-4 Game Jam\n\nP1 controls: Arrows, X, Z / P2 controls: ESDF, Tab, Q"
 data-thumb="../thumbs/wasm-4/sokoban.jpg"
-data-media=""
-data-screenshot="Images/WASM-4/Screenshot - Game Title/Sokoban (World) (Proto) (Lars Hamre).png">
+data-media="../media/wasm-4/sokoban.jpg"
+data-screenshot="../screenshots/wasm-4/sokoban.jpg">
 Sokoban
 </a>
 </td>
@@ -1541,8 +1617,8 @@ data-developer="-"
 data-ra="19323"
 data-notes=""
 data-thumb="../thumbs/wasm-4/spunky.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/wasm-4/spunky.jpg"
+data-screenshot="../screenshots/wasm-4/spunky.jpg">
 Spunky
 </a>
 </td>
@@ -1573,8 +1649,8 @@ data-developer="-"
 data-ra="20381"
 data-notes=""
 data-thumb="../thumbs/wasm-4/starpilot w.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/wasm-4/starpilot w.jpg"
+data-screenshot="../screenshots/wasm-4/starpilot w.jpg">
 StarPilot W
 </a>
 </td>
@@ -1605,8 +1681,8 @@ data-developer="-"
 data-ra="21391"
 data-notes=""
 data-thumb="../thumbs/wasm-4/strikeforce.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/wasm-4/strikeforce.jpg"
+data-screenshot="../screenshots/wasm-4/strikeforce.jpg">
 Strikeforce
 </a>
 </td>
@@ -1637,8 +1713,8 @@ data-developer="-"
 data-ra="19305"
 data-notes=""
 data-thumb="../thumbs/wasm-4/tail gunner.jpg"
-data-media=""
-data-screenshot="Images/WASM-4/Screenshot - Game Title/Tail Gunner (World) (Dial0).jpg">
+data-media="../media/wasm-4/tail gunner.jpg"
+data-screenshot="../screenshots/wasm-4/tail gunner.jpg">
 Tail Gunner
 </a>
 </td>
@@ -1669,8 +1745,8 @@ data-developer="-"
 data-ra="19434"
 data-notes=""
 data-thumb="../thumbs/wasm-4/tappyloop.jpg"
-data-media=""
-data-screenshot="Images/WASM-4/Screenshot - Game Title/TappyLoop (World) (daves84).jpg">
+data-media="../media/wasm-4/tappyloop.jpg"
+data-screenshot="../screenshots/wasm-4/tappyloop.jpg">
 TappyLoop
 </a>
 </td>
@@ -1701,8 +1777,8 @@ data-developer="-"
 data-ra="22432"
 data-notes=""
 data-thumb="../thumbs/wasm-4/texas chainsaw dodge.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/wasm-4/texas chainsaw dodge.jpg"
+data-screenshot="../screenshots/wasm-4/texas chainsaw dodge.jpg">
 Texas Chainsaw Dodge
 </a>
 </td>
@@ -1733,8 +1809,8 @@ data-developer="-"
 data-ra="19296"
 data-notes=""
 data-thumb="../thumbs/wasm-4/to the core.jpg"
-data-media=""
-data-screenshot="Images/WASM-4/Screenshot - Game Title/To the Core (World) (Garrett Hale).jpg">
+data-media="../media/wasm-4/to the core.jpg"
+data-screenshot="../screenshots/wasm-4/to the core.jpg">
 To the Core
 </a>
 </td>
@@ -1765,8 +1841,8 @@ data-developer="-"
 data-ra="19319"
 data-notes=""
 data-thumb="../thumbs/wasm-4/totally not sumo.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/wasm-4/totally not sumo.jpg"
+data-screenshot="../screenshots/wasm-4/totally not sumo.jpg">
 Totally Not Sumo
 </a>
 </td>
@@ -1797,8 +1873,8 @@ data-developer="-"
 data-ra="20058"
 data-notes=""
 data-thumb="../thumbs/wasm-4/touhou spirits.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/wasm-4/touhou spirits.jpg"
+data-screenshot="../screenshots/wasm-4/touhou spirits.jpg">
 Touhou Spirits
 </a>
 </td>
@@ -1829,8 +1905,8 @@ data-developer="-"
 data-ra="33048"
 data-notes=""
 data-thumb="../thumbs/wasm-4/untangle.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/wasm-4/untangle.jpg"
+data-screenshot="../screenshots/wasm-4/untangle.jpg">
 Untangle
 </a>
 </td>
@@ -1861,8 +1937,8 @@ data-developer="-"
 data-ra="19297"
 data-notes=""
 data-thumb="../thumbs/wasm-4/wasm4nia.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/wasm-4/wasm4nia.jpg"
+data-screenshot="../screenshots/wasm-4/wasm4nia.jpg">
 wasm4nia
 </a>
 </td>
@@ -1893,8 +1969,8 @@ data-developer="-"
 data-ra="19334"
 data-notes=""
 data-thumb="../thumbs/wasm-4/watris.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/wasm-4/watris.jpg"
+data-screenshot="../screenshots/wasm-4/watris.jpg">
 Watris
 </a>
 </td>
@@ -1925,8 +2001,8 @@ data-developer="-"
 data-ra="19317"
 data-notes=""
 data-thumb="../thumbs/wasm-4/wired.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/wasm-4/wired.jpg"
+data-screenshot="../screenshots/wasm-4/wired.jpg">
 Wired
 </a>
 </td>
@@ -1957,8 +2033,8 @@ data-developer="-"
 data-ra="19310"
 data-notes=""
 data-thumb="../thumbs/wasm-4/wloku.jpg"
-data-media=""
-data-screenshot="Images/WASM-4/Screenshot - Game Title/WLOKU (World) (12Boti).jpg">
+data-media="../media/wasm-4/wloku.jpg"
+data-screenshot="../screenshots/wasm-4/wloku.jpg">
 WLOKU
 </a>
 </td>
@@ -1989,8 +2065,8 @@ data-developer="-"
 data-ra="19333"
 data-notes=""
 data-thumb="../thumbs/wasm-4/wormhole.jpg"
-data-media=""
-data-screenshot="Images/WASM-4/Screenshot - Game Title/Wormhole (World) (David Sims).jpg">
+data-media="../media/wasm-4/wormhole.jpg"
+data-screenshot="../screenshots/wasm-4/wormhole.jpg">
 Wormhole
 </a>
 </td>
@@ -2021,8 +2097,8 @@ data-developer="-"
 data-ra="19320"
 data-notes=""
 data-thumb="../thumbs/wasm-4/you will return.jpg"
-data-media=""
-data-screenshot="Images/WASM-4/Screenshot - Game Title/You Will Return (World) (Rev 1) (Sander in 't Veld).jpg">
+data-media="../media/wasm-4/you will return.jpg"
+data-screenshot="../screenshots/wasm-4/you will return.jpg">
 You Will Return
 </a>
 </td>
@@ -2053,8 +2129,8 @@ data-developer="-"
 data-ra="24185"
 data-notes=""
 data-thumb="../thumbs/wasm-4/znake.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/wasm-4/znake.jpg"
+data-screenshot="../screenshots/wasm-4/znake.jpg">
 Znake
 </a>
 </td>
@@ -2085,8 +2161,8 @@ data-developer="-"
 data-ra="21490"
 data-notes=""
 data-thumb="../thumbs/wasm-4/zoop zoop bee adventures 7.jpg"
-data-media=""
-data-screenshot="Images/WASM-4/Screenshot - Game Title/Zoop Zoop Bee Adventures 7 (World) (Garrett Hale).jpg">
+data-media="../media/wasm-4/zoop zoop bee adventures 7.jpg"
+data-screenshot="../screenshots/wasm-4/zoop zoop bee adventures 7.jpg">
 Zoop Zoop Bee Adventures 7
 </a>
 </td>
@@ -2117,8 +2193,8 @@ data-developer="-"
 data-ra="19298"
 data-notes=""
 data-thumb="../thumbs/wasm-4/zxz.jpg"
-data-media=""
-data-screenshot="Images/WASM-4/Screenshot - Game Title/ZxZ (World) (Scislaw Dercz).jpg">
+data-media="../media/wasm-4/zxz.jpg"
+data-screenshot="../screenshots/wasm-4/zxz.jpg">
 ZxZ
 </a>
 </td>
@@ -2140,7 +2216,8 @@ ZxZ
 <div id="gameModal" class="modal-overlay">
 
 <div class="modal-content">
-
+<div id="modalBackground"></div>
+<div id="modalInner">
 <span class="modal-close" onclick="closeGame()">&times;</span>
 
 <h2 id="modalTitle"></h2>
@@ -2165,7 +2242,11 @@ onerror="this.onerror=null;this.src='../assets/no-boxart.png';">
 id="modalMedia"
 class="modal-thumb"
 style="
-max-width:180px;
+width:250px;
+height:350px;
+object-fit:contain;
+background:rgba(255,255,255,0.05);
+border-radius:8px;
 display:none;
 "
 src=""
@@ -2174,8 +2255,11 @@ onerror="this.style.display='none';">
 <img
 id="modalScreenshot"
 style="
-max-width:400px;
-max-height:350px;
+width:250px;
+height:350px;
+object-fit:contain;
+background:rgba(255,255,255,0.05);
+border-radius:8px;
 display:none;
 border-radius:6px;
 "
@@ -2229,7 +2313,7 @@ font-weight:bold;
 
 </div>
 <div class="modal-notes" id="modalNotes"></div>
-
+</div>
 </div>
 
 </div>
@@ -2344,21 +2428,24 @@ const img =
         "modalThumb"
     );
 
-img.src =
-    link.dataset.thumb;
-
 img.style.display =
     "block";
 
+img.onerror = function() {
+    this.onerror = null;
+    this.src = "../assets/no-boxart.png";
+};
+
+img.src =
+    link.dataset.thumb;
 const media =
     document.getElementById(
         "modalMedia"
     );
 
-if(link.dataset.media){
+if(link.dataset.media && link.dataset.media !== ""){
 
     media.src =
-        "../" +
         link.dataset.media;
 
     media.style.display =
@@ -2375,10 +2462,9 @@ const screenshot =
         "modalScreenshot"
     );
 
-if(link.dataset.screenshot){
+if(link.dataset.screenshot && link.dataset.screenshot !== ""){
 
     screenshot.src =
-        "../" +
         link.dataset.screenshot;
 
     screenshot.style.display =

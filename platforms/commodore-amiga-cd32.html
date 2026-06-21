@@ -19,6 +19,44 @@ th[data-sort] {
 th[data-sort]:hover {
     color: #7fb7ff;
 }
+.platform-hero {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    min-height: 250px;
+}
+
+.platform-hero-bg {
+    position: absolute;
+    inset: 0;
+
+    background-size: cover;
+    background-position: center;
+
+    filter: blur(12px);
+    transform: scale(1.1);
+
+    opacity: 0.35;
+}
+
+.platform-hero-content {
+    position: relative;
+    z-index: 1;
+
+    text-align: center;
+
+    padding: 40px 20px;
+}
+
+.platform-logo {
+    max-height: 90px;
+    max-width: 500px;
+
+    object-fit: contain;
+
+    margin-bottom: 15px;
+}
 .game-link {
     color: #7fb7ff;
     text-decoration: none;
@@ -37,6 +75,9 @@ th[data-sort]:hover {
 }
 
 .modal-content {
+    position: relative;
+    overflow: hidden;
+
     width: min(900px, 95vw);
     max-height: 90vh;
     overflow-y: auto;
@@ -45,7 +86,21 @@ th[data-sort]:hover {
     border-radius: 12px;
     padding: 25px;
 }
+#modalBackground {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.15;
+    filter: blur(12px);
+    transform: scale(1.1);
+    pointer-events: none;
+}
 
+#modalInner {
+    position: relative;
+    z-index: 1;
+}
 .modal-close {
     float: right;
     cursor: pointer;
@@ -54,10 +109,12 @@ th[data-sort]:hover {
 }
 
 .modal-thumb {
-    max-width: 250px;
-    max-height: 350px;
+    width: 250px;
+    height: 350px;
+    object-fit: contain;
+    background: rgba(255,255,255,0.05);
+    border-radius: 8px;
     display: block;
-    margin-bottom: 20px;
 }
 
 .modal-meta {
@@ -83,6 +140,22 @@ th[data-sort]:hover {
 
 <a href="../index.html">← Home</a>
 
+<div class="platform-hero">
+
+<div
+class="platform-hero-bg"
+style="
+background-image:url('../platform-fanart/commodore-amiga-cd32.jpg');
+">
+</div>
+
+<div class="platform-hero-content">
+
+<img
+class="platform-logo"
+src="../platform-logos/commodore-amiga-cd32.png"
+onerror="this.style.display='none';">
+
 <h1>Commodore Amiga CD32</h1>
 
 
@@ -93,6 +166,9 @@ Released: 1993
 
 <p>1 games</p>
 
+</div>
+
+</div>
 
 <div class="platform-notes">
 <p>The Amiga CD32, styled "CD32" and code-named "Spellbound", is the first 32-bit home video game console released in western Europe, Australia, Canada and Brazil. It was first announced at the Science Museum in London on July 16, 1993, and was released in September of the same year. The CD32 uses CD-ROM media, and was developed by Commodore, creator of the Commodore Amiga computer. It was based on Commodore's Advanced Graphics Architecture chipset, and is of similar specification to the Amiga 1200 computer. Using third party devices, it is possible to upgrade the CD32 with keyboard, floppy drive, hard drive, RAM and mouse, turning it into the equivalent of an Amiga 1200 personal computer. A hardware MPEG decompression module for playing Video CD was also released. In the Christmas period following its launch, the CD32 accounted for 38% of all CD-ROM drive sales in the UK, exceeding sales of the Mega-CD; however, it was soon overshadowed by CD-ROM based games consoles from other companies, and was discontinued as Commodore went into bankruptcy.</p>
@@ -133,8 +209,8 @@ data-developer="Cyberdreams"
 data-ra=""
 data-notes="Dark Seed is an adventure game which capitalizes on the drawings of famous horror designer H. R. Giger as a source of background artwork and inspiration.\n\nYou play Mike Dawson, an ad company manager who, in pursuit of his goal in life to become a writer, purchases a solitary mansion in a small town called Woodland Hills. Although the low cost and hush-hush transactions when purchasing the house do raise your suspicion, the solitary environment and sheer beauty of the house crush common sense and you decide to buy the house. That's when trouble begin. Upon reaching the house, you suddenly feel tired. You find a bed and fall asleep...\n\n... and wake up from a terrible dream, only to find out that your life has just become a worse nightmare: an unknown source has implanted a seed of darkness in your mind, and you only have three days to find a way to stop it."
 data-thumb="../thumbs/commodore-amiga-cd32/dark seed.jpg"
-data-media="Images/Commodore Amiga CD32/Cart - Front/Dark Seed (EN).png"
-data-screenshot="Images/Commodore Amiga CD32/Screenshot - Game Title/Dark Seed (EN).png">
+data-media="../media/commodore-amiga-cd32/dark seed.jpg"
+data-screenshot="../screenshots/commodore-amiga-cd32/dark seed.jpg">
 Dark Seed
 </a>
 </td>
@@ -156,7 +232,8 @@ Dark Seed
 <div id="gameModal" class="modal-overlay">
 
 <div class="modal-content">
-
+<div id="modalBackground"></div>
+<div id="modalInner">
 <span class="modal-close" onclick="closeGame()">&times;</span>
 
 <h2 id="modalTitle"></h2>
@@ -181,7 +258,11 @@ onerror="this.onerror=null;this.src='../assets/no-boxart.png';">
 id="modalMedia"
 class="modal-thumb"
 style="
-max-width:180px;
+width:250px;
+height:350px;
+object-fit:contain;
+background:rgba(255,255,255,0.05);
+border-radius:8px;
 display:none;
 "
 src=""
@@ -190,8 +271,11 @@ onerror="this.style.display='none';">
 <img
 id="modalScreenshot"
 style="
-max-width:400px;
-max-height:350px;
+width:250px;
+height:350px;
+object-fit:contain;
+background:rgba(255,255,255,0.05);
+border-radius:8px;
 display:none;
 border-radius:6px;
 "
@@ -245,7 +329,7 @@ font-weight:bold;
 
 </div>
 <div class="modal-notes" id="modalNotes"></div>
-
+</div>
 </div>
 
 </div>
@@ -360,21 +444,24 @@ const img =
         "modalThumb"
     );
 
-img.src =
-    link.dataset.thumb;
-
 img.style.display =
     "block";
 
+img.onerror = function() {
+    this.onerror = null;
+    this.src = "../assets/no-boxart.png";
+};
+
+img.src =
+    link.dataset.thumb;
 const media =
     document.getElementById(
         "modalMedia"
     );
 
-if(link.dataset.media){
+if(link.dataset.media && link.dataset.media !== ""){
 
     media.src =
-        "../" +
         link.dataset.media;
 
     media.style.display =
@@ -391,10 +478,9 @@ const screenshot =
         "modalScreenshot"
     );
 
-if(link.dataset.screenshot){
+if(link.dataset.screenshot && link.dataset.screenshot !== ""){
 
     screenshot.src =
-        "../" +
         link.dataset.screenshot;
 
     screenshot.style.display =

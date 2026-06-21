@@ -19,6 +19,44 @@ th[data-sort] {
 th[data-sort]:hover {
     color: #7fb7ff;
 }
+.platform-hero {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    min-height: 250px;
+}
+
+.platform-hero-bg {
+    position: absolute;
+    inset: 0;
+
+    background-size: cover;
+    background-position: center;
+
+    filter: blur(12px);
+    transform: scale(1.1);
+
+    opacity: 0.35;
+}
+
+.platform-hero-content {
+    position: relative;
+    z-index: 1;
+
+    text-align: center;
+
+    padding: 40px 20px;
+}
+
+.platform-logo {
+    max-height: 90px;
+    max-width: 500px;
+
+    object-fit: contain;
+
+    margin-bottom: 15px;
+}
 .game-link {
     color: #7fb7ff;
     text-decoration: none;
@@ -37,6 +75,9 @@ th[data-sort]:hover {
 }
 
 .modal-content {
+    position: relative;
+    overflow: hidden;
+
     width: min(900px, 95vw);
     max-height: 90vh;
     overflow-y: auto;
@@ -45,7 +86,21 @@ th[data-sort]:hover {
     border-radius: 12px;
     padding: 25px;
 }
+#modalBackground {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.15;
+    filter: blur(12px);
+    transform: scale(1.1);
+    pointer-events: none;
+}
 
+#modalInner {
+    position: relative;
+    z-index: 1;
+}
 .modal-close {
     float: right;
     cursor: pointer;
@@ -54,10 +109,12 @@ th[data-sort]:hover {
 }
 
 .modal-thumb {
-    max-width: 250px;
-    max-height: 350px;
+    width: 250px;
+    height: 350px;
+    object-fit: contain;
+    background: rgba(255,255,255,0.05);
+    border-radius: 8px;
     display: block;
-    margin-bottom: 20px;
 }
 
 .modal-meta {
@@ -83,12 +140,31 @@ th[data-sort]:hover {
 
 <a href="../index.html">← Home</a>
 
+<div class="platform-hero">
+
+<div
+class="platform-hero-bg"
+style="
+background-image:url('../platform-fanart/sega-advanced-pico-beena.jpg');
+">
+</div>
+
+<div class="platform-hero-content">
+
+<img
+class="platform-logo"
+src="../platform-logos/sega-advanced-pico-beena.png"
+onerror="this.style.display='none';">
+
 <h1>Sega Advanced Pico Beena</h1>
 
 
 
 <p>4 games</p>
 
+</div>
+
+</div>
 
 
 <table class="games-table">
@@ -125,8 +201,8 @@ data-developer="-"
 data-ra=""
 data-notes=""
 data-thumb="../thumbs/sega-advanced-pico-beena/pocket monsters advanced generation pokemon suuji battle.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/sega-advanced-pico-beena/pocket monsters advanced generation pokemon suuji battle.jpg"
+data-screenshot="../screenshots/sega-advanced-pico-beena/pocket monsters advanced generation pokemon suuji battle.jpg">
 Pocket Monsters Advanced Generation Pokemon Suuji Battle!!
 </a>
 </td>
@@ -157,8 +233,8 @@ data-developer="-"
 data-ra=""
 data-notes=""
 data-thumb="../thumbs/sega-advanced-pico-beena/pocket monsters best wishes chinou ikusei pokemon daiundoukai.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/sega-advanced-pico-beena/pocket monsters best wishes chinou ikusei pokemon daiundoukai.jpg"
+data-screenshot="../screenshots/sega-advanced-pico-beena/pocket monsters best wishes chinou ikusei pokemon daiundoukai.jpg">
 Pocket Monsters Best Wishes! Chinou Ikusei Pokemon Daiundoukai
 </a>
 </td>
@@ -189,8 +265,8 @@ data-developer="-"
 data-ra=""
 data-notes=""
 data-thumb="../thumbs/sega-advanced-pico-beena/pocket monsters diamond pearl pokemon o sagase meiro de daibouken.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/sega-advanced-pico-beena/pocket monsters diamond pearl pokemon o sagase meiro de daibouken.jpg"
+data-screenshot="../screenshots/sega-advanced-pico-beena/pocket monsters diamond pearl pokemon o sagase meiro de daibouken.jpg">
 Pocket Monsters Diamond & Pearl Pokemon o Sagase! Meiro de Daibouken!
 </a>
 </td>
@@ -221,8 +297,8 @@ data-developer="-"
 data-ra=""
 data-notes=""
 data-thumb="../thumbs/sega-advanced-pico-beena/pocket monsters diamond pearl pokemon o sagase meiro de daibouken.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/sega-advanced-pico-beena/pocket monsters diamond pearl pokemon o sagase meiro de daibouken.jpg"
+data-screenshot="../screenshots/sega-advanced-pico-beena/pocket monsters diamond pearl pokemon o sagase meiro de daibouken.jpg">
 Pocket Monsters Diamond & Pearl: Pokemon o Sagase! Meiro de Daibouken!
 </a>
 </td>
@@ -244,7 +320,8 @@ Pocket Monsters Diamond & Pearl: Pokemon o Sagase! Meiro de Daibouken!
 <div id="gameModal" class="modal-overlay">
 
 <div class="modal-content">
-
+<div id="modalBackground"></div>
+<div id="modalInner">
 <span class="modal-close" onclick="closeGame()">&times;</span>
 
 <h2 id="modalTitle"></h2>
@@ -269,7 +346,11 @@ onerror="this.onerror=null;this.src='../assets/no-boxart.png';">
 id="modalMedia"
 class="modal-thumb"
 style="
-max-width:180px;
+width:250px;
+height:350px;
+object-fit:contain;
+background:rgba(255,255,255,0.05);
+border-radius:8px;
 display:none;
 "
 src=""
@@ -278,8 +359,11 @@ onerror="this.style.display='none';">
 <img
 id="modalScreenshot"
 style="
-max-width:400px;
-max-height:350px;
+width:250px;
+height:350px;
+object-fit:contain;
+background:rgba(255,255,255,0.05);
+border-radius:8px;
 display:none;
 border-radius:6px;
 "
@@ -333,7 +417,7 @@ font-weight:bold;
 
 </div>
 <div class="modal-notes" id="modalNotes"></div>
-
+</div>
 </div>
 
 </div>
@@ -448,21 +532,24 @@ const img =
         "modalThumb"
     );
 
-img.src =
-    link.dataset.thumb;
-
 img.style.display =
     "block";
 
+img.onerror = function() {
+    this.onerror = null;
+    this.src = "../assets/no-boxart.png";
+};
+
+img.src =
+    link.dataset.thumb;
 const media =
     document.getElementById(
         "modalMedia"
     );
 
-if(link.dataset.media){
+if(link.dataset.media && link.dataset.media !== ""){
 
     media.src =
-        "../" +
         link.dataset.media;
 
     media.style.display =
@@ -479,10 +566,9 @@ const screenshot =
         "modalScreenshot"
     );
 
-if(link.dataset.screenshot){
+if(link.dataset.screenshot && link.dataset.screenshot !== ""){
 
     screenshot.src =
-        "../" +
         link.dataset.screenshot;
 
     screenshot.style.display =

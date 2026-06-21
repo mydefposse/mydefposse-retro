@@ -19,6 +19,44 @@ th[data-sort] {
 th[data-sort]:hover {
     color: #7fb7ff;
 }
+.platform-hero {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    min-height: 250px;
+}
+
+.platform-hero-bg {
+    position: absolute;
+    inset: 0;
+
+    background-size: cover;
+    background-position: center;
+
+    filter: blur(12px);
+    transform: scale(1.1);
+
+    opacity: 0.35;
+}
+
+.platform-hero-content {
+    position: relative;
+    z-index: 1;
+
+    text-align: center;
+
+    padding: 40px 20px;
+}
+
+.platform-logo {
+    max-height: 90px;
+    max-width: 500px;
+
+    object-fit: contain;
+
+    margin-bottom: 15px;
+}
 .game-link {
     color: #7fb7ff;
     text-decoration: none;
@@ -37,6 +75,9 @@ th[data-sort]:hover {
 }
 
 .modal-content {
+    position: relative;
+    overflow: hidden;
+
     width: min(900px, 95vw);
     max-height: 90vh;
     overflow-y: auto;
@@ -45,7 +86,21 @@ th[data-sort]:hover {
     border-radius: 12px;
     padding: 25px;
 }
+#modalBackground {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.15;
+    filter: blur(12px);
+    transform: scale(1.1);
+    pointer-events: none;
+}
 
+#modalInner {
+    position: relative;
+    z-index: 1;
+}
 .modal-close {
     float: right;
     cursor: pointer;
@@ -54,10 +109,12 @@ th[data-sort]:hover {
 }
 
 .modal-thumb {
-    max-width: 250px;
-    max-height: 350px;
+    width: 250px;
+    height: 350px;
+    object-fit: contain;
+    background: rgba(255,255,255,0.05);
+    border-radius: 8px;
     display: block;
-    margin-bottom: 20px;
 }
 
 .modal-meta {
@@ -83,6 +140,22 @@ th[data-sort]:hover {
 
 <a href="../index.html">← Home</a>
 
+<div class="platform-hero">
+
+<div
+class="platform-hero-bg"
+style="
+background-image:url('../platform-fanart/arduboy.jpg');
+">
+</div>
+
+<div class="platform-hero-content">
+
+<img
+class="platform-logo"
+src="../platform-logos/arduboy.png"
+onerror="this.style.display='none';">
+
 <h1>Arduboy</h1>
 
 
@@ -93,6 +166,9 @@ Released: 2016
 
 <p>100 games</p>
 
+</div>
+
+</div>
 
 <div class="platform-notes">
 <p>The Arduboy is a credit card-sized, open-source handheld game console launched in 2016 by Kevin Bates. Powered by an ATmega32u4 microcontroller and featuring a monochrome OLED screen, the Arduboy was designed to bring accessible game development and retro-inspired gameplay to hobbyists and indie creators. With a focus on simplicity and creativity, games for the platform are written in Arduino C++, and users can upload new titles via USB. Despite its minimalist hardware, the Arduboy community has produced a wide range of homebrew games, from arcade classics to puzzle and RPG experiences.</p>
@@ -133,8 +209,8 @@ data-developer="Filmote"
 data-ra="21470"
 data-notes=""
 data-thumb="../thumbs/arduboy/1944.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/arduboy/1944.jpg"
+data-screenshot="../screenshots/arduboy/1944.jpg">
 1944
 </a>
 </td>
@@ -165,8 +241,8 @@ data-developer="Filmote"
 data-ra="7911"
 data-notes="1NVADER is a one or two-player game played with one button, one laser, one 1NVADER, and one life. Play co-operatively, or competitively with a friend, or face the 1NVADER alone."
 data-thumb="../thumbs/arduboy/1nvader.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/arduboy/1nvader.jpg"
+data-screenshot="../screenshots/arduboy/1nvader.jpg">
 1nvader
 </a>
 </td>
@@ -197,8 +273,8 @@ data-developer="Yuki"
 data-ra="29892"
 data-notes="A port of 2048 to Arduboy."
 data-thumb="../thumbs/arduboy/2048.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/arduboy/2048.jpg"
+data-screenshot="../screenshots/arduboy/2048.jpg">
 2048
 </a>
 </td>
@@ -229,8 +305,8 @@ data-developer="Remz"
 data-ra="21384"
 data-notes="Technical info so far:\n\nGame runs at a constant rate of 67 frames per second\nRendered in 3 colors: black, gray, white\nGrayscale is achieved by flickering quickly between black and white, and also alternating the dithering pattern, so it looks more stable. The resulting grayscale is almost perfectly stable, except for a sort of visible subtle scanline glitch\nSprite scaling (pre-rendered scaled sprites, to be precise)\nSound (using ArduboyTones library)\nIt uses Arduboy2 lib, although most of the drawing routines have been written from scratch\nCustom font!\npng to Arduboy conversion made using Processing 3\nBold text!"
 data-thumb="../thumbs/arduboy/ard drivin.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/arduboy/ard drivin.jpg"
+data-screenshot="../screenshots/arduboy/ard drivin.jpg">
 Ard-Drivin
 </a>
 </td>
@@ -261,8 +337,8 @@ data-developer="FerJerez"
 data-ra="29898"
 data-notes="A Golf game tribute to the classic Neo Turf Masters.\n\nYour main goal is to fill your card with the lowest score possible.\n\nYou can replay holes to improve your score."
 data-thumb="../thumbs/arduboy/ardu turf masters.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/arduboy/ardu turf masters.jpg"
+data-screenshot="../screenshots/arduboy/ardu turf masters.jpg">
 Ardu Turf Masters
 </a>
 </td>
@@ -293,8 +369,8 @@ data-developer="Shiyouganai"
 data-ra="19548"
 data-notes=""
 data-thumb="../thumbs/arduboy/ardu ez button.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/arduboy/ardu ez button.jpg"
+data-screenshot="../screenshots/arduboy/ardu ez button.jpg">
 Ardu-EZ Button
 </a>
 </td>
@@ -325,8 +401,8 @@ data-developer="Seth Robinson"
 data-ra="9250"
 data-notes="An Arduboy tribute to Pac-Man."
 data-thumb="../thumbs/arduboy/ardu man.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/arduboy/ardu man.jpg"
+data-screenshot="../screenshots/arduboy/ardu man.jpg">
 Ardu-Man
 </a>
 </td>
@@ -357,8 +433,8 @@ data-developer="Slade"
 data-ra="29900"
 data-notes=""
 data-thumb="../thumbs/arduboy/arduboy says.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/arduboy/arduboy says.jpg"
+data-screenshot="../screenshots/arduboy/arduboy says.jpg">
 Arduboy Says
 </a>
 </td>
@@ -389,8 +465,8 @@ data-developer="obono"
 data-ra="29902"
 data-notes="Defeat large waves of enemies within one minute. Enemy attack patterns are randomly generated from a five-letter code, which you can share to let others play the same level."
 data-thumb="../thumbs/arduboy/ardubullets.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/arduboy/ardubullets.jpg"
+data-screenshot="../screenshots/arduboy/ardubullets.jpg">
 ARDUBULLETs
 </a>
 </td>
@@ -421,8 +497,8 @@ data-developer="Resetreboot"
 data-ra="19516"
 data-notes=""
 data-thumb="../thumbs/arduboy/ardugods.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/arduboy/ardugods.jpg"
+data-screenshot="../screenshots/arduboy/ardugods.jpg">
 ArduGods
 </a>
 </td>
@@ -453,8 +529,8 @@ data-developer="brow1067"
 data-ra="19855"
 data-notes=""
 data-thumb="../thumbs/arduboy/ardugolf 18 hole mini golf.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/arduboy/ardugolf 18 hole mini golf.jpg"
+data-screenshot="../screenshots/arduboy/ardugolf 18 hole mini golf.jpg">
 ArduGolf: 18-Hole Mini Golf
 </a>
 </td>
@@ -485,8 +561,8 @@ data-developer="-"
 data-ra="10664"
 data-notes=""
 data-thumb="../thumbs/arduboy/arduminer.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/arduboy/arduminer.jpg"
+data-screenshot="../screenshots/arduboy/arduminer.jpg">
 Arduminer
 </a>
 </td>
@@ -517,8 +593,8 @@ data-developer="Tonym128"
 data-ra="28138"
 data-notes="Ardu-Racer is a top down racing time trail racing game for the ArduBoy.\n\nGame works like follows, if you beat the number 2 time, you can advance to the next stage. You need to do 5 laps on each stage. The stages have checkpoints which you have go through. Your fastest lap time is what gets you to advance.\n\nFeatures:\n-Top down racing action\n-10 Stages\n-Smooth scrolling\n-Saves best times and stage progression automatically when you get a better time or progress stages\n-Can use Tiled to make maps"
 data-thumb="../thumbs/arduboy/arduracer.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/arduboy/arduracer.jpg"
+data-screenshot="../screenshots/arduboy/arduracer.jpg">
 ArduRacer
 </a>
 </td>
@@ -549,8 +625,8 @@ data-developer="brow1067"
 data-ra="29905"
 data-notes="An Arduboy roguelike."
 data-thumb="../thumbs/arduboy/ardurogue.jpg"
-data-media=""
-data-screenshot="Images/Arduboy/Screenshot - Game Title/ArduRogue-01.png">
+data-media="../media/arduboy/ardurogue.jpg"
+data-screenshot="../screenshots/arduboy/ardurogue.jpg">
 ArduRogue
 </a>
 </td>
@@ -581,8 +657,8 @@ data-developer="Frrout"
 data-ra="8633"
 data-notes="A minesweeper-like for the Arduboy."
 data-thumb="../thumbs/arduboy/ardusweeper.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/arduboy/ardusweeper.jpg"
+data-screenshot="../screenshots/arduboy/ardusweeper.jpg">
 Ardusweeper
 </a>
 </td>
@@ -613,8 +689,8 @@ data-developer="Team A.R.G."
 data-ra="11124"
 data-notes=""
 data-thumb="../thumbs/arduboy/arduventure trail of the blade.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/arduboy/arduventure trail of the blade.jpg"
+data-screenshot="../screenshots/arduboy/arduventure trail of the blade.jpg">
 Arduventure: Trail of the Blade
 </a>
 </td>
@@ -645,8 +721,8 @@ data-developer="city41"
 data-ra="5840"
 data-notes="Hey everyone! I wanted to share some information about the game I'm developing for the Arduboy, called Ardynia. It\u2019s inspired by the Zelda series, particularly Link\u2019s Awakening.\n\nThe game features an auto-save function, and completing the game will result in about 20 auto-saves being created.\n\nArdynia includes a large overworld to explore, three dungeons, three equipable items in addition to your sword, three bosses, six enemy types, and several secret areas. On average, each dungeon consists of 29 rooms.\n\nI\u2019ve fully implemented the game engine, and both the overworld and dungeons are in place. Right now, I'm focusing on populating the dungeons with content and designing engaging puzzles."
 data-thumb="../thumbs/arduboy/ardynia an elvish adventure.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/arduboy/ardynia an elvish adventure.jpg"
+data-screenshot="../screenshots/arduboy/ardynia an elvish adventure.jpg">
 Ardynia: An Elvish Adventure
 </a>
 </td>
@@ -677,8 +753,8 @@ data-developer="Bergasms"
 data-ra="29908"
 data-notes="The classic 2 player artillery game now on Arduboy!"
 data-thumb="../thumbs/arduboy/artillery.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/arduboy/artillery.jpg"
+data-screenshot="../screenshots/arduboy/artillery.jpg">
 ARtillery
 </a>
 </td>
@@ -709,8 +785,8 @@ data-developer="Shiyouganai"
 data-ra="19511"
 data-notes="BiriBiriBeat is a miniature rhythm game experience in a microscopic 28KB package. Join your robotic guide Navi and groove together to square wave sounds as you tap your way to the top of the scoreboard! This game is designed and compiled for the Arduboy handheld game system."
 data-thumb="../thumbs/arduboy/biribiribeat.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/arduboy/biribiribeat.jpg"
+data-screenshot="../screenshots/arduboy/biribiribeat.jpg">
 BiriBiriBeat
 </a>
 </td>
@@ -741,8 +817,8 @@ data-developer="-"
 data-ra="29919"
 data-notes=""
 data-thumb="../thumbs/arduboy/bitwars.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/arduboy/bitwars.jpg"
+data-screenshot="../screenshots/arduboy/bitwars.jpg">
 BitWars
 </a>
 </td>
@@ -773,8 +849,8 @@ data-developer="Filmote"
 data-ra="7871"
 data-notes="Blackjack for the Arduboy"
 data-thumb="../thumbs/arduboy/blackjack.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/arduboy/blackjack.jpg"
+data-screenshot="../screenshots/arduboy/blackjack.jpg">
 Blackjack
 </a>
 </td>
@@ -805,8 +881,8 @@ data-developer="NoobGeek"
 data-ra="21408"
 data-notes="Your task is to move from one platform to another through the constructed blade-bridge. If you get to the exact center of the bridge, you earn one coin. Perfect hit 5 times in a row gives +5 coins. At the hard level, these indicators double."
 data-thumb="../thumbs/arduboy/blade runner.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/arduboy/blade runner.jpg"
+data-screenshot="../screenshots/arduboy/blade runner.jpg">
 Blade Runner
 </a>
 </td>
@@ -837,8 +913,8 @@ data-developer="Team A.R.G."
 data-ra="29920"
 data-notes="Blob Attack is a falling block puzzle game inspired by Puyo Pop Fever. The game plays the same as most Puyo Puyo variants. Sets of two blobs fall from the top, and each blob can be one of five types. You need to match at least four of the same blobs in order to clear them and increase your score. You can see the next two upcoming sets of blobs on the side of the play field. The left, right, and down buttons on the directional pad are used to move the sets of blobs, and the two face buttons are used to rotate them clockwise and counterclockwise. The more points you score, the faster the sets of blobs fall. Once all the blobs pile up to the top of the screen, you lose the game."
 data-thumb="../thumbs/arduboy/blob attack.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/arduboy/blob attack.jpg"
+data-screenshot="../screenshots/arduboy/blob attack.jpg">
 Blob Attack
 </a>
 </td>
@@ -869,8 +945,8 @@ data-developer="w3woody"
 data-ra="29924"
 data-notes="An Arudboy Sokoban type game."
 data-thumb="../thumbs/arduboy/blocks.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/arduboy/blocks.jpg"
+data-screenshot="../screenshots/arduboy/blocks.jpg">
 Blocks
 </a>
 </td>
@@ -901,8 +977,8 @@ data-developer="-"
 data-ra=""
 data-notes=""
 data-thumb="../thumbs/arduboy/bytes and knights.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/arduboy/bytes and knights.jpg"
+data-screenshot="../screenshots/arduboy/bytes and knights.jpg">
 Bytes and Knights
 </a>
 </td>
@@ -933,8 +1009,8 @@ data-developer="Joel Lauener"
 data-ra="10665"
 data-notes="An Arduboy Castlevania clone."
 data-thumb="../thumbs/arduboy/castleboy.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/arduboy/castleboy.jpg"
+data-screenshot="../screenshots/arduboy/castleboy.jpg">
 CastleBoy
 </a>
 </td>
@@ -965,8 +1041,8 @@ data-developer="Visual-mov"
 data-ra="21381"
 data-notes="The objective is to successfully mark all the mines (or cats) on the grid in the shortest amount of time possible. If you accidentally reveal a mine, the game ends. The game has three different difficulty levels, each with a different number of mines on the grid. Once you have won or lost, your time will be shown."
 data-thumb="../thumbs/arduboy/cat mines.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/arduboy/cat mines.jpg"
+data-screenshot="../screenshots/arduboy/cat mines.jpg">
 Cat Mines
 </a>
 </td>
@@ -997,8 +1073,8 @@ data-developer="jhhoward"
 data-ra="13862"
 data-notes="Catacombs of the damned! is a first person shooter / dungeon crawler where you navigate 10 floors of a randomly generated dungeon dispatching monsters with your magic fireballs whilst collecting as much loot as possible."
 data-thumb="../thumbs/arduboy/catacombs of the damned.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/arduboy/catacombs of the damned.jpg"
+data-screenshot="../screenshots/arduboy/catacombs of the damned.jpg">
 Catacombs of the Damned
 </a>
 </td>
@@ -1029,8 +1105,8 @@ data-developer="GarBenjamin"
 data-ra="21421"
 data-notes="You control the saucer and you are on a quest for cows. Your ship is armed with missiles and a tractor beam. You collect a cow and transport it to the bin at the very far left of the level and drop it in. The level is 5 screens wide.\n\nUsing the tractor beam drains energy as indicated by the meter in the lower left. Run out and the beam shuts off and there is a tiny cooldown for it to recharge before you can activate it again. Energy recharges automatically. You begin the game with 3 lives total 2 lives in reserve as indicated by the icons to the right of the energy bar."
 data-thumb="../thumbs/arduboy/cattle quest.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/arduboy/cattle quest.jpg"
+data-screenshot="../screenshots/arduboy/cattle quest.jpg">
 Cattle Quest
 </a>
 </td>
@@ -1061,8 +1137,8 @@ data-developer="obono"
 data-ra="21400"
 data-notes="Move the cat and bounce gift boxes for 2 minutes."
 data-thumb="../thumbs/arduboy/chri bocchi cat.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/arduboy/chri bocchi cat.jpg"
+data-screenshot="../screenshots/arduboy/chri bocchi cat.jpg">
 Chri-Bocchi Cat
 </a>
 </td>
@@ -1093,8 +1169,8 @@ data-developer="Jonathan Holmes"
 data-ra="8779"
 data-notes="Help Circuit Dude build an awesome invention by leading him through 75 unique levels, completing circuits and plugging in microchips. After all chips are inserted into their sockets, the exit will activate and you can advance to the next puzzle! What kind of secret invention is Circuit Dude building? Complete all of the levels to find out!"
 data-thumb="../thumbs/arduboy/circuit dude.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/arduboy/circuit dude.jpg"
+data-screenshot="../screenshots/arduboy/circuit dude.jpg">
 Circuit Dude
 </a>
 </td>
@@ -1125,8 +1201,8 @@ data-developer="-"
 data-ra="9219"
 data-notes=""
 data-thumb="../thumbs/arduboy/cooties attack.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/arduboy/cooties attack.jpg"
+data-screenshot="../screenshots/arduboy/cooties attack.jpg">
 Cooties Attack
 </a>
 </td>
@@ -1157,8 +1233,8 @@ data-developer="Badja"
 data-ra="23788"
 data-notes=""
 data-thumb="../thumbs/arduboy/crates 3d.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/arduboy/crates 3d.jpg"
+data-screenshot="../screenshots/arduboy/crates 3d.jpg">
 Crates 3D
 </a>
 </td>
@@ -1189,8 +1265,8 @@ data-developer="-"
 data-ra="22869"
 data-notes=""
 data-thumb="../thumbs/arduboy/crazykart.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/arduboy/crazykart.jpg"
+data-screenshot="../screenshots/arduboy/crazykart.jpg">
 CrazyKart
 </a>
 </td>
@@ -1221,8 +1297,8 @@ data-developer="-"
 data-ra="20068"
 data-notes=""
 data-thumb="../thumbs/arduboy/curse of astarok the.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/arduboy/curse of astarok the.jpg"
+data-screenshot="../screenshots/arduboy/curse of astarok the.jpg">
 Curse of Astarok, The
 </a>
 </td>
@@ -1253,8 +1329,8 @@ data-developer="Garage Collective"
 data-ra="11123"
 data-notes="Dark & Under is a dungeon crawler for Arduboy.\n\nDo you have what it takes to survive the depths of the Undermountain? Alone?\nIf so, then pack your gear, strap on your shield, explore  labyrinthine corridors and battle unimaginable foes to steal the greedy Dragon\u2019s treasure.\n\nThis dungeon is hardcore and it doesn\u2019t have a safe word!"
 data-thumb="../thumbs/arduboy/dark and under.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/arduboy/dark and under.jpg"
+data-screenshot="../screenshots/arduboy/dark and under.jpg">
 Dark and Under
 </a>
 </td>
@@ -1285,8 +1361,8 @@ data-developer="-"
 data-ra=""
 data-notes=""
 data-thumb="../thumbs/arduboy/dazzle dash.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/arduboy/dazzle dash.jpg"
+data-screenshot="../screenshots/arduboy/dazzle dash.jpg">
 Dazzle Dash
 </a>
 </td>
@@ -1317,8 +1393,8 @@ data-developer="Team A.R.G."
 data-ra="19577"
 data-notes="Dice of Fate is a dice rolling simulator for the Arduboy."
 data-thumb="../thumbs/arduboy/dice of fate.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/arduboy/dice of fate.jpg"
+data-screenshot="../screenshots/arduboy/dice of fate.jpg">
 Dice of Fate
 </a>
 </td>
@@ -1349,8 +1425,8 @@ data-developer="Broskibble"
 data-ra="21383"
 data-notes="Google's dinosaur game ported to Arduboy."
 data-thumb="../thumbs/arduboy/dinosaur.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/arduboy/dinosaur.jpg"
+data-screenshot="../screenshots/arduboy/dinosaur.jpg">
 Dinosaur
 </a>
 </td>
@@ -1381,8 +1457,8 @@ data-developer="oddgoo"
 data-ra="29339"
 data-notes="A minimalist arcade game about keeping the beat alive.\n\nFeatures 2 game modes and alternating colours.\n\nInstructions:\n-Raise the columns with the arrows / buttons\n-Avoid or stomp the beats\n-Raised columns lose life over time. Resting columns regain it."
 data-thumb="../thumbs/arduboy/electrocardioground fx.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/arduboy/electrocardioground fx.jpg"
+data-screenshot="../screenshots/arduboy/electrocardioground fx.jpg">
 Electrocardioground FX
 </a>
 </td>
@@ -1413,8 +1489,8 @@ data-developer="Spartanfox"
 data-ra="19518"
 data-notes="The objective of the game is simple: Fill the cup\n\nThere are 10 unique levels. Some challenging and some just pure fun all mixed in.\n\nAfter you complete level 10 the game will enter a new mode, the time trial mode where you have a set amount of time to complete the level and progress to the next level.\n\nBeyond level 20 the game will repeat over and over but giving you less and less time to complete the levels."
 data-thumb="../thumbs/arduboy/fill the cup.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/arduboy/fill the cup.jpg"
+data-screenshot="../screenshots/arduboy/fill the cup.jpg">
 Fill the Cup
 </a>
 </td>
@@ -1445,8 +1521,8 @@ data-developer="Press Play On Tape"
 data-ra="19512"
 data-notes="An Arduboy remake of the Game & Watch classic."
 data-thumb="../thumbs/arduboy/fire panic.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/arduboy/fire panic.jpg"
+data-screenshot="../screenshots/arduboy/fire panic.jpg">
 Fire Panic
 </a>
 </td>
@@ -1477,8 +1553,8 @@ data-developer="Chris Martinez"
 data-ra="5816"
 data-notes="Floaty Ball, or Flappy Ball as the intro screen calls it, was a game included as an example in early versions of the Arduboy library. It was removed because it was virtually unplayable, due to the speed that the ball moved.\n\nI\u2019ve taken some time to clean it up a bit and fiddled with the rise and fall speed of the ball, to make it easier to play (maybe too easy?). I renamed it from FloatyBall to FlappyBall, to match the intro screen."
 data-thumb="../thumbs/arduboy/flappy ball.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/arduboy/flappy ball.jpg"
+data-screenshot="../screenshots/arduboy/flappy ball.jpg">
 Flappy Ball
 </a>
 </td>
@@ -1509,8 +1585,8 @@ data-developer="GameExpress Leonardo"
 data-ra="8691"
 data-notes="An Arduboy Flappy Bird clone."
 data-thumb="../thumbs/arduboy/flappy birdie.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/arduboy/flappy birdie.jpg"
+data-screenshot="../screenshots/arduboy/flappy birdie.jpg">
 Flappy Birdie
 </a>
 </td>
@@ -1541,8 +1617,8 @@ data-developer="Pharap"
 data-ra="21386"
 data-notes="An 11 level puzzle game."
 data-thumb="../thumbs/arduboy/floor fall.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/arduboy/floor fall.jpg"
+data-screenshot="../screenshots/arduboy/floor fall.jpg">
 Floor Fall
 </a>
 </td>
@@ -1573,8 +1649,8 @@ data-developer="Dreamer2345"
 data-ra="21500"
 data-notes="Can you help fluffles get through the rain? This pup doesent like getting their paws wet unfortunately they\u2019ve gotten themselves stuck out in a storm. Try and avoid as many puddles as you can so that Fluffles doesent get wet!"
 data-thumb="../thumbs/arduboy/fluffles rainy day.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/arduboy/fluffles rainy day.jpg"
+data-screenshot="../screenshots/arduboy/fluffles rainy day.jpg">
 Fluffles Rainy Day
 </a>
 </td>
@@ -1605,8 +1681,8 @@ data-developer="Ivan Villacampa"
 data-ra="21414"
 data-notes="You are a little ship in the middle of the space and your objective is pass through 3 levels full of enemies and beat a boss at the final of the level 3.\nWhen you kill enemies, they drop spacial money, and you can use that money to improve your ship in the shop."
 data-thumb="../thumbs/arduboy/galactea.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/arduboy/galactea.jpg"
+data-screenshot="../screenshots/arduboy/galactea.jpg">
 Galactea
 </a>
 </td>
@@ -1637,8 +1713,8 @@ data-developer="serisman"
 data-ra="8624"
 data-notes="A Hangman clone for the Arduboy, developed by serisman."
 data-thumb="../thumbs/arduboy/hangman.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/arduboy/hangman.jpg"
+data-screenshot="../screenshots/arduboy/hangman.jpg">
 Hangman
 </a>
 </td>
@@ -1669,8 +1745,8 @@ data-developer="Lapis Games"
 data-ra="21466"
 data-notes="Holidate is a Christmas-themed visual novel where you go on a date with Frosty the Snowman.\nMany MULTIPLE different endings are available. Will you win the heart of Frosty?\nPress RIGHT on the dpad to advance the text."
 data-thumb="../thumbs/arduboy/holidate.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/arduboy/holidate.jpg"
+data-screenshot="../screenshots/arduboy/holidate.jpg">
 Holidate
 </a>
 </td>
@@ -1701,8 +1777,8 @@ data-developer="metalidol"
 data-ra="23777"
 data-notes="An endless runner for Arduboy."
 data-thumb="../thumbs/arduboy/kemono patrol.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/arduboy/kemono patrol.jpg"
+data-screenshot="../screenshots/arduboy/kemono patrol.jpg">
 Kemono Patrol
 </a>
 </td>
@@ -1733,8 +1809,8 @@ data-developer="-"
 data-ra="33095"
 data-notes=""
 data-thumb="../thumbs/arduboy/knight move.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/arduboy/knight move.jpg"
+data-screenshot="../screenshots/arduboy/knight move.jpg">
 Knight Move
 </a>
 </td>
@@ -1765,8 +1841,8 @@ data-developer="Filmote"
 data-ra="7912"
 data-notes="An Arduboy Donkey Kong-like."
 data-thumb="../thumbs/arduboy/kong.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/arduboy/kong.jpg"
+data-screenshot="../screenshots/arduboy/kong.jpg">
 Kong
 </a>
 </td>
@@ -1797,8 +1873,8 @@ data-developer="Filmote"
 data-ra="20318"
 data-notes="An Arduboy Donkey Kong-like."
 data-thumb="../thumbs/arduboy/kong ii.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/arduboy/kong ii.jpg"
+data-screenshot="../screenshots/arduboy/kong ii.jpg">
 Kong II
 </a>
 </td>
@@ -1829,8 +1905,8 @@ data-developer="renato-grottesi"
 data-ra="9218"
 data-notes="A wild west themed town builder."
 data-thumb="../thumbs/arduboy/lagunita.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/arduboy/lagunita.jpg"
+data-screenshot="../screenshots/arduboy/lagunita.jpg">
 Lagunita
 </a>
 </td>
@@ -1861,8 +1937,8 @@ data-developer="jaguile6"
 data-ra="19529"
 data-notes="LongCat is a little puzzle game inspired in the longcat minigame from the Fancade Android game."
 data-thumb="../thumbs/arduboy/longcat.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/arduboy/longcat.jpg"
+data-screenshot="../screenshots/arduboy/longcat.jpg">
 LongCat
 </a>
 </td>
@@ -1893,8 +1969,8 @@ data-developer="pixelplatforms"
 data-ra="19522"
 data-notes="An Arduboy Duck Hunt clone."
 data-thumb="../thumbs/arduboy/mallard hunt.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/arduboy/mallard hunt.jpg"
+data-screenshot="../screenshots/arduboy/mallard hunt.jpg">
 MallARD Hunt
 </a>
 </td>
@@ -1925,8 +2001,8 @@ data-developer="James Howard"
 data-ra="11132"
 data-notes="An Arduboy clone of SimCity."
 data-thumb="../thumbs/arduboy/microcity.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/arduboy/microcity.jpg"
+data-screenshot="../screenshots/arduboy/microcity.jpg">
 MicroCity
 </a>
 </td>
@@ -1957,8 +2033,8 @@ data-developer="hartmann1301"
 data-ra="8658"
 data-notes="You start with a small tank and your goal is to get as deep as possilbe into enemy territory. Some enemys drop coins for upgrading the weapon of your choice. For more detail see my github readme file."
 data-thumb="../thumbs/arduboy/microtank.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/arduboy/microtank.jpg"
+data-screenshot="../screenshots/arduboy/microtank.jpg">
 MicroTank
 </a>
 </td>
@@ -1989,8 +2065,8 @@ data-developer="drummyfish"
 data-ra="11126"
 data-notes="You build towers in order to keep creeps that spawn at start location(s) and run to the finish location(s). By killing creeps and finishing rounds you earn $$$ to buy more towers and upgrades. There are 5 maps, 8 tower types, most with 2 upgrades, and 11 creep types. Each map has an infinite number of rounds that get progressively more difficult. The goal is to last as long as you can."
 data-thumb="../thumbs/arduboy/microtd.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/arduboy/microtd.jpg"
+data-screenshot="../screenshots/arduboy/microtd.jpg">
 MicroTD
 </a>
 </td>
@@ -2021,8 +2097,8 @@ data-developer="Crait"
 data-ra="7910"
 data-notes="Something\u2019s gone awry out West! Help Dusty Argile adventure out and defeat the baddies who are causing a commotion and stopping him from getting a good night\u2019s rest. Put them to sleep with your handy lasso and rack up as many points as you can, but watch out for falling barrels, cacti, whirling tumbleweeds, snakes, and coyotes! Most of all, watch out for the mad bull and crazy Texan twister!"
 data-thumb="../thumbs/arduboy/midnight wild.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/arduboy/midnight wild.jpg"
+data-screenshot="../screenshots/arduboy/midnight wild.jpg">
 Midnight Wild
 </a>
 </td>
@@ -2053,8 +2129,8 @@ data-developer="Press Play On Tape"
 data-ra="9267"
 data-notes="Mini Rogue is a 9-card game in which a single player delves into a deep dungeon to get the famous ruby called The Og\u2019s Blood on the bottom floor. The player must choose how to spend their resources in order to be powerful enough to confront ever difficult monsters. Random events and encounters make every play-through a unique experience."
 data-thumb="../thumbs/arduboy/mini rogue.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/arduboy/mini rogue.jpg"
+data-screenshot="../screenshots/arduboy/mini rogue.jpg">
 Mini Rogue
 </a>
 </td>
@@ -2085,8 +2161,8 @@ data-developer="Revlis64"
 data-ra="19519"
 data-notes="Monpals is a rpg that is much like Pokemon and Monster Rancher.\n\nThere are 15 total monsters in the game that have one of three types: Nature, Mystic, Synth."
 data-thumb="../thumbs/arduboy/monpals.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/arduboy/monpals.jpg"
+data-screenshot="../screenshots/arduboy/monpals.jpg">
 Monpals
 </a>
 </td>
@@ -2117,8 +2193,8 @@ data-developer="Team A.R.G."
 data-ra="11125"
 data-notes=""
 data-thumb="../thumbs/arduboy/mystic balloon.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/arduboy/mystic balloon.jpg"
+data-screenshot="../screenshots/arduboy/mystic balloon.jpg">
 Mystic Balloon
 </a>
 </td>
@@ -2149,8 +2225,8 @@ data-developer="Hundstrasse"
 data-ra="3660"
 data-notes="Guide the Fuzzgrawth up the three towers to collect the three \u2018things\u2019! It\u2019s a fast paced platformer against the clock with randomly ordered levels."
 data-thumb="../thumbs/arduboy/ninja fuzzgrawth.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/arduboy/ninja fuzzgrawth.jpg"
+data-screenshot="../screenshots/arduboy/ninja fuzzgrawth.jpg">
 Ninja Fuzzgrawth
 </a>
 </td>
@@ -2181,8 +2257,8 @@ data-developer="Hundstrasse"
 data-ra="8689"
 data-notes="\u2018Not Just a Hat Rack\u2019 is a fast paced platformer for the Arduboy inspired by titles such as \u2018Super Meat Boy\u2019 & \u2018Super House of Dead Ninjas\u2019. The aim is to complete the 40 rapidfire levels in the shortest time\u2026 There is no pause button\u2026"
 data-thumb="../thumbs/arduboy/not just a hat rack.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/arduboy/not just a hat rack.jpg"
+data-screenshot="../screenshots/arduboy/not just a hat rack.jpg">
 Not Just a Hat Rack
 </a>
 </td>
@@ -2213,8 +2289,8 @@ data-developer="Press Play On Tape"
 data-ra="8632"
 data-notes="Inspired by yet another Game and Watch, PPOT presents Oil Panic.\n\nCatch all the oil before it sets the shop on fire!"
 data-thumb="../thumbs/arduboy/oil panic.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/arduboy/oil panic.jpg"
+data-screenshot="../screenshots/arduboy/oil panic.jpg">
 Oil Panic
 </a>
 </td>
@@ -2245,8 +2321,8 @@ data-developer="-"
 data-ra="11121"
 data-notes=""
 data-thumb="../thumbs/arduboy/omega horizon.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/arduboy/omega horizon.jpg"
+data-screenshot="../screenshots/arduboy/omega horizon.jpg">
 Omega Horizon
 </a>
 </td>
@@ -2277,8 +2353,8 @@ data-developer="Yoda"
 data-ra="8676"
 data-notes="An Arduboy Pac-man port."
 data-thumb="../thumbs/arduboy/paqman.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/arduboy/paqman.jpg"
+data-screenshot="../screenshots/arduboy/paqman.jpg">
 Paqman
 </a>
 </td>
@@ -2309,8 +2385,8 @@ data-developer="Filmote"
 data-ra="9251"
 data-notes="Classic PiCross game with 300 puzzles ranging in size from 5x5 to 16x16."
 data-thumb="../thumbs/arduboy/picross.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/arduboy/picross.jpg"
+data-screenshot="../screenshots/arduboy/picross.jpg">
 PiCross
 </a>
 </td>
@@ -2341,8 +2417,8 @@ data-developer="Filmote"
 data-ra="8626"
 data-notes="A version of the classic pipes game where you must lay pip between each pair of nodes without the pipes crossing each other. This version has puzzles ranging from 5 x 5 to 9 x 9."
 data-thumb="../thumbs/arduboy/pipes.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/arduboy/pipes.jpg"
+data-screenshot="../screenshots/arduboy/pipes.jpg">
 Pipes
 </a>
 </td>
@@ -2373,8 +2449,8 @@ data-developer="obono"
 data-ra="35173"
 data-notes="\u201cQuarto!\u201d is a board game played on a 4x4 board with 16 unique pieces."
 data-thumb="../thumbs/arduboy/quarto.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/arduboy/quarto.jpg"
+data-screenshot="../screenshots/arduboy/quarto.jpg">
 Quarto!
 </a>
 </td>
@@ -2405,8 +2481,8 @@ data-developer="Neo Retro Games"
 data-ra="19513"
 data-notes="As a child Rayne watched the rich from the streets of the village and burned with jealousy. After years and years of poverty an idea formed. Rayne has decided to sneak into the lairs of dragons and steel their treasures. Rayne need your help to navigate the dangerous caves and avoid the dragon\u2019s breath to become the wealthiest person in the village, but take heed, the further Rayne gets the more treacherous it will be."
 data-thumb="../thumbs/arduboy/rayne the rogue.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/arduboy/rayne the rogue.jpg"
+data-screenshot="../screenshots/arduboy/rayne the rogue.jpg">
 Rayne the Rogue
 </a>
 </td>
@@ -2437,8 +2513,8 @@ data-developer="RetrobitCoder"
 data-ra="26482"
 data-notes="Mobile suit/mech rhythm like game for the Arduboy.\n\nYou are piloting the Orchestra's new Rhythum mobile suit unit, when the ship you are on is attacked by a fleet of enemy suits known as the Conductors. Do you have what it takes to survive the Conductors' attack?\n\nPress the correct (directional or A) button when icon lines up with aim reticule.\nPause/Unpause game with B button."
 data-thumb="../thumbs/arduboy/rhythum.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/arduboy/rhythum.jpg"
+data-screenshot="../screenshots/arduboy/rhythum.jpg">
 Rhythum
 </a>
 </td>
@@ -2469,8 +2545,8 @@ data-developer="Celinebins"
 data-ra="7935"
 data-notes=""
 data-thumb="../thumbs/arduboy/rick and morty game.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/arduboy/rick and morty game.jpg"
+data-screenshot="../screenshots/arduboy/rick and morty game.jpg">
 Rick and Morty Game
 </a>
 </td>
@@ -2501,8 +2577,8 @@ data-developer="lswbanban"
 data-ra="32475"
 data-notes="Rick Dangerous, now on the Arduboy."
 data-thumb="../thumbs/arduboy/rick ardurous.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/arduboy/rick ardurous.jpg"
+data-screenshot="../screenshots/arduboy/rick ardurous.jpg">
 Rick Ardurous
 </a>
 </td>
@@ -2533,8 +2609,8 @@ data-developer="Press Play On Tape"
 data-ra="8678"
 data-notes="Strap on your goggles. Sink into your seat. And leave all your fears in the pit. You\u2019re about to enter the race of your life. You\u2019ll be required to pass lots of cars each day. From sunrise to sunset - as fast as you can. Welcome to the National Enduro!\n\nWith each passing day, your target number of cars will increase. For an extra challenge, switch to a manual transmission!"
 data-thumb="../thumbs/arduboy/road trip.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/arduboy/road trip.jpg"
+data-screenshot="../screenshots/arduboy/road trip.jpg">
 Road Trip
 </a>
 </td>
@@ -2565,8 +2641,8 @@ data-developer="Madya121"
 data-ra="21473"
 data-notes="This holiday, there're too many good kids in the world. As usual, good kids will get a present from Santa in this holiday. But before that, you gotta help Santa to wrap all the presents.\n\nIn Santa's Factory, there's no room for one mistake. Your job is to deliver each present to the correct place. Press [Left] or [Right] to move the pipe, then press [A Button] to push the present into the box. If you create a single mistake (Misplacing the present or one present got skipped) you will break Santa's Factory and many kids hearts since they didn't get any present."
 data-thumb="../thumbs/arduboy/santa s factory.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/arduboy/santa s factory.jpg"
+data-screenshot="../screenshots/arduboy/santa s factory.jpg">
 Santa's Factory
 </a>
 </td>
@@ -2597,8 +2673,8 @@ data-developer="Justin Davis"
 data-ra="8778"
 data-notes="Shattered Lands: Towers of Perdition is a multi-part RPG saga for the Arduboy."
 data-thumb="../thumbs/arduboy/shattered lands towers of perdition.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/arduboy/shattered lands towers of perdition.jpg"
+data-screenshot="../screenshots/arduboy/shattered lands towers of perdition.jpg">
 Shattered Lands: Towers of Perdition
 </a>
 </td>
@@ -2629,8 +2705,8 @@ data-developer="Jay Chan"
 data-ra="21876"
 data-notes="Single Ennead is a demake of the Triple Triad trading card game from the Final Fantasy franchise. In this clone, there are 100 cards to collect, each with different art and flavor text."
 data-thumb="../thumbs/arduboy/single ennead.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/arduboy/single ennead.jpg"
+data-screenshot="../screenshots/arduboy/single ennead.jpg">
 Single Ennead
 </a>
 </td>
@@ -2661,8 +2737,8 @@ data-developer="Team A.R.G."
 data-ra="9215"
 data-notes=""
 data-thumb="../thumbs/arduboy/sirene.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/arduboy/sirene.jpg"
+data-screenshot="../screenshots/arduboy/sirene.jpg">
 Sirene
 </a>
 </td>
@@ -2693,8 +2769,8 @@ data-developer="Pharap"
 data-ra="29879"
 data-notes="Various images have been sliced into nine equal pieces and it\u2019s your job to put them back in order.\nYou know the drill, it\u2019s a 3x3 sliding tile puzzle"
 data-thumb="../thumbs/arduboy/sliding tiles.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/arduboy/sliding tiles.jpg"
+data-screenshot="../screenshots/arduboy/sliding tiles.jpg">
 Sliding Tiles
 </a>
 </td>
@@ -2725,8 +2801,8 @@ data-developer="Marcus Sanatan"
 data-ra="11680"
 data-notes="Get more points by keeping your distance from pedestrians and make your community proud. Ultimately, you should really be at home so at some point you\u2019ll lose lol."
 data-thumb="../thumbs/arduboy/social distance game the.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/arduboy/social distance game the.jpg"
+data-screenshot="../screenshots/arduboy/social distance game the.jpg">
 Social Distance Game, The
 </a>
 </td>
@@ -2757,8 +2833,8 @@ data-developer="Filmote"
 data-ra="19515"
 data-notes="Collect and deliver customers to their destination as quickly as possible to make the most money! But be careful and make sure you do not run out of fuel, land without deploying your landing gear or squash a customer."
 data-thumb="../thumbs/arduboy/spacecab.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/arduboy/spacecab.jpg"
+data-screenshot="../screenshots/arduboy/spacecab.jpg">
 SpaceCab
 </a>
 </td>
@@ -2789,8 +2865,8 @@ data-developer="-"
 data-ra="26074"
 data-notes=""
 data-thumb="../thumbs/arduboy/squid jump.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/arduboy/squid jump.jpg"
+data-screenshot="../screenshots/arduboy/squid jump.jpg">
 Squid Jump
 </a>
 </td>
@@ -2821,8 +2897,8 @@ data-developer="Wenceslao Villanueva Jr."
 data-ra="11671"
 data-notes="Star Honor is a Roguelike space adventure where you are field promoted into the Captain\u2019s chair of the USS Arduino. Your home world has become the victim of the a biological weapon deployed by enemies. You posses the only hope for your world, a cure for the phage. With a skeleton crew, a limping vessel and time running out, you must travel world to world, seeking supplies, upgrades and doing battle to make it home and save your planet."
 data-thumb="../thumbs/arduboy/star honor.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/arduboy/star honor.jpg"
+data-screenshot="../screenshots/arduboy/star honor.jpg">
 Star Honor
 </a>
 </td>
@@ -2853,8 +2929,8 @@ data-developer="Stephane Hockenhull"
 data-ra="9237"
 data-notes="A StarFox themed space shooter."
 data-thumb="../thumbs/arduboy/starduino.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/arduboy/starduino.jpg"
+data-screenshot="../screenshots/arduboy/starduino.jpg">
 Starduino
 </a>
 </td>
@@ -2885,8 +2961,8 @@ data-developer="Laconic"
 data-ra="28355"
 data-notes=""
 data-thumb="../thumbs/arduboy/stonk simulator.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/arduboy/stonk simulator.jpg"
+data-screenshot="../screenshots/arduboy/stonk simulator.jpg">
 Stonk Simulator
 </a>
 </td>
@@ -2917,8 +2993,8 @@ data-developer="Neil Pierson"
 data-ra="8690"
 data-notes="An Arduboy Sudoku game."
 data-thumb="../thumbs/arduboy/sudoku nbp.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/arduboy/sudoku nbp.jpg"
+data-screenshot="../screenshots/arduboy/sudoku nbp.jpg">
 Sudoku-NBP
 </a>
 </td>
@@ -2949,8 +3025,8 @@ data-developer="city41"
 data-ra="5843"
 data-notes="Armed with ten bucks, a fishing pole and a dream, your quest is to find and catch the big one."
 data-thumb="../thumbs/arduboy/tackle box.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/arduboy/tackle box.jpg"
+data-screenshot="../screenshots/arduboy/tackle box.jpg">
 Tackle Box
 </a>
 </td>
@@ -2981,8 +3057,8 @@ data-developer="Joshimuz"
 data-ra="5838"
 data-notes="The Bounce is a bouncy ball physics platformer game. Simple to understand yet incredibly hard to master, what seems easy at first glance is actually pretty rage inducing when you get to the later levels."
 data-thumb="../thumbs/arduboy/the bounce.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/arduboy/the bounce.jpg"
+data-screenshot="../screenshots/arduboy/the bounce.jpg">
 The Bounce
 </a>
 </td>
@@ -3013,8 +3089,8 @@ data-developer="LatheSoft"
 data-ra="7913"
 data-notes=""
 data-thumb="../thumbs/arduboy/the crawl.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/arduboy/the crawl.jpg"
+data-screenshot="../screenshots/arduboy/the crawl.jpg">
 The Crawl
 </a>
 </td>
@@ -3045,8 +3121,8 @@ data-developer="Akkera102"
 data-ra="25683"
 data-notes=""
 data-thumb="../thumbs/arduboy/tiny 2048.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/arduboy/tiny 2048.jpg"
+data-screenshot="../screenshots/arduboy/tiny 2048.jpg">
 Tiny 2048
 </a>
 </td>
@@ -3077,8 +3153,8 @@ data-developer="Akkera102"
 data-ra="19547"
 data-notes="Tiny Sokoban is Sokoban(1982) clone."
 data-thumb="../thumbs/arduboy/tiny sokoban.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/arduboy/tiny sokoban.jpg"
+data-screenshot="../screenshots/arduboy/tiny sokoban.jpg">
 Tiny Sokoban
 </a>
 </td>
@@ -3109,8 +3185,8 @@ data-developer="Daniel Champagne"
 data-ra="23778"
 data-notes="An Arduboy take on Dig-Dug"
 data-thumb="../thumbs/arduboy/tiny ddug.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/arduboy/tiny ddug.jpg"
+data-screenshot="../screenshots/arduboy/tiny ddug.jpg">
 Tiny-DDug
 </a>
 </td>
@@ -3141,8 +3217,8 @@ data-developer="Franalvarez21"
 data-ra="19520"
 data-notes="Tower Of Pain is a small roguelike game with simplified mechanics and small assets."
 data-thumb="../thumbs/arduboy/tower of pain.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/arduboy/tower of pain.jpg"
+data-screenshot="../screenshots/arduboy/tower of pain.jpg">
 Tower of Pain
 </a>
 </td>
@@ -3173,8 +3249,8 @@ data-developer="-"
 data-ra="7880"
 data-notes=""
 data-thumb="../thumbs/arduboy/turtle bridge.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/arduboy/turtle bridge.jpg"
+data-screenshot="../screenshots/arduboy/turtle bridge.jpg">
 Turtle Bridge
 </a>
 </td>
@@ -3205,8 +3281,8 @@ data-developer="Wuuff"
 data-ra="9286"
 data-notes="In a dying city, cut off from the world due to plague, The Tower stands above its center. While the rich and powerful gather in the tower, safe from the devastation below, those below are not so lucky. Among the trash on mud flats by the river, scavengers seek to find anything valuable. They are known as Mudlarks. This is the tale of one of the many unfortunate souls that lives\u2026\n\nUnder the Tower."
 data-thumb="../thumbs/arduboy/under the tower.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/arduboy/under the tower.jpg"
+data-screenshot="../screenshots/arduboy/under the tower.jpg">
 Under the Tower
 </a>
 </td>
@@ -3237,8 +3313,8 @@ data-developer="Team A.R.G."
 data-ra="11127"
 data-notes="Virus LQP-79 is a multi-directional shooter where you play as Amy, who is trying to escape her home town which has been infested by zombies. In the game you are placed into a small level and must find two survivors before the level exit opens up and you can move on to the next level. To do this you have to fight off all the zombies that get in your way. These zombies can drop coins, which give you points, and hearts, which replenish your health. Once you have found the two survivors and the exit opens, a timer starts counting down. If this timer reaches zero before you exit the level, your health starts to slowly drain. If you exit the level before the timer reaches zero, the remaining time is added to your score. There are 64 levels total.\n\nThe player character's movement is controlled with the directional pad, and you can shoot your gun with both of the action buttons. Holding down the action button will allow you to shoot at a faster rate, however if you hold it down for too long your gun will jam and you have to wait a few seconds before you can shoot again. Shooting by holding down the right action button will allow you to strafe using the directional pad."
 data-thumb="../thumbs/arduboy/virus lqp 79.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/arduboy/virus lqp 79.jpg"
+data-screenshot="../screenshots/arduboy/virus lqp 79.jpg">
 Virus LQP-79
 </a>
 </td>
@@ -3269,8 +3345,8 @@ data-developer="-"
 data-ra="23781"
 data-notes=""
 data-thumb="../thumbs/arduboy/yatzy.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/arduboy/yatzy.jpg"
+data-screenshot="../screenshots/arduboy/yatzy.jpg">
 Yatzy
 </a>
 </td>
@@ -3301,8 +3377,8 @@ data-developer="Hundstrasse"
 data-ra="25180"
 data-notes="The zoo had to close, but the keepers had forgotten to feed the animals, now it\u2019s up to Scrawf to find them food and feed them without being caught in the zoo warden\u2019s flashlights!\n\nGuide Scrawf through, what can only be described as, the world\u2019s most warden heavy zoo & hedge-maze. Slip past the wardens and avoid their flashlights to find the three different types of food to feed the Lion, Zebra, and Elephant. Finally, once all the animals are fed and sleepy, escape from the zoo!"
 data-thumb="../thumbs/arduboy/zoo at midnight.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/arduboy/zoo at midnight.jpg"
+data-screenshot="../screenshots/arduboy/zoo at midnight.jpg">
 Zoo at Midnight
 </a>
 </td>
@@ -3324,7 +3400,8 @@ Zoo at Midnight
 <div id="gameModal" class="modal-overlay">
 
 <div class="modal-content">
-
+<div id="modalBackground"></div>
+<div id="modalInner">
 <span class="modal-close" onclick="closeGame()">&times;</span>
 
 <h2 id="modalTitle"></h2>
@@ -3349,7 +3426,11 @@ onerror="this.onerror=null;this.src='../assets/no-boxart.png';">
 id="modalMedia"
 class="modal-thumb"
 style="
-max-width:180px;
+width:250px;
+height:350px;
+object-fit:contain;
+background:rgba(255,255,255,0.05);
+border-radius:8px;
 display:none;
 "
 src=""
@@ -3358,8 +3439,11 @@ onerror="this.style.display='none';">
 <img
 id="modalScreenshot"
 style="
-max-width:400px;
-max-height:350px;
+width:250px;
+height:350px;
+object-fit:contain;
+background:rgba(255,255,255,0.05);
+border-radius:8px;
 display:none;
 border-radius:6px;
 "
@@ -3413,7 +3497,7 @@ font-weight:bold;
 
 </div>
 <div class="modal-notes" id="modalNotes"></div>
-
+</div>
 </div>
 
 </div>
@@ -3528,21 +3612,24 @@ const img =
         "modalThumb"
     );
 
-img.src =
-    link.dataset.thumb;
-
 img.style.display =
     "block";
 
+img.onerror = function() {
+    this.onerror = null;
+    this.src = "../assets/no-boxart.png";
+};
+
+img.src =
+    link.dataset.thumb;
 const media =
     document.getElementById(
         "modalMedia"
     );
 
-if(link.dataset.media){
+if(link.dataset.media && link.dataset.media !== ""){
 
     media.src =
-        "../" +
         link.dataset.media;
 
     media.style.display =
@@ -3559,10 +3646,9 @@ const screenshot =
         "modalScreenshot"
     );
 
-if(link.dataset.screenshot){
+if(link.dataset.screenshot && link.dataset.screenshot !== ""){
 
     screenshot.src =
-        "../" +
         link.dataset.screenshot;
 
     screenshot.style.display =

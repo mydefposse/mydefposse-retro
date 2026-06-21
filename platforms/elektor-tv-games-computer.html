@@ -19,6 +19,44 @@ th[data-sort] {
 th[data-sort]:hover {
     color: #7fb7ff;
 }
+.platform-hero {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    min-height: 250px;
+}
+
+.platform-hero-bg {
+    position: absolute;
+    inset: 0;
+
+    background-size: cover;
+    background-position: center;
+
+    filter: blur(12px);
+    transform: scale(1.1);
+
+    opacity: 0.35;
+}
+
+.platform-hero-content {
+    position: relative;
+    z-index: 1;
+
+    text-align: center;
+
+    padding: 40px 20px;
+}
+
+.platform-logo {
+    max-height: 90px;
+    max-width: 500px;
+
+    object-fit: contain;
+
+    margin-bottom: 15px;
+}
 .game-link {
     color: #7fb7ff;
     text-decoration: none;
@@ -37,6 +75,9 @@ th[data-sort]:hover {
 }
 
 .modal-content {
+    position: relative;
+    overflow: hidden;
+
     width: min(900px, 95vw);
     max-height: 90vh;
     overflow-y: auto;
@@ -45,7 +86,21 @@ th[data-sort]:hover {
     border-radius: 12px;
     padding: 25px;
 }
+#modalBackground {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.15;
+    filter: blur(12px);
+    transform: scale(1.1);
+    pointer-events: none;
+}
 
+#modalInner {
+    position: relative;
+    z-index: 1;
+}
 .modal-close {
     float: right;
     cursor: pointer;
@@ -54,10 +109,12 @@ th[data-sort]:hover {
 }
 
 .modal-thumb {
-    max-width: 250px;
-    max-height: 350px;
+    width: 250px;
+    height: 350px;
+    object-fit: contain;
+    background: rgba(255,255,255,0.05);
+    border-radius: 8px;
     display: block;
-    margin-bottom: 20px;
 }
 
 .modal-meta {
@@ -83,12 +140,31 @@ th[data-sort]:hover {
 
 <a href="../index.html">← Home</a>
 
+<div class="platform-hero">
+
+<div
+class="platform-hero-bg"
+style="
+background-image:url('../platform-fanart/elektor-tv-games-computer.jpg');
+">
+</div>
+
+<div class="platform-hero-content">
+
+<img
+class="platform-logo"
+src="../platform-logos/elektor-tv-games-computer.png"
+onerror="this.style.display='none';">
+
 <h1>Elektor TV Games Computer</h1>
 
 
 
 <p>28 games</p>
 
+</div>
+
+</div>
 
 <div class="platform-notes">
 <p>The Elektor TV Games Computer (TVGC) is a hybrid video game console and educational microcomputer introduced in April 1979 by Elektor magazine as a build-it-yourself kit. Based on the Signetics 2650 CPU and 2636 PVI graphics/sound chip, the TVGC connected to a television and offered both built-in games and programmability via cassette tape. Though primarily a hobbyist system, it laid the groundwork for several games and features later seen in the Interton VC 4000 console family. Its modular design allowed for significant hardware expansion, including sound chips, cartridge support, and memory upgrades.</p>
@@ -129,8 +205,8 @@ data-developer="-"
 data-ra="22898"
 data-notes=""
 data-thumb="../thumbs/elektor-tv-games-computer/asteroids.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/elektor-tv-games-computer/asteroids.jpg"
+data-screenshot="../screenshots/elektor-tv-games-computer/asteroids.jpg">
 Asteroids
 </a>
 </td>
@@ -161,8 +237,8 @@ data-developer="-"
 data-ra="24641"
 data-notes=""
 data-thumb="../thumbs/elektor-tv-games-computer/attack from space.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/elektor-tv-games-computer/attack from space.jpg"
+data-screenshot="../screenshots/elektor-tv-games-computer/attack from space.jpg">
 Attack from Space
 </a>
 </td>
@@ -193,8 +269,8 @@ data-developer="-"
 data-ra="24643"
 data-notes=""
 data-thumb="../thumbs/elektor-tv-games-computer/basketball.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/elektor-tv-games-computer/basketball.jpg"
+data-screenshot="../screenshots/elektor-tv-games-computer/basketball.jpg">
 Basketball
 </a>
 </td>
@@ -225,8 +301,8 @@ data-developer="-"
 data-ra="24644"
 data-notes=""
 data-thumb="../thumbs/elektor-tv-games-computer/bursting balloons.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/elektor-tv-games-computer/bursting balloons.jpg"
+data-screenshot="../screenshots/elektor-tv-games-computer/bursting balloons.jpg">
 Bursting Balloons
 </a>
 </td>
@@ -257,8 +333,8 @@ data-developer="Peter Marschat"
 data-ra="24684"
 data-notes="Car Race is a racing game where you must overtake 51 rivals and reach the finish line in under 60 seconds."
 data-thumb="../thumbs/elektor-tv-games-computer/car race.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/elektor-tv-games-computer/car race.jpg"
+data-screenshot="../screenshots/elektor-tv-games-computer/car race.jpg">
 Car Race
 </a>
 </td>
@@ -289,8 +365,8 @@ data-developer="-"
 data-ra="24670"
 data-notes=""
 data-thumb="../thumbs/elektor-tv-games-computer/catapult.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/elektor-tv-games-computer/catapult.jpg"
+data-screenshot="../screenshots/elektor-tv-games-computer/catapult.jpg">
 Catapult
 </a>
 </td>
@@ -321,8 +397,8 @@ data-developer="-"
 data-ra="24671"
 data-notes=""
 data-thumb="../thumbs/elektor-tv-games-computer/circledrive.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/elektor-tv-games-computer/circledrive.jpg"
+data-screenshot="../screenshots/elektor-tv-games-computer/circledrive.jpg">
 Circledrive
 </a>
 </td>
@@ -353,8 +429,8 @@ data-developer="-"
 data-ra="24646"
 data-notes=""
 data-thumb="../thumbs/elektor-tv-games-computer/cosmic adventure.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/elektor-tv-games-computer/cosmic adventure.jpg"
+data-screenshot="../screenshots/elektor-tv-games-computer/cosmic adventure.jpg">
 Cosmic Adventure
 </a>
 </td>
@@ -385,8 +461,8 @@ data-developer="-"
 data-ra="24647"
 data-notes=""
 data-thumb="../thumbs/elektor-tv-games-computer/destroyer.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/elektor-tv-games-computer/destroyer.jpg"
+data-screenshot="../screenshots/elektor-tv-games-computer/destroyer.jpg">
 Destroyer
 </a>
 </td>
@@ -417,8 +493,8 @@ data-developer="-"
 data-ra="24678"
 data-notes=""
 data-thumb="../thumbs/elektor-tv-games-computer/dragster.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/elektor-tv-games-computer/dragster.jpg"
+data-screenshot="../screenshots/elektor-tv-games-computer/dragster.jpg">
 Dragster
 </a>
 </td>
@@ -449,8 +525,8 @@ data-developer="-"
 data-ra="24649"
 data-notes=""
 data-thumb="../thumbs/elektor-tv-games-computer/helicopter.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/elektor-tv-games-computer/helicopter.jpg"
+data-screenshot="../screenshots/elektor-tv-games-computer/helicopter.jpg">
 Helicopter
 </a>
 </td>
@@ -481,8 +557,8 @@ data-developer="-"
 data-ra="24650"
 data-notes=""
 data-thumb="../thumbs/elektor-tv-games-computer/invaders.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/elektor-tv-games-computer/invaders.jpg"
+data-screenshot="../screenshots/elektor-tv-games-computer/invaders.jpg">
 Invaders
 </a>
 </td>
@@ -513,8 +589,8 @@ data-developer="-"
 data-ra="24673"
 data-notes=""
 data-thumb="../thumbs/elektor-tv-games-computer/jackpot.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/elektor-tv-games-computer/jackpot.jpg"
+data-screenshot="../screenshots/elektor-tv-games-computer/jackpot.jpg">
 Jackpot
 </a>
 </td>
@@ -545,8 +621,8 @@ data-developer="-"
 data-ra="24651"
 data-notes=""
 data-thumb="../thumbs/elektor-tv-games-computer/labyrinth.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/elektor-tv-games-computer/labyrinth.jpg"
+data-screenshot="../screenshots/elektor-tv-games-computer/labyrinth.jpg">
 Labyrinth
 </a>
 </td>
@@ -577,8 +653,8 @@ data-developer="-"
 data-ra="24675"
 data-notes=""
 data-thumb="../thumbs/elektor-tv-games-computer/mazes.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/elektor-tv-games-computer/mazes.jpg"
+data-screenshot="../screenshots/elektor-tv-games-computer/mazes.jpg">
 Mazes
 </a>
 </td>
@@ -609,8 +685,8 @@ data-developer="-"
 data-ra="24652"
 data-notes=""
 data-thumb="../thumbs/elektor-tv-games-computer/memory.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/elektor-tv-games-computer/memory.jpg"
+data-screenshot="../screenshots/elektor-tv-games-computer/memory.jpg">
 Memory
 </a>
 </td>
@@ -641,8 +717,8 @@ data-developer="-"
 data-ra="22900"
 data-notes=""
 data-thumb="../thumbs/elektor-tv-games-computer/molebasher.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/elektor-tv-games-computer/molebasher.jpg"
+data-screenshot="../screenshots/elektor-tv-games-computer/molebasher.jpg">
 Molebasher
 </a>
 </td>
@@ -673,8 +749,8 @@ data-developer="-"
 data-ra="24653"
 data-notes=""
 data-thumb="../thumbs/elektor-tv-games-computer/newton.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/elektor-tv-games-computer/newton.jpg"
+data-screenshot="../screenshots/elektor-tv-games-computer/newton.jpg">
 Newton
 </a>
 </td>
@@ -705,8 +781,8 @@ data-developer="-"
 data-ra="24655"
 data-notes=""
 data-thumb="../thumbs/elektor-tv-games-computer/omega landing.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/elektor-tv-games-computer/omega landing.jpg"
+data-screenshot="../screenshots/elektor-tv-games-computer/omega landing.jpg">
 Omega Landing
 </a>
 </td>
@@ -737,8 +813,8 @@ data-developer="-"
 data-ra="24824"
 data-notes=""
 data-thumb="../thumbs/elektor-tv-games-computer/penalty.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/elektor-tv-games-computer/penalty.jpg"
+data-screenshot="../screenshots/elektor-tv-games-computer/penalty.jpg">
 Penalty
 </a>
 </td>
@@ -769,8 +845,8 @@ data-developer="-"
 data-ra="24658"
 data-notes=""
 data-thumb="../thumbs/elektor-tv-games-computer/pinball.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/elektor-tv-games-computer/pinball.jpg"
+data-screenshot="../screenshots/elektor-tv-games-computer/pinball.jpg">
 Pinball
 </a>
 </td>
@@ -801,8 +877,8 @@ data-developer="-"
 data-ra="24659"
 data-notes=""
 data-thumb="../thumbs/elektor-tv-games-computer/raster.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/elektor-tv-games-computer/raster.jpg"
+data-screenshot="../screenshots/elektor-tv-games-computer/raster.jpg">
 Raster
 </a>
 </td>
@@ -833,8 +909,8 @@ data-developer="-"
 data-ra="24661"
 data-notes=""
 data-thumb="../thumbs/elektor-tv-games-computer/rocket hunting.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/elektor-tv-games-computer/rocket hunting.jpg"
+data-screenshot="../screenshots/elektor-tv-games-computer/rocket hunting.jpg">
 Rocket Hunting
 </a>
 </td>
@@ -865,8 +941,8 @@ data-developer="-"
 data-ra="24681"
 data-notes=""
 data-thumb="../thumbs/elektor-tv-games-computer/snakes and ladders.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/elektor-tv-games-computer/snakes and ladders.jpg"
+data-screenshot="../screenshots/elektor-tv-games-computer/snakes and ladders.jpg">
 Snakes and Ladders
 </a>
 </td>
@@ -897,8 +973,8 @@ data-developer="-"
 data-ra="24683"
 data-notes=""
 data-thumb="../thumbs/elektor-tv-games-computer/solitaire.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/elektor-tv-games-computer/solitaire.jpg"
+data-screenshot="../screenshots/elektor-tv-games-computer/solitaire.jpg">
 Solitaire
 </a>
 </td>
@@ -929,8 +1005,8 @@ data-developer="-"
 data-ra="37507"
 data-notes=""
 data-thumb="../thumbs/elektor-tv-games-computer/submarines racing.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/elektor-tv-games-computer/submarines racing.jpg"
+data-screenshot="../screenshots/elektor-tv-games-computer/submarines racing.jpg">
 Submarines & Racing
 </a>
 </td>
@@ -961,8 +1037,8 @@ data-developer="-"
 data-ra="24665"
 data-notes=""
 data-thumb="../thumbs/elektor-tv-games-computer/tiny tim.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/elektor-tv-games-computer/tiny tim.jpg"
+data-screenshot="../screenshots/elektor-tv-games-computer/tiny tim.jpg">
 Tiny Tim
 </a>
 </td>
@@ -993,8 +1069,8 @@ data-developer="-"
 data-ra="24666"
 data-notes=""
 data-thumb="../thumbs/elektor-tv-games-computer/ufo shooting.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/elektor-tv-games-computer/ufo shooting.jpg"
+data-screenshot="../screenshots/elektor-tv-games-computer/ufo shooting.jpg">
 UFO Shooting
 </a>
 </td>
@@ -1016,7 +1092,8 @@ UFO Shooting
 <div id="gameModal" class="modal-overlay">
 
 <div class="modal-content">
-
+<div id="modalBackground"></div>
+<div id="modalInner">
 <span class="modal-close" onclick="closeGame()">&times;</span>
 
 <h2 id="modalTitle"></h2>
@@ -1041,7 +1118,11 @@ onerror="this.onerror=null;this.src='../assets/no-boxart.png';">
 id="modalMedia"
 class="modal-thumb"
 style="
-max-width:180px;
+width:250px;
+height:350px;
+object-fit:contain;
+background:rgba(255,255,255,0.05);
+border-radius:8px;
 display:none;
 "
 src=""
@@ -1050,8 +1131,11 @@ onerror="this.style.display='none';">
 <img
 id="modalScreenshot"
 style="
-max-width:400px;
-max-height:350px;
+width:250px;
+height:350px;
+object-fit:contain;
+background:rgba(255,255,255,0.05);
+border-radius:8px;
 display:none;
 border-radius:6px;
 "
@@ -1105,7 +1189,7 @@ font-weight:bold;
 
 </div>
 <div class="modal-notes" id="modalNotes"></div>
-
+</div>
 </div>
 
 </div>
@@ -1220,21 +1304,24 @@ const img =
         "modalThumb"
     );
 
-img.src =
-    link.dataset.thumb;
-
 img.style.display =
     "block";
 
+img.onerror = function() {
+    this.onerror = null;
+    this.src = "../assets/no-boxart.png";
+};
+
+img.src =
+    link.dataset.thumb;
 const media =
     document.getElementById(
         "modalMedia"
     );
 
-if(link.dataset.media){
+if(link.dataset.media && link.dataset.media !== ""){
 
     media.src =
-        "../" +
         link.dataset.media;
 
     media.style.display =
@@ -1251,10 +1338,9 @@ const screenshot =
         "modalScreenshot"
     );
 
-if(link.dataset.screenshot){
+if(link.dataset.screenshot && link.dataset.screenshot !== ""){
 
     screenshot.src =
-        "../" +
         link.dataset.screenshot;
 
     screenshot.style.display =

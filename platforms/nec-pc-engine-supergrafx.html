@@ -19,6 +19,44 @@ th[data-sort] {
 th[data-sort]:hover {
     color: #7fb7ff;
 }
+.platform-hero {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    min-height: 250px;
+}
+
+.platform-hero-bg {
+    position: absolute;
+    inset: 0;
+
+    background-size: cover;
+    background-position: center;
+
+    filter: blur(12px);
+    transform: scale(1.1);
+
+    opacity: 0.35;
+}
+
+.platform-hero-content {
+    position: relative;
+    z-index: 1;
+
+    text-align: center;
+
+    padding: 40px 20px;
+}
+
+.platform-logo {
+    max-height: 90px;
+    max-width: 500px;
+
+    object-fit: contain;
+
+    margin-bottom: 15px;
+}
 .game-link {
     color: #7fb7ff;
     text-decoration: none;
@@ -37,6 +75,9 @@ th[data-sort]:hover {
 }
 
 .modal-content {
+    position: relative;
+    overflow: hidden;
+
     width: min(900px, 95vw);
     max-height: 90vh;
     overflow-y: auto;
@@ -45,7 +86,21 @@ th[data-sort]:hover {
     border-radius: 12px;
     padding: 25px;
 }
+#modalBackground {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.15;
+    filter: blur(12px);
+    transform: scale(1.1);
+    pointer-events: none;
+}
 
+#modalInner {
+    position: relative;
+    z-index: 1;
+}
 .modal-close {
     float: right;
     cursor: pointer;
@@ -54,10 +109,12 @@ th[data-sort]:hover {
 }
 
 .modal-thumb {
-    max-width: 250px;
-    max-height: 350px;
+    width: 250px;
+    height: 350px;
+    object-fit: contain;
+    background: rgba(255,255,255,0.05);
+    border-radius: 8px;
     display: block;
-    margin-bottom: 20px;
 }
 
 .modal-meta {
@@ -83,6 +140,22 @@ th[data-sort]:hover {
 
 <a href="../index.html">← Home</a>
 
+<div class="platform-hero">
+
+<div
+class="platform-hero-bg"
+style="
+background-image:url('../platform-fanart/nec-pc-engine-supergrafx.jpg');
+">
+</div>
+
+<div class="platform-hero-content">
+
+<img
+class="platform-logo"
+src="../platform-logos/nec-pc-engine-supergrafx.png"
+onerror="this.style.display='none';">
+
 <h1>NEC PC Engine SuperGrafx</h1>
 
 
@@ -93,6 +166,9 @@ Released: 1989
 
 <p>5 games</p>
 
+</div>
+
+</div>
 
 <div class="platform-notes">
 <p>The PC Engine SuperGrafx, also shortened as the SuperGrafx or PC Engine SG, is a video game console by NEC Home Electronics, released exclusively in Japan. It is an upgraded version of the PC Engine, released two years prior. Like the PC Engine, the SuperGrafx was also imported and sold in France.  Originally announced as the PC Engine 2, the machine was purported to be a true 16-bit system with improved graphics and audio capabilities over the original PC Engine. Expected to be released in 1990, the SuperGrafx was rushed to market, debuting several months earlier in late 1989 with only modest improvements over the original PC Engine.  Only seven games were produced which took advantage of the improved SuperGrafx hardware, and two of those could be played on a regular PC Engine. However, the SuperGrafx is backwards compatible with all PC Engine software in both, HuCard and CD-ROM format, bringing the compatible software total up to nearly 700. The system was not widely adopted and is largely seen as a commercial failure.</p>
@@ -133,8 +209,8 @@ data-developer="Hudson Soft"
 data-ra=""
 data-notes="1941 Counter Attack is a vertical shooter by Capcom and conversion of the arcade game of the same name originally released in 1990. The action takes place during World War II and depicts Capcom's own fantastic vision of the historic battle between the American and Japanese air forces in the Pacific. The player's mission is rather straightforward - on board a Lockheed P-38 airplane, he must fight his way through six varied stages, take down enemy installations, battleships and other huge rockets on their narrow launching pads. Unlike its predecessors in the series, 1941 Counter Attack traded the trademark and arguably monotonous level design for a more structured and diverse formula. Stages vary from an enemy infested canyon to city landscapes and fortified strongholds. Several powerups can be collected along the way, such as tiny wingmen widening the plane's fire power, or destructive special weapons such as laser beams and side rockets. The main weapon can also be charged up by holding the fire button to discharge a powerful attack. Finally, the plane comes with a small life bar and can be hit three time before being blasted into oblivion - this bar however increases as the game progresses, and is used to release devastating special attacks as well. 1941 Counter Attack also features a two simultaneous player mode."
 data-thumb="../thumbs/nec-pc-engine-supergrafx/1941 counter attack.jpg"
-data-media="Images/NEC PC Engine SuperGrafx/Cart - Front/Japan/1941_ Counter Attack-01.png"
-data-screenshot="">
+data-media="../media/nec-pc-engine-supergrafx/1941 counter attack.jpg"
+data-screenshot="../screenshots/nec-pc-engine-supergrafx/1941 counter attack.jpg">
 1941: Counter Attack
 </a>
 </td>
@@ -165,8 +241,8 @@ data-developer="Produce!"
 data-ra=""
 data-notes="The year is 2020, and global depression has descended upon the societies of the Earth. When humans least expect it, aliens from a mechanical planetoid attack seemingly without any reason. The League of Nations collaborates with NASA to produce a powerful space fighter under project name Aldynes. When a pilot known as Fox-A is killed, his girlfriend Hiroko heads to the air base where works on Project Aldynes took place. As the aliens launch their attack, Hiroko hijacks one of the fighters and enters the battle.\n\nAldynes is a horizontally-scrolling sci-fi shoot-em-up. Player-controlled spaceship can acquire power-ups that either change its default vulcan gun to lasers that shoot either straight ahead or in different directions, or enhance the shot of an already equipped weapon. A special power-up adds a small ship that fights alongside the player-controlled one; collecting more power-ups of the same kind adds more ships. These ships can be ordered to stay behind and repeat the shooting patterns of the player-controlled craft, or shoot at enemies following their own AI. \n\nThe player-controlled fighter does not have hit points and loses a life every time it is hit. There are seven stages altogether, each ending with a massive boss battle."
 data-thumb="../thumbs/nec-pc-engine-supergrafx/aldynes the misson code for rage crisis.jpg"
-data-media="Images/NEC PC Engine SuperGrafx/Cart - Front/Japan/Aldynes_ The Misson Code for Rage Crisis-01.jpg"
-data-screenshot="">
+data-media="../media/nec-pc-engine-supergrafx/aldynes the misson code for rage crisis.jpg"
+data-screenshot="../screenshots/nec-pc-engine-supergrafx/aldynes the misson code for rage crisis.jpg">
 Aldynes: The Misson Code for Rage Crisis
 </a>
 </td>
@@ -197,8 +273,8 @@ data-developer="Hudson Soft"
 data-ra=""
 data-notes="Battle Ace is an action-oriented flight game in a first-person perspective. The player mans a space ship, including a radar which shows enemies, and the goal is to reach the end of each level where an end boss waits. As usually, the main occupation is to blast a lot of aliens which approach the player. The available weapons are bombs and a machine gun, both unlimited. Getting hit is a bad idea because it results in death. The player has three lives which can be raised by scoring 20.000 points."
 data-thumb="../thumbs/nec-pc-engine-supergrafx/battle ace.jpg"
-data-media="Images/NEC PC Engine SuperGrafx/Cart - Front/Japan/Battle Ace-01.png"
-data-screenshot="">
+data-media="../media/nec-pc-engine-supergrafx/battle ace.jpg"
+data-screenshot="../screenshots/nec-pc-engine-supergrafx/battle ace.jpg">
 Battle Ace
 </a>
 </td>
@@ -229,8 +305,8 @@ data-developer="AlfaSystem"
 data-ra=""
 data-notes="Daimakaimura is a platform game by Capcom and is the SuperGrafx port of the classic arcade game known outside of Japan as Ghouls'n Ghosts. The brave Arthur, infamous for wearing red hearted boxers under his piece of armor, is back. His beloved princess Prin-Prin has been captured by the great demon king Loki and he has now, once again, the daunting task of rescuing her. His journey gets him through six long stages from a creepy cemetery infested with Grim Reapers and Vultures, to a abandoned windmills full of deadly stone turtles. Arthur starts the game equipped with a short joust spear that he can throw at his enemies. Treasure chests appear from time to time (usually triggered by jumping over specific spots of the scenery) and Arthur can crack them open to reveal new weapons, brand new piece of armors or, if already equipped with one, the almighty Golden Armor. But treasure chests can also reveal mean sorcerers who won't hesitate to turn our hero into an elderly man with a walking stick, or a cute but particularly vulnerable duck. Finally, the Golden Armor can be charged up and unleash powerful attacks from the equipped weapon. For instance, the spear can trigger a lighting spell and daggers a mirror-image of Arthur. The game is vast and mean guardians keep the gates leading to Loki's lair."
 data-thumb="../thumbs/nec-pc-engine-supergrafx/daimakaimura.jpg"
-data-media="Images/NEC PC Engine SuperGrafx/Cart - Front/Japan/Daimakaimura-01.png"
-data-screenshot="">
+data-media="../media/nec-pc-engine-supergrafx/daimakaimura.jpg"
+data-screenshot="../screenshots/nec-pc-engine-supergrafx/daimakaimura.jpg">
 Daimakaimura
 </a>
 </td>
@@ -261,8 +337,8 @@ data-developer="Mutech"
 data-ra=""
 data-notes="Madou King Granzort is based on the anime of the same name. The story takes place in science-fiction scenario in which a few kids get special powers to save the world from the evil Jadou Clan. To be more exact, they can summon three powerful creatures: The Madou kings of earth, water and wind. The player takes the role of those kings to defeat the Jadou Clan.\n\nThe player needs to find the way through the levels while solving basic platforming challenges and a lot of fighting, either with a sword or by shooting. The player can switch between the Madou kings which have different abilities. It is important to look after the energy bar and the time limit: both result in the loss of a life when running out."
 data-thumb="../thumbs/nec-pc-engine-supergrafx/madou ou granzort.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/nec-pc-engine-supergrafx/madou ou granzort.jpg"
+data-screenshot="../screenshots/nec-pc-engine-supergrafx/madou ou granzort.jpg">
 Madou Ou Granzort
 </a>
 </td>
@@ -284,7 +360,8 @@ Madou Ou Granzort
 <div id="gameModal" class="modal-overlay">
 
 <div class="modal-content">
-
+<div id="modalBackground"></div>
+<div id="modalInner">
 <span class="modal-close" onclick="closeGame()">&times;</span>
 
 <h2 id="modalTitle"></h2>
@@ -309,7 +386,11 @@ onerror="this.onerror=null;this.src='../assets/no-boxart.png';">
 id="modalMedia"
 class="modal-thumb"
 style="
-max-width:180px;
+width:250px;
+height:350px;
+object-fit:contain;
+background:rgba(255,255,255,0.05);
+border-radius:8px;
 display:none;
 "
 src=""
@@ -318,8 +399,11 @@ onerror="this.style.display='none';">
 <img
 id="modalScreenshot"
 style="
-max-width:400px;
-max-height:350px;
+width:250px;
+height:350px;
+object-fit:contain;
+background:rgba(255,255,255,0.05);
+border-radius:8px;
 display:none;
 border-radius:6px;
 "
@@ -373,7 +457,7 @@ font-weight:bold;
 
 </div>
 <div class="modal-notes" id="modalNotes"></div>
-
+</div>
 </div>
 
 </div>
@@ -488,21 +572,24 @@ const img =
         "modalThumb"
     );
 
-img.src =
-    link.dataset.thumb;
-
 img.style.display =
     "block";
 
+img.onerror = function() {
+    this.onerror = null;
+    this.src = "../assets/no-boxart.png";
+};
+
+img.src =
+    link.dataset.thumb;
 const media =
     document.getElementById(
         "modalMedia"
     );
 
-if(link.dataset.media){
+if(link.dataset.media && link.dataset.media !== ""){
 
     media.src =
-        "../" +
         link.dataset.media;
 
     media.style.display =
@@ -519,10 +606,9 @@ const screenshot =
         "modalScreenshot"
     );
 
-if(link.dataset.screenshot){
+if(link.dataset.screenshot && link.dataset.screenshot !== ""){
 
     screenshot.src =
-        "../" +
         link.dataset.screenshot;
 
     screenshot.style.display =

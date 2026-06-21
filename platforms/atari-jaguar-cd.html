@@ -19,6 +19,44 @@ th[data-sort] {
 th[data-sort]:hover {
     color: #7fb7ff;
 }
+.platform-hero {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    min-height: 250px;
+}
+
+.platform-hero-bg {
+    position: absolute;
+    inset: 0;
+
+    background-size: cover;
+    background-position: center;
+
+    filter: blur(12px);
+    transform: scale(1.1);
+
+    opacity: 0.35;
+}
+
+.platform-hero-content {
+    position: relative;
+    z-index: 1;
+
+    text-align: center;
+
+    padding: 40px 20px;
+}
+
+.platform-logo {
+    max-height: 90px;
+    max-width: 500px;
+
+    object-fit: contain;
+
+    margin-bottom: 15px;
+}
 .game-link {
     color: #7fb7ff;
     text-decoration: none;
@@ -37,6 +75,9 @@ th[data-sort]:hover {
 }
 
 .modal-content {
+    position: relative;
+    overflow: hidden;
+
     width: min(900px, 95vw);
     max-height: 90vh;
     overflow-y: auto;
@@ -45,7 +86,21 @@ th[data-sort]:hover {
     border-radius: 12px;
     padding: 25px;
 }
+#modalBackground {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.15;
+    filter: blur(12px);
+    transform: scale(1.1);
+    pointer-events: none;
+}
 
+#modalInner {
+    position: relative;
+    z-index: 1;
+}
 .modal-close {
     float: right;
     cursor: pointer;
@@ -54,10 +109,12 @@ th[data-sort]:hover {
 }
 
 .modal-thumb {
-    max-width: 250px;
-    max-height: 350px;
+    width: 250px;
+    height: 350px;
+    object-fit: contain;
+    background: rgba(255,255,255,0.05);
+    border-radius: 8px;
     display: block;
-    margin-bottom: 20px;
 }
 
 .modal-meta {
@@ -83,6 +140,22 @@ th[data-sort]:hover {
 
 <a href="../index.html">← Home</a>
 
+<div class="platform-hero">
+
+<div
+class="platform-hero-bg"
+style="
+background-image:url('../platform-fanart/atari-jaguar-cd.jpg');
+">
+</div>
+
+<div class="platform-hero-content">
+
+<img
+class="platform-logo"
+src="../platform-logos/atari-jaguar-cd.png"
+onerror="this.style.display='none';">
+
 <h1>Atari Jaguar CD</h1>
 
 
@@ -93,6 +166,9 @@ Released: 1995
 
 <p>21 games</p>
 
+</div>
+
+</div>
 
 <div class="platform-notes">
 <p>The Atari Jaguar CD is a fifth generation (1993–2005) CD-ROM peripheral for the Atari Jaguar video game console developed and distributed by Atari Corporation. It was released in September 1995 in North America at a retail price of $149.95. The peripheral was also released in Europe (1995). The Jaguar CD unit featured a double-speed (2×) drive and its own cartridge slot to allow cartridge games to be played without removing the CD drive. The peripheral was discontinued in early 1996, possibly at the time of the company's sale on April 8, 1996.</p>
@@ -133,8 +209,8 @@ data-developer="atari2600land"
 data-ra="24303"
 data-notes="Why spend hundreds of dollars on pest control? Why hire strange, overweight, smelly men with tanks on their backs to come into your home, squirting fowl smelling liquids all over your precious preciouses? THAT'S RIGHT! You have the power to stop your home infestation and free yourself from these ant invaders! JUST SQUISH THEM WITH YOUR FINGER! That's right, that same finger you just had crammed up your nose for the last 15 minutes! Put that picker to work and get to squishing!\n\nAnts is a unique game about getting rid of common household pests using nothing but your finger. The game contains options designed to drastically change the gameplay depending on what options you select prior to play. Not all options will be available the first time you play. You will need to unlock all of the special options by achieving certain high scores throughout the game."
 data-thumb="../thumbs/atari-jaguar-cd/ants.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/atari-jaguar-cd/ants.jpg"
+data-screenshot="../screenshots/atari-jaguar-cd/ants.jpg">
 ANTS
 </a>
 </td>
@@ -165,8 +241,8 @@ data-developer="Creative Edge Software"
 data-ra="21663"
 data-notes="Ever want to rule the world? With Baldies you have the resources, but do you have the strategy and skill? Build your own society complete with workers, builders, soldiers, and scientists, and use them to conquer enemy territory. When it comes to killing your foe, creativity is highly encouraged. You can skunk 'em, drown 'em, blow 'em up, and electrocute 'em. Plan your attack well. The enemy is trying to do the same to you!"
 data-thumb="../thumbs/atari-jaguar-cd/baldies.jpg"
-data-media="Images/Atari Jaguar CD/Cart - Front/Baldies (USA) (Rev 1).png"
-data-screenshot="Images/Atari Jaguar CD/Screenshot - Game Title/Baldies (USA) (Rev 1).png">
+data-media="../media/atari-jaguar-cd/baldies.jpg"
+data-screenshot="../screenshots/atari-jaguar-cd/baldies.jpg">
 Baldies
 </a>
 </td>
@@ -197,8 +273,8 @@ data-developer="Attention to Detail"
 data-ra=""
 data-notes="Battlemorph is the Jaguar CD sequel to the first Jaguar cartridge, Cybermorph. This game takes place 30 years after the original. The Pernitian empire, long thought to be extinct, is back with a vengeance. Your new War Griffon craft must travel to 8 different star clusters so that your star ship can find the plasma it needs to make it's way to the Pernish cluster. Once you take out the Pernish home world, the galaxy may be safe from the Pernitians once and for all."
 data-thumb="../thumbs/atari-jaguar-cd/battle morph.jpg"
-data-media="Images/Atari Jaguar CD/Cart - Front/Battle Morph (USA).png"
-data-screenshot="Images/Atari Jaguar CD/Screenshot - Game Title/Battle Morph (USA).png">
+data-media="../media/atari-jaguar-cd/battle morph.jpg"
+data-screenshot="../screenshots/atari-jaguar-cd/battle morph.jpg">
 Battle Morph
 </a>
 </td>
@@ -229,8 +305,8 @@ data-developer="Attention to Detail"
 data-ra=""
 data-notes="A top U.N. General named Drako has gone renegade. As a member of the U.N's Blue Lightning squad, you must stop him from organizing a global crime empire and holding the world for ransom. Use a multi-national selection of deadly fighter and attack aircraft to stop Drako's military forces. Only you stand between Drako and world domination!"
 data-thumb="../thumbs/atari-jaguar-cd/blue lightning.jpg"
-data-media="Images/Atari Jaguar CD/Cart - Front/Blue Lightning (USA).png"
-data-screenshot="Images/Atari Jaguar CD/Screenshot - Game Title/Blue Lightning (USA).png">
+data-media="../media/atari-jaguar-cd/blue lightning.jpg"
+data-screenshot="../screenshots/atari-jaguar-cd/blue lightning.jpg">
 Blue Lightning
 </a>
 </td>
@@ -261,8 +337,8 @@ data-developer="ReadySoft"
 data-ra="21671"
 data-notes="In Brain Dead 13, the player takes on the role of a young computer expert who one day is called to fix a computer at some scary castle and in no time flat, finds himself in trouble.\n\nIt is up to the player to use the complex moves of an interactive movie to escape from the castle. This animated adventure is basically based on the player's judgment on which direction you think the character might go, and if the player guesses wrong, death."
 data-thumb="../thumbs/atari-jaguar-cd/braindead 13.jpg"
-data-media="Images/Atari Jaguar CD/Cart - Front/BrainDead 13 (USA).png"
-data-screenshot="Images/Atari Jaguar CD/Screenshot - Game Title/BrainDead 13 (USA).png">
+data-media="../media/atari-jaguar-cd/braindead 13.jpg"
+data-screenshot="../screenshots/atari-jaguar-cd/braindead 13.jpg">
 BrainDead 13
 </a>
 </td>
@@ -293,8 +369,8 @@ data-developer="ReadySoft"
 data-ra="24065"
 data-notes="Dragon's Lair features the hero, Dirk the Daring, attempting to rescue Princess Daphne from the evil dragon Singe, who has locked Princess Daphne in the foul wizard Mordroc's castle. The screen shows animated cutscenes, and the player executes an action by selecting a direction or pressing the sword button with correct timing, requiring the player to memorize each scenario in order to clear each quick time event. The comedy aspects of the game stemmed not only from the bizarre looking creatures and humorous death scenes, but also the fact that while Dirk was a skilled knight, he was somewhat clumsy in his efforts, as well as being a reluctant hero, prone to shrieking and reacting in horror to the various dangers he encounters."
 data-thumb="../thumbs/atari-jaguar-cd/dragon s lair.jpg"
-data-media="Images/Atari Jaguar CD/Cart - Front/Dragon's Lair (USA).png"
-data-screenshot="Images/Atari Jaguar CD/Screenshot - Game Title/Dragon's Lair (USA).png">
+data-media="../media/atari-jaguar-cd/dragon s lair.jpg"
+data-screenshot="../screenshots/atari-jaguar-cd/dragon s lair.jpg">
 Dragon's Lair
 </a>
 </td>
@@ -325,8 +401,8 @@ data-developer="Wave 1 Games"
 data-ra="24307"
 data-notes="The spiritual successor to the Atari 2600 game FAST FOOD by Telesys. In this game you take on the role of Mighty Mouth, a disembodied pair of hungry lips that are on a munching binge. You must watch out for the dreaded Purple Pickles because if you accidently eat too many Mighty Mouth will get indigestion and die!\n\nGame included five different modes, including a recreation of the original Atari 2600 game."
 data-thumb="../thumbs/atari-jaguar-cd/fast food 64.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/atari-jaguar-cd/fast food 64.jpg"
+data-screenshot="../screenshots/atari-jaguar-cd/fast food 64.jpg">
 Fast Food 64
 </a>
 </td>
@@ -357,8 +433,8 @@ data-developer="Wave 1 Games"
 data-ra="24306"
 data-notes="Make no mistake, Fast Food 64: Holiday Snacks is not just a Christmas re-skin of Fast Food 64. It is a BRAND NEW game with an entirely new code base written from the ground up.\n\nFAST FOOD 64 has returned for a Holiday inspired TRUE sequel! In Fast Food 64: Holiday Snacks you can play in one of 3 exciting arcade style game modes! The game also features a Christmas techno soundtrack with 5 music tracks, all of which are MP3 quality sound! You will hear these jamming beats in the different game modes, or you can listen to them as you wish in the games' Music Test Mode."
 data-thumb="../thumbs/atari-jaguar-cd/fast food 64 holiday snacks.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/atari-jaguar-cd/fast food 64 holiday snacks.jpg"
+data-screenshot="../screenshots/atari-jaguar-cd/fast food 64 holiday snacks.jpg">
 Fast Food 64: Holiday Snacks
 </a>
 </td>
@@ -389,8 +465,8 @@ data-developer="Oldergames"
 data-ra="22996"
 data-notes="Frog Feast is an after-market video game developed by Rastersoft for several game consoles. The latest system to receive the game was the Atari Jaguar and its CD attachment in 2007. While originally offered through Oldergames, due to difficulties with the company, Rastersoft has begun to sell Frog Feast directly.\n\nGameplay\nFrog Feast is a tribute to the Mattel Intellivision game Frog Bog, and play is nearly identical. The game is played by either a single player against the CPU or a second player. Each version of Frog Feast is graphically identical, but limitations in storage media have led to alteration or removal of some aspects, including music and sound.\n\nJaguar CD controversy\nThe Atari Jaguar CD version handled by Oldergames in 2007 met many difficulties in the first run, as all fifty numbered copies were defective. The way in which they handled the problem left fans of the system considering a class-action lawsuit against Oldergames, which may have led to the operation closing down shop."
 data-thumb="../thumbs/atari-jaguar-cd/frog feast.jpg"
-data-media="Images/Atari Jaguar CD/Cart - Front/Frog Feast (USA) (Unl).png"
-data-screenshot="Images/Atari Jaguar CD/Screenshot - Game Title/Frog Feast (USA) (Unl).png">
+data-media="../media/atari-jaguar-cd/frog feast.jpg"
+data-screenshot="../screenshots/atari-jaguar-cd/frog feast.jpg">
 Frog Feast
 </a>
 </td>
@@ -421,8 +497,8 @@ data-developer="Wave 1 Games"
 data-ra=""
 data-notes="Finally you can play the arcade classic you know and love on the Atari Jaguar 64 bit multimedia system! This game hops onto your console with brilliant 24 bit color rich environments and a classic style of gameplay that never gets old. Its FROGZ 64 and you better move quick or you will become a frog legs dinner, served hot off the pavement! This game is a tribute to the froggie type arcade games from the 80's era."
 data-thumb="../thumbs/atari-jaguar-cd/frogz 64.jpg"
-data-media="Images/Atari Jaguar CD/Disc/North America/Frogz 64 (USA) (Unl)-01.png"
-data-screenshot="">
+data-media="../media/atari-jaguar-cd/frogz 64.jpg"
+data-screenshot="../screenshots/atari-jaguar-cd/frogz 64.jpg">
 Frogz 64
 </a>
 </td>
@@ -453,8 +529,8 @@ data-developer="Atari"
 data-ra=""
 data-notes="Quentin McCloud must rescue clan members during a journey across his world in this game for the Jaguar CD. Quentin is portrayed in 3D, as are his enemies, but most of his world is in 2D (much like Alone in the Dark and Resident Evil). Unfortunately, the 3D polygon construction of the characters is hideous, though the backgrounds and cut scenes are well done. The first-person control scheme has promise, but suffers from multiple problems. If Quentin is attacked from behind, by the time he pivots, he's usually dead. Highlander is a mediocre game deserving of consideration from Highlander fans but, even considering the scarcity of Jaguar CD titles, probably best left alone by others."
 data-thumb="../thumbs/atari-jaguar-cd/highlander the last of the macleods.jpg"
-data-media="Images/Atari Jaguar CD/Cart - Front/Highlander - The Last of the MacLeods (USA).png"
-data-screenshot="Images/Atari Jaguar CD/Screenshot - Game Title/Highlander - The Last of the MacLeods (USA).png">
+data-media="../media/atari-jaguar-cd/highlander the last of the macleods.jpg"
+data-screenshot="../screenshots/atari-jaguar-cd/highlander the last of the macleods.jpg">
 Highlander: The Last of the MacLeods
 </a>
 </td>
@@ -485,8 +561,8 @@ data-developer="Atari"
 data-ra=""
 data-notes="Hover Strike is a futuristic 3D action game where you pilot a lone hovercraft in a series of missions against overwhelming enemy forces. You must use your speed, firepower, and displays to outfight and outwit the enemy. The game presents a series of missions which must be completed before you can advance. Goals include destroying a certain number or type of enemy units. The missions take place in a variety of different planetary environments."
 data-thumb="../thumbs/atari-jaguar-cd/hover strike unconquered lands.jpg"
-data-media="Images/Atari Jaguar CD/Cart - Front/Hover Strike - Unconquered Lands (USA).png"
-data-screenshot="Images/Atari Jaguar CD/Screenshot - Game Title/Hover Strike - Unconquered Lands (USA).png">
+data-media="../media/atari-jaguar-cd/hover strike unconquered lands.jpg"
+data-screenshot="../screenshots/atari-jaguar-cd/hover strike unconquered lands.jpg">
 Hover Strike: Unconquered Lands
 </a>
 </td>
@@ -517,8 +593,8 @@ data-developer="Telegames"
 data-ra=""
 data-notes="Iron Soldier 2 is a first-person 3D giant mech game. Players must pilot their building-sized robots in a variety of missions ranging from search-and-destroy to surgical attacks to defending objectives. Starting with a limited set of weapons, players can collect more armaments throughout the game. Each weapon can be mounted on a certain part of the robot's body, but once mounted, no other weapons can be placed there. So, while there is a wide range of weapon configurations, not every weapon can be combined with others. Players can destroy buildings in levels to find crates containing new weapons and extra ammunition for current weapons."
 data-thumb="../thumbs/atari-jaguar-cd/iron soldier 2.jpg"
-data-media="Images/Atari Jaguar CD/Cart - Front/Iron Soldier 2 (USA) (Songbird).png"
-data-screenshot="Images/Atari Jaguar CD/Screenshot - Game Title/Iron Soldier 2 (USA) (Songbird).png">
+data-media="../media/atari-jaguar-cd/iron soldier 2.jpg"
+data-screenshot="../screenshots/atari-jaguar-cd/iron soldier 2.jpg">
 Iron Soldier 2
 </a>
 </td>
@@ -549,8 +625,8 @@ data-developer="-"
 data-ra="21667"
 data-notes="An action/puzzle game, the object is to catch assorted color falling tiles and create rows, columns, or diagonals of a single color. Each level requires a different pattern to be made, and the tiles fall faster, more at a time, and in an increasing number of colors as the game progresses.\n\nThe Atari ST version of the game was ported by Cyrano Jones."
 data-thumb="../thumbs/atari-jaguar-cd/klax.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/atari-jaguar-cd/klax.jpg"
+data-screenshot="../screenshots/atari-jaguar-cd/klax.jpg">
 Klax
 </a>
 </td>
@@ -581,8 +657,8 @@ data-developer="Cyan"
 data-ra=""
 data-notes="You have just stumbled upon a most intriguing book, a book titled Myst. You have no idea where it came from, who wrote it, or how old it is. Reading through its pages provides you with only a description of an island world. But it's just a book, isn't it? As you reach the end of the book, you lay your hand on a page. Suddenly your own world dissolves into blackness, replaced with the island world the pages described. Now you're here, wherever here is, with no option but to explore.\n\nMyst is a first-person point-and-click adventure where the player controls a character known as The Stranger. Magically transported into the world described in the book, he needs to explore Myst Island and solve its mysteries. The game is presented as a series of static scenes where the player acts with the environment by clicking and manipulating objects. There are no enemies and it is not possible to die. Through Myst Island, the game is further divided into mini-worlds set in different ages accessed through different books. \n\nThe game's interface is reduced to a single cursor for navigation and interaction. Rather than collecting items and using them to solve puzzles, the player must gather subtly placed clues and manipulate complex mechanical devices in order to advance in the game. The world of Myst is mostly uninhabited, and the game has very few live-action scenes with characters and dialogue."
 data-thumb="../thumbs/atari-jaguar-cd/myst.jpg"
-data-media="Images/Atari Jaguar CD/Cart - Front/Myst (USA).png"
-data-screenshot="Images/Atari Jaguar CD/Screenshot - Game Title/Myst (USA).png">
+data-media="../media/atari-jaguar-cd/myst.jpg"
+data-screenshot="../screenshots/atari-jaguar-cd/myst.jpg">
 Myst
 </a>
 </td>
@@ -613,8 +689,8 @@ data-developer="Probe Entertainment"
 data-ra=""
 data-notes="Primal Rage is a one-on-one fighting game featuring dinosaurs and giant apes as the fighters. The graphics are done with digitized stop-motion animation. Gameplay is similar to Mortal Kombat in that it is viewed from a side perspective, and features deadly finishing moves at the end of the match."
 data-thumb="../thumbs/atari-jaguar-cd/primal rage.jpg"
-data-media="Images/Atari Jaguar CD/Cart - Front/Primal Rage (USA).png"
-data-screenshot="Images/Atari Jaguar CD/Screenshot - Game Title/Primal Rage (USA).png">
+data-media="../media/atari-jaguar-cd/primal rage.jpg"
+data-screenshot="../screenshots/atari-jaguar-cd/primal rage.jpg">
 Primal Rage
 </a>
 </td>
@@ -645,8 +721,8 @@ data-developer="Silmarils"
 data-ra=""
 data-notes="Robinson's Requiem is a 1994 survival simulation game developed by Silmarils and published by ReadySoft. The game has one sequel, Deus, released in 1996."
 data-thumb="../thumbs/atari-jaguar-cd/robinson s requiem.jpg"
-data-media="Images/Atari Jaguar CD/Cart - Front/North America/Robinson_s Requiem (USA) (Unl)-01.png"
-data-screenshot="">
+data-media="../media/atari-jaguar-cd/robinson s requiem.jpg"
+data-screenshot="../screenshots/atari-jaguar-cd/robinson s requiem.jpg">
 Robinson's Requiem
 </a>
 </td>
@@ -677,8 +753,8 @@ data-developer="Wave 1 Games"
 data-ra="24060"
 data-notes="In Saucer Wars you take on the role of scientist Milo Marslender. Your mission is to stop an alien invasion of Earth with your home made laser turret prototype. The aliens use special rifts in space to get to our planet faster. Your laser turret has accidently tuned into the alien forces signal. A timer on your laser turret will count down to zero. Once your timer hits zero, a new rift in psace time wipp open up, transporting you and your laser turret to another location! Keep taking out alien forces until you can reach the alien homeworld and destroy their Queen. It's up to you Dr. Marslender, now get out there and save humanity!"
 data-thumb="../thumbs/atari-jaguar-cd/saucer wars.jpg"
-data-media="Images/Atari Jaguar CD/Cart - Front/North America/Saucer Wars (USA) (Unl)-01.png"
-data-screenshot="">
+data-media="../media/atari-jaguar-cd/saucer wars.jpg"
+data-screenshot="../screenshots/atari-jaguar-cd/saucer wars.jpg">
 Saucer Wars
 </a>
 </td>
@@ -709,8 +785,8 @@ data-developer="ReadySoft"
 data-ra="24063"
 data-notes="Space Ace is something like an interactive cartoon. You don't control each and every action of your character, but you control his reactions to the events taking place around him. As you watch each of the more than 40 animated sequences play out, you must decide in which direction Ace should go and when. You must choose at what points he should wield his laser staff and fire his laser gun, and when he should jump, duck, or run."
 data-thumb="../thumbs/atari-jaguar-cd/space ace.jpg"
-data-media="Images/Atari Jaguar CD/Cart - Front/Space Ace (USA).png"
-data-screenshot="Images/Atari Jaguar CD/Screenshot - Game Title/Space Ace (USA).png">
+data-media="../media/atari-jaguar-cd/space ace.jpg"
+data-screenshot="../screenshots/atari-jaguar-cd/space ace.jpg">
 Space Ace
 </a>
 </td>
@@ -741,8 +817,8 @@ data-developer="High Voltage Software"
 data-ra=""
 data-notes="In Vid Grid, the video of a music video is chopped up into a grid (like a 3x3 square) and randomly rearranged. Some pieces may be flipped vertically or horizontally. As the music video plays it is up to the player to reassemble the pieces into a coherent image. Once the video has been reassembled the player can watch the rest of the music video in its unscrambled form.\n\nThe music videos contained in Vid Grid are mainly popular MTV fare from the mid-1990s. Some of the bands represented include Aerosmith, Van Halen and Jimi Hendrix."
 data-thumb="../thumbs/atari-jaguar-cd/vid grid.jpg"
-data-media="Images/Atari Jaguar CD/Cart - Front/Vid Grid (USA).png"
-data-screenshot="Images/Atari Jaguar CD/Screenshot - Game Title/Vid Grid (USA).png">
+data-media="../media/atari-jaguar-cd/vid grid.jpg"
+data-screenshot="../screenshots/atari-jaguar-cd/vid grid.jpg">
 Vid Grid
 </a>
 </td>
@@ -773,8 +849,8 @@ data-developer="Teque London"
 data-ra=""
 data-notes="World Tour Racing was the first racer available for the Atari Jaguar CD. Earlier cartridge games, like Super Burnout and Checkered Flag were received with mixed reviews, which created some excitement for the release of WTR. Gameplay includes customizable cars, seven different racing views, and surprisingly intelligent AI. World Tour Racing also features a damage system -- too many mid-race collisions will force drivers to the pits."
 data-thumb="../thumbs/atari-jaguar-cd/world tour racing.jpg"
-data-media="Images/Atari Jaguar CD/Cart - Front/World Tour Racing (USA).png"
-data-screenshot="Images/Atari Jaguar CD/Screenshot - Game Title/World Tour Racing (USA).png">
+data-media="../media/atari-jaguar-cd/world tour racing.jpg"
+data-screenshot="../screenshots/atari-jaguar-cd/world tour racing.jpg">
 World Tour Racing
 </a>
 </td>
@@ -796,7 +872,8 @@ World Tour Racing
 <div id="gameModal" class="modal-overlay">
 
 <div class="modal-content">
-
+<div id="modalBackground"></div>
+<div id="modalInner">
 <span class="modal-close" onclick="closeGame()">&times;</span>
 
 <h2 id="modalTitle"></h2>
@@ -821,7 +898,11 @@ onerror="this.onerror=null;this.src='../assets/no-boxart.png';">
 id="modalMedia"
 class="modal-thumb"
 style="
-max-width:180px;
+width:250px;
+height:350px;
+object-fit:contain;
+background:rgba(255,255,255,0.05);
+border-radius:8px;
 display:none;
 "
 src=""
@@ -830,8 +911,11 @@ onerror="this.style.display='none';">
 <img
 id="modalScreenshot"
 style="
-max-width:400px;
-max-height:350px;
+width:250px;
+height:350px;
+object-fit:contain;
+background:rgba(255,255,255,0.05);
+border-radius:8px;
 display:none;
 border-radius:6px;
 "
@@ -885,7 +969,7 @@ font-weight:bold;
 
 </div>
 <div class="modal-notes" id="modalNotes"></div>
-
+</div>
 </div>
 
 </div>
@@ -1000,21 +1084,24 @@ const img =
         "modalThumb"
     );
 
-img.src =
-    link.dataset.thumb;
-
 img.style.display =
     "block";
 
+img.onerror = function() {
+    this.onerror = null;
+    this.src = "../assets/no-boxart.png";
+};
+
+img.src =
+    link.dataset.thumb;
 const media =
     document.getElementById(
         "modalMedia"
     );
 
-if(link.dataset.media){
+if(link.dataset.media && link.dataset.media !== ""){
 
     media.src =
-        "../" +
         link.dataset.media;
 
     media.style.display =
@@ -1031,10 +1118,9 @@ const screenshot =
         "modalScreenshot"
     );
 
-if(link.dataset.screenshot){
+if(link.dataset.screenshot && link.dataset.screenshot !== ""){
 
     screenshot.src =
-        "../" +
         link.dataset.screenshot;
 
     screenshot.style.display =

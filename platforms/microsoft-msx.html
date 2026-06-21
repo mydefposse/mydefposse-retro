@@ -19,6 +19,44 @@ th[data-sort] {
 th[data-sort]:hover {
     color: #7fb7ff;
 }
+.platform-hero {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    min-height: 250px;
+}
+
+.platform-hero-bg {
+    position: absolute;
+    inset: 0;
+
+    background-size: cover;
+    background-position: center;
+
+    filter: blur(12px);
+    transform: scale(1.1);
+
+    opacity: 0.35;
+}
+
+.platform-hero-content {
+    position: relative;
+    z-index: 1;
+
+    text-align: center;
+
+    padding: 40px 20px;
+}
+
+.platform-logo {
+    max-height: 90px;
+    max-width: 500px;
+
+    object-fit: contain;
+
+    margin-bottom: 15px;
+}
 .game-link {
     color: #7fb7ff;
     text-decoration: none;
@@ -37,6 +75,9 @@ th[data-sort]:hover {
 }
 
 .modal-content {
+    position: relative;
+    overflow: hidden;
+
     width: min(900px, 95vw);
     max-height: 90vh;
     overflow-y: auto;
@@ -45,7 +86,21 @@ th[data-sort]:hover {
     border-radius: 12px;
     padding: 25px;
 }
+#modalBackground {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.15;
+    filter: blur(12px);
+    transform: scale(1.1);
+    pointer-events: none;
+}
 
+#modalInner {
+    position: relative;
+    z-index: 1;
+}
 .modal-close {
     float: right;
     cursor: pointer;
@@ -54,10 +109,12 @@ th[data-sort]:hover {
 }
 
 .modal-thumb {
-    max-width: 250px;
-    max-height: 350px;
+    width: 250px;
+    height: 350px;
+    object-fit: contain;
+    background: rgba(255,255,255,0.05);
+    border-radius: 8px;
     display: block;
-    margin-bottom: 20px;
 }
 
 .modal-meta {
@@ -83,6 +140,22 @@ th[data-sort]:hover {
 
 <a href="../index.html">← Home</a>
 
+<div class="platform-hero">
+
+<div
+class="platform-hero-bg"
+style="
+background-image:url('../platform-fanart/microsoft-msx.jpg');
+">
+</div>
+
+<div class="platform-hero-content">
+
+<img
+class="platform-logo"
+src="../platform-logos/microsoft-msx.png"
+onerror="this.style.display='none';">
+
 <h1>Microsoft MSX</h1>
 
 
@@ -93,6 +166,9 @@ Released: 1983
 
 <p>3 games</p>
 
+</div>
+
+</div>
 
 <div class="platform-notes">
 <p>MSX is the name of a standardized home computer architecture, first announced by Microsoft on June 16, 1983.</p>
@@ -133,8 +209,8 @@ data-developer="Pack-In-Video"
 data-ra="22622"
 data-notes="A fun little disk-based action-RPG for the MSX2 similar to the Ys series.\n\nSilviana is a cheerful girl living on a hill with her single mother. Upon her mother falling ill to an unknown condition and hearing rumor of a doctor Doppel having a cure-all medicine, she goes to ask him for help. Doppel has the medicine, but before he can give it out, he sends Silviana out to bring back his 8 treasures stolen by monsters.\n\nThis is an action game with some RPG elements. The world view highly resembles Zelda with one fixed screen at a time, scrolling to the next when you reach the edge. The game has a bump combat system borrowed from Ys, including the directional damage effect. The game does not have a leveling system. Instead, Silviana's attack and defense improve by accumulating money to buy better weapons and armors, and like Zelda, her health bar is expanded by finding hearts."
 data-thumb="../thumbs/microsoft-msx/silviana.jpg"
-data-media=""
-data-screenshot="Images/Microsoft MSX/Screenshot - Game Title/Silviana [T-En by MIJET v20091213].png">
+data-media="../media/microsoft-msx/silviana.jpg"
+data-screenshot="../screenshots/microsoft-msx/silviana.jpg">
 Silviana
 </a>
 </td>
@@ -165,8 +241,8 @@ data-developer="Oxford Digital Enterprises"
 data-ra=""
 data-notes="In this adaptation of Tom Clancy's popular novel, you play the part of Captain Marko Ramius attempting to defect to the US. Once into the Atlantic, you must rendezvous with the US Navy and fake the destruction of the Red October. Your crew is not aware of the defection -- but the Soviet Navy is, and will try to stop you at any cost."
 data-thumb="../thumbs/microsoft-msx/tom clancy s the hunt for red october book version.jpg"
-data-media="Images/Microsoft MSX/Cart - Front/Hunt for Red October, The (1988)(Grandslam Entertainments)(GB)[a].png"
-data-screenshot="Images/Microsoft MSX/Screenshot - Game Title/Hunt for Red October, The (1988)(Grandslam Entertainments)(GB)[a].png">
+data-media="../media/microsoft-msx/tom clancy s the hunt for red october book version.jpg"
+data-screenshot="../screenshots/microsoft-msx/tom clancy s the hunt for red october book version.jpg">
 Tom Clancy's The Hunt for Red October (Book Version)
 </a>
 </td>
@@ -197,8 +273,8 @@ data-developer="Pack-In-Video"
 data-ra=""
 data-notes="1987 Japanese adventure game based on the 1985 film Young Sherlock Holmes, but with a completely different original story. It was developed by Pack-In-Video for the MSX home computer platform."
 data-thumb="../thumbs/microsoft-msx/young sherlock the legacy of doyle.jpg"
-data-media="Images/Microsoft MSX/Cart - Front/Young Sherlock - The Legacy of Doyle (Japan).png"
-data-screenshot="Images/Microsoft MSX/Screenshot - Game Title/Young Sherlock - The Legacy of Doyle (Japan).png">
+data-media="../media/microsoft-msx/young sherlock the legacy of doyle.jpg"
+data-screenshot="../screenshots/microsoft-msx/young sherlock the legacy of doyle.jpg">
 Young Sherlock: The Legacy of Doyle
 </a>
 </td>
@@ -220,7 +296,8 @@ Young Sherlock: The Legacy of Doyle
 <div id="gameModal" class="modal-overlay">
 
 <div class="modal-content">
-
+<div id="modalBackground"></div>
+<div id="modalInner">
 <span class="modal-close" onclick="closeGame()">&times;</span>
 
 <h2 id="modalTitle"></h2>
@@ -245,7 +322,11 @@ onerror="this.onerror=null;this.src='../assets/no-boxart.png';">
 id="modalMedia"
 class="modal-thumb"
 style="
-max-width:180px;
+width:250px;
+height:350px;
+object-fit:contain;
+background:rgba(255,255,255,0.05);
+border-radius:8px;
 display:none;
 "
 src=""
@@ -254,8 +335,11 @@ onerror="this.style.display='none';">
 <img
 id="modalScreenshot"
 style="
-max-width:400px;
-max-height:350px;
+width:250px;
+height:350px;
+object-fit:contain;
+background:rgba(255,255,255,0.05);
+border-radius:8px;
 display:none;
 border-radius:6px;
 "
@@ -309,7 +393,7 @@ font-weight:bold;
 
 </div>
 <div class="modal-notes" id="modalNotes"></div>
-
+</div>
 </div>
 
 </div>
@@ -424,21 +508,24 @@ const img =
         "modalThumb"
     );
 
-img.src =
-    link.dataset.thumb;
-
 img.style.display =
     "block";
 
+img.onerror = function() {
+    this.onerror = null;
+    this.src = "../assets/no-boxart.png";
+};
+
+img.src =
+    link.dataset.thumb;
 const media =
     document.getElementById(
         "modalMedia"
     );
 
-if(link.dataset.media){
+if(link.dataset.media && link.dataset.media !== ""){
 
     media.src =
-        "../" +
         link.dataset.media;
 
     media.style.display =
@@ -455,10 +542,9 @@ const screenshot =
         "modalScreenshot"
     );
 
-if(link.dataset.screenshot){
+if(link.dataset.screenshot && link.dataset.screenshot !== ""){
 
     screenshot.src =
-        "../" +
         link.dataset.screenshot;
 
     screenshot.style.display =

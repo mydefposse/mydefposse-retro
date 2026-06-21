@@ -19,6 +19,44 @@ th[data-sort] {
 th[data-sort]:hover {
     color: #7fb7ff;
 }
+.platform-hero {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    min-height: 250px;
+}
+
+.platform-hero-bg {
+    position: absolute;
+    inset: 0;
+
+    background-size: cover;
+    background-position: center;
+
+    filter: blur(12px);
+    transform: scale(1.1);
+
+    opacity: 0.35;
+}
+
+.platform-hero-content {
+    position: relative;
+    z-index: 1;
+
+    text-align: center;
+
+    padding: 40px 20px;
+}
+
+.platform-logo {
+    max-height: 90px;
+    max-width: 500px;
+
+    object-fit: contain;
+
+    margin-bottom: 15px;
+}
 .game-link {
     color: #7fb7ff;
     text-decoration: none;
@@ -37,6 +75,9 @@ th[data-sort]:hover {
 }
 
 .modal-content {
+    position: relative;
+    overflow: hidden;
+
     width: min(900px, 95vw);
     max-height: 90vh;
     overflow-y: auto;
@@ -45,7 +86,21 @@ th[data-sort]:hover {
     border-radius: 12px;
     padding: 25px;
 }
+#modalBackground {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.15;
+    filter: blur(12px);
+    transform: scale(1.1);
+    pointer-events: none;
+}
 
+#modalInner {
+    position: relative;
+    z-index: 1;
+}
 .modal-close {
     float: right;
     cursor: pointer;
@@ -54,10 +109,12 @@ th[data-sort]:hover {
 }
 
 .modal-thumb {
-    max-width: 250px;
-    max-height: 350px;
+    width: 250px;
+    height: 350px;
+    object-fit: contain;
+    background: rgba(255,255,255,0.05);
+    border-radius: 8px;
     display: block;
-    margin-bottom: 20px;
 }
 
 .modal-meta {
@@ -83,6 +140,22 @@ th[data-sort]:hover {
 
 <a href="../index.html">← Home</a>
 
+<div class="platform-hero">
+
+<div
+class="platform-hero-bg"
+style="
+background-image:url('../platform-fanart/nintendo-wii-u.jpg');
+">
+</div>
+
+<div class="platform-hero-content">
+
+<img
+class="platform-logo"
+src="../platform-logos/nintendo-wii-u.png"
+onerror="this.style.display='none';">
+
 <h1>Nintendo Wii U</h1>
 
 
@@ -93,6 +166,9 @@ Released: 2012
 
 <p>5 games</p>
 
+</div>
+
+</div>
 
 <div class="platform-notes">
 <p>The Nintendo Wii U is an eighth generation (2012–present) home video game console developed and distributed by Nintendo. It was released on November 18, 2012 in North America at a retail price of $299. The console was later released in Europe (2012), Japan (2012), South America (2012), and Australia (2012). The Wii U was much like its predecessor the Wii, but with the added GamePad, which allowed games to be played on its screen instead of the TV, or was utilized for interesting multi-player game mechanics in some games. The console was discontinued in January 2017.</p>
@@ -133,8 +209,8 @@ data-developer="Capcom"
 data-ra=""
 data-notes="Resident Evil: Revelations returns to the survival horror gameplay of earlier series installments, with returning elements such as a limited supply of ammunition, and more emphasis on exploration and puzzle solving. The game's camera keeps an over-the-shoulder view from behind the playable character. The player may move the protagonist while aiming a weapon, and has the option to switch between a first-person and third-person perspective. A new device, the Genesis, detects items hidden throughout the game's environments."
 data-thumb="../thumbs/nintendo-wii-u/resident evil revelations.jpg"
-data-media="Images/Nintendo Wii U/Disc/North America/Resident Evil_ Revelations-01.png"
-data-screenshot="">
+data-media="../media/nintendo-wii-u/resident evil revelations.jpg"
+data-screenshot="../screenshots/nintendo-wii-u/resident evil revelations.jpg">
 Resident Evil: Revelations
 </a>
 </td>
@@ -165,8 +241,8 @@ data-developer="Nintendo"
 data-ra=""
 data-notes="Step into a world of adventure \n\nForget everything you know about The Legend of Zelda games. Step into a world of discovery, exploration and adventure in The Legend of Zelda: Breath of the Wild, a boundary-breaking new game in the acclaimed series. Travel across fields, through forests and to mountain peaks as you discover what has become of the ruined kingdom of Hyrule in this stunning open-air adventure. \n\nExplore the wilds of Hyrule any way you like - Climb up towers and mountain peaks in search of new destinations, then set your own path to get there and plunge into the wilderness. Along the way, you'll battle towering enemies, hunt wild beasts and gather ingredients for the food and elixirs you'll need to sustain you on your journey. \n\nMore than 100 Shrines of Trials to discover and explore - Shrines dot the landscape, waiting to be discovered in any order you want. Search for them in various ways, and solve a variety of puzzles inside. Work your way through the traps and devices inside to earn special items and other rewards that will help you on your adventure. \n\nBe prepared and properly equipped - With an entire world waiting to be explored, you'll need a variety of outfits and gear to reach every corner. You may need to bundle up with warmer clothes or change into something better suited to the desert heat. Some clothing even has special effects that, for example, can make you faster and stealthier. \n\nBattling enemies requires strategy - The world is inhabited by enemies of all shapes and sizes. Each one has its own attack method and weaponry, so you must think quickly and develop the right strategies to defeat them."
 data-thumb="../thumbs/nintendo-wii-u/the legend of zelda breath of the wild.jpg"
-data-media="Images/Nintendo Wii U/Disc/North America/The Legend of Zelda_ Breath of the Wild-01.png"
-data-screenshot="">
+data-media="../media/nintendo-wii-u/the legend of zelda breath of the wild.jpg"
+data-screenshot="../screenshots/nintendo-wii-u/the legend of zelda breath of the wild.jpg">
 The Legend of Zelda: Breath of the Wild
 </a>
 </td>
@@ -197,8 +273,8 @@ data-developer="-"
 data-ra=""
 data-notes="Released as a collector's book with a Wii U Visual novel style presentation containing an unparalleled collection of historical information on The Legend of Zelda franchise."
 data-thumb="../thumbs/nintendo-wii-u/the legend of zelda hyrule historia.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/nintendo-wii-u/the legend of zelda hyrule historia.jpg"
+data-screenshot="../screenshots/nintendo-wii-u/the legend of zelda hyrule historia.jpg">
 The Legend of Zelda: Hyrule Historia
 </a>
 </td>
@@ -229,8 +305,8 @@ data-developer="Nintendo EAD"
 data-ra=""
 data-notes="The game is set on a group of islands in a vast sea\u2014a first for the series. The player controls Link, the protagonist of the Zelda series. He struggles against his nemesis, Ganondorf, for control of a sacred relic known as the Triforce. Link spends a large portion of the game sailing, traveling between islands, and traversing dungeons and temples to gain the power necessary to defeat Ganondorf. He also spends time trying to find his little sister Aryll. The Wind Waker HD expands on the original with updated 1080p-resolution graphics, an alternative lighting engine, as well as new gameplay features and modifications. The release of the game marks the ten-year anniversary of the international release of the original, and the first game in The Legend of Zelda series released on the Wii U."
 data-thumb="../thumbs/nintendo-wii-u/the legend of zelda the wind waker hd.jpg"
-data-media="Images/Nintendo Wii U/Disc/North America/The Legend of Zelda_ The Wind Waker HD-01.png"
-data-screenshot="">
+data-media="../media/nintendo-wii-u/the legend of zelda the wind waker hd.jpg"
+data-screenshot="../screenshots/nintendo-wii-u/the legend of zelda the wind waker hd.jpg">
 The Legend of Zelda: The Wind Waker HD
 </a>
 </td>
@@ -261,8 +337,8 @@ data-developer="Tantalus Interactive"
 data-ra=""
 data-notes="The Legend of Zelda: Twilight Princess is a critically acclaimed masterpiece, set in a massive world bursting with life - but also shadow. A dark figure from the Twilight Realm has invaded the world of light. As Link, a farmhand turned cursed beast, you'll join forces with the impish Midna, the Hyrule Resistance, and trusted (albeit unusual) allies to survive a quest that will take you to the farthest corners of Hyrule and beyond... to the Twilight Realm. This epic, emotional adventure is now on the Wii U console."
 data-thumb="../thumbs/nintendo-wii-u/the legend of zelda twilight princess hd.jpg"
-data-media="Images/Nintendo Wii U/Disc/North America/The Legend of Zelda_ Twilight Princess HD-01.png"
-data-screenshot="">
+data-media="../media/nintendo-wii-u/the legend of zelda twilight princess hd.jpg"
+data-screenshot="../screenshots/nintendo-wii-u/the legend of zelda twilight princess hd.jpg">
 The Legend of Zelda: Twilight Princess HD
 </a>
 </td>
@@ -284,7 +360,8 @@ The Legend of Zelda: Twilight Princess HD
 <div id="gameModal" class="modal-overlay">
 
 <div class="modal-content">
-
+<div id="modalBackground"></div>
+<div id="modalInner">
 <span class="modal-close" onclick="closeGame()">&times;</span>
 
 <h2 id="modalTitle"></h2>
@@ -309,7 +386,11 @@ onerror="this.onerror=null;this.src='../assets/no-boxart.png';">
 id="modalMedia"
 class="modal-thumb"
 style="
-max-width:180px;
+width:250px;
+height:350px;
+object-fit:contain;
+background:rgba(255,255,255,0.05);
+border-radius:8px;
 display:none;
 "
 src=""
@@ -318,8 +399,11 @@ onerror="this.style.display='none';">
 <img
 id="modalScreenshot"
 style="
-max-width:400px;
-max-height:350px;
+width:250px;
+height:350px;
+object-fit:contain;
+background:rgba(255,255,255,0.05);
+border-radius:8px;
 display:none;
 border-radius:6px;
 "
@@ -373,7 +457,7 @@ font-weight:bold;
 
 </div>
 <div class="modal-notes" id="modalNotes"></div>
-
+</div>
 </div>
 
 </div>
@@ -488,21 +572,24 @@ const img =
         "modalThumb"
     );
 
-img.src =
-    link.dataset.thumb;
-
 img.style.display =
     "block";
 
+img.onerror = function() {
+    this.onerror = null;
+    this.src = "../assets/no-boxart.png";
+};
+
+img.src =
+    link.dataset.thumb;
 const media =
     document.getElementById(
         "modalMedia"
     );
 
-if(link.dataset.media){
+if(link.dataset.media && link.dataset.media !== ""){
 
     media.src =
-        "../" +
         link.dataset.media;
 
     media.style.display =
@@ -519,10 +606,9 @@ const screenshot =
         "modalScreenshot"
     );
 
-if(link.dataset.screenshot){
+if(link.dataset.screenshot && link.dataset.screenshot !== ""){
 
     screenshot.src =
-        "../" +
         link.dataset.screenshot;
 
     screenshot.style.display =

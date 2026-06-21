@@ -19,6 +19,44 @@ th[data-sort] {
 th[data-sort]:hover {
     color: #7fb7ff;
 }
+.platform-hero {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    min-height: 250px;
+}
+
+.platform-hero-bg {
+    position: absolute;
+    inset: 0;
+
+    background-size: cover;
+    background-position: center;
+
+    filter: blur(12px);
+    transform: scale(1.1);
+
+    opacity: 0.35;
+}
+
+.platform-hero-content {
+    position: relative;
+    z-index: 1;
+
+    text-align: center;
+
+    padding: 40px 20px;
+}
+
+.platform-logo {
+    max-height: 90px;
+    max-width: 500px;
+
+    object-fit: contain;
+
+    margin-bottom: 15px;
+}
 .game-link {
     color: #7fb7ff;
     text-decoration: none;
@@ -37,6 +75,9 @@ th[data-sort]:hover {
 }
 
 .modal-content {
+    position: relative;
+    overflow: hidden;
+
     width: min(900px, 95vw);
     max-height: 90vh;
     overflow-y: auto;
@@ -45,7 +86,21 @@ th[data-sort]:hover {
     border-radius: 12px;
     padding: 25px;
 }
+#modalBackground {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.15;
+    filter: blur(12px);
+    transform: scale(1.1);
+    pointer-events: none;
+}
 
+#modalInner {
+    position: relative;
+    z-index: 1;
+}
 .modal-close {
     float: right;
     cursor: pointer;
@@ -54,10 +109,12 @@ th[data-sort]:hover {
 }
 
 .modal-thumb {
-    max-width: 250px;
-    max-height: 350px;
+    width: 250px;
+    height: 350px;
+    object-fit: contain;
+    background: rgba(255,255,255,0.05);
+    border-radius: 8px;
     display: block;
-    margin-bottom: 20px;
 }
 
 .modal-meta {
@@ -83,6 +140,22 @@ th[data-sort]:hover {
 
 <a href="../index.html">← Home</a>
 
+<div class="platform-hero">
+
+<div
+class="platform-hero-bg"
+style="
+background-image:url('../platform-fanart/uzebox.jpg');
+">
+</div>
+
+<div class="platform-hero-content">
+
+<img
+class="platform-logo"
+src="../platform-logos/uzebox.png"
+onerror="this.style.display='none';">
+
 <h1>Uzebox</h1>
 
 
@@ -93,6 +166,9 @@ Released: 2008
 
 <p>44 games</p>
 
+</div>
+
+</div>
 
 <div class="platform-notes">
 <p>The Uzebox is an open-source, DIY game console developed by Belogic Software and released in 2008. Powered by an ATmega644 microcontroller and designed with no dedicated graphics or sound chips, the Uzebox generates video and audio entirely in software, making it a unique challenge for low-level developers. Games are written in C and loaded via SD card, with a growing library of homebrew titles created by a passionate community. With support for NES/SNES controllers and retro-style video output, the Uzebox blends classic console charm with homebrew creativity.</p>
@@ -133,8 +209,8 @@ data-developer="-"
 data-ra="24713"
 data-notes=""
 data-thumb="../thumbs/uzebox/2048.jpg"
-data-media=""
-data-screenshot="Images/Uzebox/Screenshot - Game Title/2048 (World) (Harty123).png">
+data-media="../media/uzebox/2048.jpg"
+data-screenshot="../screenshots/uzebox/2048.jpg">
 2048
 </a>
 </td>
@@ -165,8 +241,8 @@ data-developer="-"
 data-ra="24715"
 data-notes=""
 data-thumb="../thumbs/uzebox/alter ego.jpg"
-data-media=""
-data-screenshot="Images/Uzebox/Screenshot - Game Title/Alter Ego (World) (D3thAdd3r).png">
+data-media="../media/uzebox/alter ego.jpg"
+data-screenshot="../screenshots/uzebox/alter ego.jpg">
 Alter Ego
 </a>
 </td>
@@ -197,8 +273,8 @@ data-developer="-"
 data-ra="24717"
 data-notes=""
 data-thumb="../thumbs/uzebox/atomix.jpg"
-data-media=""
-data-screenshot="Images/Uzebox/Screenshot - Game Title/Atomix (World) (Martin Sustek).png">
+data-media="../media/uzebox/atomix.jpg"
+data-screenshot="../screenshots/uzebox/atomix.jpg">
 Atomix
 </a>
 </td>
@@ -229,8 +305,8 @@ data-developer="-"
 data-ra="24718"
 data-notes=""
 data-thumb="../thumbs/uzebox/b c dash.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/uzebox/b c dash.jpg"
+data-screenshot="../screenshots/uzebox/b c dash.jpg">
 B.C. Dash
 </a>
 </td>
@@ -261,8 +337,8 @@ data-developer="-"
 data-ra="24712"
 data-notes=""
 data-thumb="../thumbs/uzebox/bomber.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/uzebox/bomber.jpg"
+data-screenshot="../screenshots/uzebox/bomber.jpg">
 Bomber
 </a>
 </td>
@@ -293,8 +369,8 @@ data-developer="-"
 data-ra="24724"
 data-notes=""
 data-thumb="../thumbs/uzebox/bugz.jpg"
-data-media=""
-data-screenshot="Images/Uzebox/Screenshot - Game Title/Bugz (World) (Artcfox).png">
+data-media="../media/uzebox/bugz.jpg"
+data-screenshot="../screenshots/uzebox/bugz.jpg">
 Bugz
 </a>
 </td>
@@ -325,8 +401,8 @@ data-developer="-"
 data-ra="24725"
 data-notes=""
 data-thumb="../thumbs/uzebox/chickens in choppers.jpg"
-data-media=""
-data-screenshot="Images/Uzebox/Screenshot - Game Title/Chickens In Choppers (World) (CunningFellow).png">
+data-media="../media/uzebox/chickens in choppers.jpg"
+data-screenshot="../screenshots/uzebox/chickens in choppers.jpg">
 Chickens In Choppers
 </a>
 </td>
@@ -357,8 +433,8 @@ data-developer="-"
 data-ra="24800"
 data-notes=""
 data-thumb="../thumbs/uzebox/circuit puzzle.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/uzebox/circuit puzzle.jpg"
+data-screenshot="../screenshots/uzebox/circuit puzzle.jpg">
 Circuit Puzzle
 </a>
 </td>
@@ -389,8 +465,8 @@ data-developer="-"
 data-ra="24731"
 data-notes=""
 data-thumb="../thumbs/uzebox/columns.jpg"
-data-media=""
-data-screenshot="Images/Uzebox/Screenshot - Game Title/Columns (World) (D3thAdd3r).png">
+data-media="../media/uzebox/columns.jpg"
+data-screenshot="../screenshots/uzebox/columns.jpg">
 Columns
 </a>
 </td>
@@ -421,8 +497,8 @@ data-developer="-"
 data-ra="24732"
 data-notes=""
 data-thumb="../thumbs/uzebox/das boot.jpg"
-data-media=""
-data-screenshot="Images/Uzebox/Screenshot - Game Title/Das Boot (World) (KILO).png">
+data-media="../media/uzebox/das boot.jpg"
+data-screenshot="../screenshots/uzebox/das boot.jpg">
 Das Boot
 </a>
 </td>
@@ -453,8 +529,8 @@ data-developer="-"
 data-ra="24733"
 data-notes=""
 data-thumb="../thumbs/uzebox/donkey kong.jpg"
-data-media=""
-data-screenshot="Images/Uzebox/Screenshot - Game Title/Donkey Kong (World) (Paul McPhee).png">
+data-media="../media/uzebox/donkey kong.jpg"
+data-screenshot="../screenshots/uzebox/donkey kong.jpg">
 Donkey Kong
 </a>
 </td>
@@ -485,8 +561,8 @@ data-developer="-"
 data-ra="24805"
 data-notes=""
 data-thumb="../thumbs/uzebox/flight of a dragon.jpg"
-data-media=""
-data-screenshot="Images/Uzebox/Screenshot - Game Title/Flight of a Dragon (World) (Final) (Jubatian).png">
+data-media="../media/uzebox/flight of a dragon.jpg"
+data-screenshot="../screenshots/uzebox/flight of a dragon.jpg">
 Flight of a Dragon
 </a>
 </td>
@@ -517,8 +593,8 @@ data-developer="-"
 data-ra="24739"
 data-notes=""
 data-thumb="../thumbs/uzebox/frog feast.jpg"
-data-media=""
-data-screenshot="Images/Uzebox/Screenshot - Game Title/Frog Feast (World) (D3thAdd3r).png">
+data-media="../media/uzebox/frog feast.jpg"
+data-screenshot="../screenshots/uzebox/frog feast.jpg">
 Frog Feast
 </a>
 </td>
@@ -549,8 +625,8 @@ data-developer="-"
 data-ra="24740"
 data-notes=""
 data-thumb="../thumbs/uzebox/frogger.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/uzebox/frogger.jpg"
+data-screenshot="../screenshots/uzebox/frogger.jpg">
 Frogger
 </a>
 </td>
@@ -581,8 +657,8 @@ data-developer="-"
 data-ra="24746"
 data-notes=""
 data-thumb="../thumbs/uzebox/gorillas.jpg"
-data-media=""
-data-screenshot="Images/Uzebox/Screenshot - Game Title/Gorillas (World) (Harty123).png">
+data-media="../media/uzebox/gorillas.jpg"
+data-screenshot="../screenshots/uzebox/gorillas.jpg">
 Gorillas
 </a>
 </td>
@@ -613,8 +689,8 @@ data-developer="-"
 data-ra="24810"
 data-notes=""
 data-thumb="../thumbs/uzebox/hattrick.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/uzebox/hattrick.jpg"
+data-screenshot="../screenshots/uzebox/hattrick.jpg">
 Hattrick
 </a>
 </td>
@@ -645,8 +721,8 @@ data-developer="-"
 data-ra="24743"
 data-notes=""
 data-thumb="../thumbs/uzebox/holey moley.jpg"
-data-media=""
-data-screenshot="Images/Uzebox/Screenshot - Game Title/Holey Moley (World) (Ellipsis).png">
+data-media="../media/uzebox/holey moley.jpg"
+data-screenshot="../screenshots/uzebox/holey moley.jpg">
 Holey Moley
 </a>
 </td>
@@ -677,8 +753,8 @@ data-developer="-"
 data-ra="24754"
 data-notes=""
 data-thumb="../thumbs/uzebox/iros.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/uzebox/iros.jpg"
+data-screenshot="../screenshots/uzebox/iros.jpg">
 Iros
 </a>
 </td>
@@ -709,8 +785,8 @@ data-developer="James Howard"
 data-ra="24744"
 data-notes="Joyrider is an action / driving game for the Uzebox, in the style of the original Grand Theft Auto and Driver games, created by James Howard for the Uzebox Coding Competition 2014.\n\nThere are several game modes available:\n - Story : Features three missions with specific objectives\n - Free roam : Freely explore the city at your own leisure\n - Survival (Arcade) : With the full force of the police after you, survive as long as you can!\n - Pursuit (Arcade) : Play as the police and chase down the suspect, ramming them off the road.\n - Pursuit (2 Player): Player 1 plays as the police, whilst Player 2 tries to escape"
 data-thumb="../thumbs/uzebox/joyrider.jpg"
-data-media=""
-data-screenshot="Images/Uzebox/Screenshot - Game Title/Joyrider.png">
+data-media="../media/uzebox/joyrider.jpg"
+data-screenshot="../screenshots/uzebox/joyrider.jpg">
 Joyrider
 </a>
 </td>
@@ -741,8 +817,8 @@ data-developer="-"
 data-ra="24752"
 data-notes=""
 data-thumb="../thumbs/uzebox/laser puzzle.jpg"
-data-media=""
-data-screenshot="Images/Uzebox/Screenshot - Game Title/Laser Puzzle (World) (Artcfox).png">
+data-media="../media/uzebox/laser puzzle.jpg"
+data-screenshot="../screenshots/uzebox/laser puzzle.jpg">
 Laser Puzzle
 </a>
 </td>
@@ -773,8 +849,8 @@ data-developer="-"
 data-ra="28806"
 data-notes=""
 data-thumb="../thumbs/uzebox/megatris.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/uzebox/megatris.jpg"
+data-screenshot="../screenshots/uzebox/megatris.jpg">
 Megatris
 </a>
 </td>
@@ -805,8 +881,8 @@ data-developer="-"
 data-ra="24767"
 data-notes=""
 data-thumb="../thumbs/uzebox/melli s retro land.jpg"
-data-media=""
-data-screenshot="Images/Uzebox/Screenshot - Game Title/Melli's Retro Land (World) (Grobian99).png">
+data-media="../media/uzebox/melli s retro land.jpg"
+data-screenshot="../screenshots/uzebox/melli s retro land.jpg">
 Melli's Retro Land
 </a>
 </td>
@@ -837,8 +913,8 @@ data-developer="-"
 data-ra="24758"
 data-notes=""
 data-thumb="../thumbs/uzebox/pengo.jpg"
-data-media=""
-data-screenshot="Images/Uzebox/Screenshot - Game Title/Pengo (World) (Pitfall Jones).png">
+data-media="../media/uzebox/pengo.jpg"
+data-screenshot="../screenshots/uzebox/pengo.jpg">
 Pengo
 </a>
 </td>
@@ -869,8 +945,8 @@ data-developer="-"
 data-ra="24759"
 data-notes=""
 data-thumb="../thumbs/uzebox/reels of fortune.jpg"
-data-media=""
-data-screenshot="Images/Uzebox/Screenshot - Game Title/Reels of Fortune (World) (KILO).png">
+data-media="../media/uzebox/reels of fortune.jpg"
+data-screenshot="../screenshots/uzebox/reels of fortune.jpg">
 Reels of Fortune
 </a>
 </td>
@@ -901,8 +977,8 @@ data-developer="Adrastos"
 data-ra="24763"
 data-notes="Ruby Crush is an open source clone of Bejeweled (or any other match-3 game). It is currently single player, with two modes: Classic and Timed."
 data-thumb="../thumbs/uzebox/ruby crush.jpg"
-data-media=""
-data-screenshot="Images/Uzebox/Screenshot - Game Title/rubycrush.png">
+data-media="../media/uzebox/ruby crush.jpg"
+data-screenshot="../screenshots/uzebox/ruby crush.jpg">
 Ruby Crush
 </a>
 </td>
@@ -933,8 +1009,8 @@ data-developer="-"
 data-ra="24763"
 data-notes=""
 data-thumb="../thumbs/uzebox/rubycrush.jpg"
-data-media=""
-data-screenshot="Images/Uzebox/Screenshot - Game Title/rubycrush.png">
+data-media="../media/uzebox/rubycrush.jpg"
+data-screenshot="../screenshots/uzebox/rubycrush.jpg">
 rubycrush
 </a>
 </td>
@@ -965,8 +1041,8 @@ data-developer="-"
 data-ra="24770"
 data-notes=""
 data-thumb="../thumbs/uzebox/sokoban world.jpg"
-data-media=""
-data-screenshot="Images/Uzebox/Screenshot - Game Title/Sokoban World (World) (Final) (D3thAdd3r).png">
+data-media="../media/uzebox/sokoban world.jpg"
+data-screenshot="../screenshots/uzebox/sokoban world.jpg">
 Sokoban World
 </a>
 </td>
@@ -997,8 +1073,8 @@ data-developer="-"
 data-ra="27961"
 data-notes=""
 data-thumb="../thumbs/uzebox/sokoban world 2.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/uzebox/sokoban world 2.jpg"
+data-screenshot="../screenshots/uzebox/sokoban world 2.jpg">
 Sokoban World 2
 </a>
 </td>
@@ -1029,8 +1105,8 @@ data-developer="-"
 data-ra="24772"
 data-notes=""
 data-thumb="../thumbs/uzebox/solitaire.jpg"
-data-media=""
-data-screenshot="Images/Uzebox/Screenshot - Game Title/Solitaire (World) (Final) (D3thAdd3r).png">
+data-media="../media/uzebox/solitaire.jpg"
+data-screenshot="../screenshots/uzebox/solitaire.jpg">
 Solitaire
 </a>
 </td>
@@ -1061,8 +1137,8 @@ data-developer="-"
 data-ra="24773"
 data-notes=""
 data-thumb="../thumbs/uzebox/space age.jpg"
-data-media=""
-data-screenshot="Images/Uzebox/Screenshot - Game Title/Space Age (World) (Pitfall Jones).png">
+data-media="../media/uzebox/space age.jpg"
+data-screenshot="../screenshots/uzebox/space age.jpg">
 Space Age
 </a>
 </td>
@@ -1093,8 +1169,8 @@ data-developer="-"
 data-ra="28940"
 data-notes=""
 data-thumb="../thumbs/uzebox/space age director s cut.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/uzebox/space age director s cut.jpg"
+data-screenshot="../screenshots/uzebox/space age director s cut.jpg">
 Space Age: Director's Cut
 </a>
 </td>
@@ -1125,8 +1201,8 @@ data-developer="Paul McPhee"
 data-ra="24774"
 data-notes="Space Invaders is a re-make of the 1978 classic arcade game."
 data-thumb="../thumbs/uzebox/space invaders.jpg"
-data-media=""
-data-screenshot="Images/Uzebox/Screenshot - Game Title/Space Invaders (World) (Paul McPhee).png">
+data-media="../media/uzebox/space invaders.jpg"
+data-screenshot="../screenshots/uzebox/space invaders.jpg">
 Space Invaders
 </a>
 </td>
@@ -1157,8 +1233,8 @@ data-developer="-"
 data-ra="24798"
 data-notes=""
 data-thumb="../thumbs/uzebox/stmforce.jpg"
-data-media=""
-data-screenshot="Images/Uzebox/Screenshot - Game Title/STMFORCE.png">
+data-media="../media/uzebox/stmforce.jpg"
+data-screenshot="../screenshots/uzebox/stmforce.jpg">
 STMFORCE
 </a>
 </td>
@@ -1189,8 +1265,8 @@ data-developer="Grobian99"
 data-ra="24798"
 data-notes="Stormforce is a vertical shooter. Use your star fighter to fight your way through 4 levels. There are no shields, so use your 3 smartbombs and 3 lives carefully.\n\nFeatures:\n- 4 levels\n- Some enemies\n- Some sound effects"
 data-thumb="../thumbs/uzebox/stormforce.jpg"
-data-media=""
-data-screenshot="Images/Uzebox/Screenshot - Game Title/STMFORCE.png">
+data-media="../media/uzebox/stormforce.jpg"
+data-screenshot="../screenshots/uzebox/stormforce.jpg">
 Stormforce
 </a>
 </td>
@@ -1221,8 +1297,8 @@ data-developer="-"
 data-ra="24775"
 data-notes=""
 data-thumb="../thumbs/uzebox/submarine.jpg"
-data-media=""
-data-screenshot="Images/Uzebox/Screenshot - Game Title/SubMarine (World) (KILO).png">
+data-media="../media/uzebox/submarine.jpg"
+data-screenshot="../screenshots/uzebox/submarine.jpg">
 SubMarine
 </a>
 </td>
@@ -1253,8 +1329,8 @@ data-developer="-"
 data-ra="24777"
 data-notes=""
 data-thumb="../thumbs/uzebox/tetris.jpg"
-data-media=""
-data-screenshot="Images/Uzebox/Screenshot - Game Title/Tetris (World) (Alec Bourque, KILO).png">
+data-media="../media/uzebox/tetris.jpg"
+data-screenshot="../screenshots/uzebox/tetris.jpg">
 Tetris
 </a>
 </td>
@@ -1285,8 +1361,8 @@ data-developer="-"
 data-ra="24997"
 data-notes=""
 data-thumb="../thumbs/uzebox/toorum s quest.jpg"
-data-media=""
-data-screenshot="Images/Uzebox/Screenshot - Game Title/Toorum's Quest (World) (Final) (D3thAdd3r).png">
+data-media="../media/uzebox/toorum s quest.jpg"
+data-screenshot="../screenshots/uzebox/toorum s quest.jpg">
 Toorum's Quest
 </a>
 </td>
@@ -1317,8 +1393,8 @@ data-developer="-"
 data-ra="24781"
 data-notes=""
 data-thumb="../thumbs/uzebox/uze snakes.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/uzebox/uze snakes.jpg"
+data-screenshot="../screenshots/uzebox/uze snakes.jpg">
 Uze Snakes
 </a>
 </td>
@@ -1349,8 +1425,8 @@ data-developer="-"
 data-ra="24801"
 data-notes=""
 data-thumb="../thumbs/uzebox/uzemaze.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/uzebox/uzemaze.jpg"
+data-screenshot="../screenshots/uzebox/uzemaze.jpg">
 UzeMaze
 </a>
 </td>
@@ -1381,8 +1457,8 @@ data-developer="-"
 data-ra="25084"
 data-notes=""
 data-thumb="../thumbs/uzebox/uzemaze uzemaze ra.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/uzebox/uzemaze uzemaze ra.jpg"
+data-screenshot="../screenshots/uzebox/uzemaze uzemaze ra.jpg">
 UzeMaze: UzeMaze RA
 </a>
 </td>
@@ -1413,8 +1489,8 @@ data-developer="-"
 data-ra="24783"
 data-notes=""
 data-thumb="../thumbs/uzebox/uzesweeper.jpg"
-data-media=""
-data-screenshot="Images/Uzebox/Screenshot - Game Title/Uzesweeper (World) (Final) (D3thAdd3r).png">
+data-media="../media/uzebox/uzesweeper.jpg"
+data-screenshot="../screenshots/uzebox/uzesweeper.jpg">
 Uzesweeper
 </a>
 </td>
@@ -1445,8 +1521,8 @@ data-developer="Pitfall Jones"
 data-ra="24789"
 data-notes="XOR is a remake of an 8-bit game made by Astral Software back in 1987 for the BBC Micro, Amstrad CPC, ZX Spectrum etc. The object of the game is to pick up all the masks in the maze. That sounds easy but it can get devilishly difficult on later levels where you have things that can explode and turn the lights on and off. As you complete each level you are given a secret letter - once you have all 15 letters you can discover the hidden word - and become a member of the Order of XOR!"
 data-thumb="../thumbs/uzebox/xor.jpg"
-data-media=""
-data-screenshot="Images/Uzebox/Screenshot - Game Title/XOR.png">
+data-media="../media/uzebox/xor.jpg"
+data-screenshot="../screenshots/uzebox/xor.jpg">
 XOR
 </a>
 </td>
@@ -1477,8 +1553,8 @@ data-developer="Peter Hedman (Phog)"
 data-ra="24790"
 data-notes="Zombinator is a shoot-em-up game taking place in a cemetery where you must shoot onslaughts of zombies.\n\nFeatures:\n - 2 player mode\n - Scrolling\n - Zombies!\n - Bushes and Churches!\n - FLAMETHROWER!!"
 data-thumb="../thumbs/uzebox/zombienator.jpg"
-data-media=""
-data-screenshot="Images/Uzebox/Screenshot - Game Title/Zombienator.png">
+data-media="../media/uzebox/zombienator.jpg"
+data-screenshot="../screenshots/uzebox/zombienator.jpg">
 Zombienator
 </a>
 </td>
@@ -1509,8 +1585,8 @@ data-developer="-"
 data-ra="24793"
 data-notes=""
 data-thumb="../thumbs/uzebox/zooming secretary.jpg"
-data-media=""
-data-screenshot="Images/Uzebox/Screenshot - Game Title/Zooming Secretary (World) (Final) (D3thAdd3r).png">
+data-media="../media/uzebox/zooming secretary.jpg"
+data-screenshot="../screenshots/uzebox/zooming secretary.jpg">
 Zooming Secretary
 </a>
 </td>
@@ -1532,7 +1608,8 @@ Zooming Secretary
 <div id="gameModal" class="modal-overlay">
 
 <div class="modal-content">
-
+<div id="modalBackground"></div>
+<div id="modalInner">
 <span class="modal-close" onclick="closeGame()">&times;</span>
 
 <h2 id="modalTitle"></h2>
@@ -1557,7 +1634,11 @@ onerror="this.onerror=null;this.src='../assets/no-boxart.png';">
 id="modalMedia"
 class="modal-thumb"
 style="
-max-width:180px;
+width:250px;
+height:350px;
+object-fit:contain;
+background:rgba(255,255,255,0.05);
+border-radius:8px;
 display:none;
 "
 src=""
@@ -1566,8 +1647,11 @@ onerror="this.style.display='none';">
 <img
 id="modalScreenshot"
 style="
-max-width:400px;
-max-height:350px;
+width:250px;
+height:350px;
+object-fit:contain;
+background:rgba(255,255,255,0.05);
+border-radius:8px;
 display:none;
 border-radius:6px;
 "
@@ -1621,7 +1705,7 @@ font-weight:bold;
 
 </div>
 <div class="modal-notes" id="modalNotes"></div>
-
+</div>
 </div>
 
 </div>
@@ -1736,21 +1820,24 @@ const img =
         "modalThumb"
     );
 
-img.src =
-    link.dataset.thumb;
-
 img.style.display =
     "block";
 
+img.onerror = function() {
+    this.onerror = null;
+    this.src = "../assets/no-boxart.png";
+};
+
+img.src =
+    link.dataset.thumb;
 const media =
     document.getElementById(
         "modalMedia"
     );
 
-if(link.dataset.media){
+if(link.dataset.media && link.dataset.media !== ""){
 
     media.src =
-        "../" +
         link.dataset.media;
 
     media.style.display =
@@ -1767,10 +1854,9 @@ const screenshot =
         "modalScreenshot"
     );
 
-if(link.dataset.screenshot){
+if(link.dataset.screenshot && link.dataset.screenshot !== ""){
 
     screenshot.src =
-        "../" +
         link.dataset.screenshot;
 
     screenshot.style.display =

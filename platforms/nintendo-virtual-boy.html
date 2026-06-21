@@ -19,6 +19,44 @@ th[data-sort] {
 th[data-sort]:hover {
     color: #7fb7ff;
 }
+.platform-hero {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    min-height: 250px;
+}
+
+.platform-hero-bg {
+    position: absolute;
+    inset: 0;
+
+    background-size: cover;
+    background-position: center;
+
+    filter: blur(12px);
+    transform: scale(1.1);
+
+    opacity: 0.35;
+}
+
+.platform-hero-content {
+    position: relative;
+    z-index: 1;
+
+    text-align: center;
+
+    padding: 40px 20px;
+}
+
+.platform-logo {
+    max-height: 90px;
+    max-width: 500px;
+
+    object-fit: contain;
+
+    margin-bottom: 15px;
+}
 .game-link {
     color: #7fb7ff;
     text-decoration: none;
@@ -37,6 +75,9 @@ th[data-sort]:hover {
 }
 
 .modal-content {
+    position: relative;
+    overflow: hidden;
+
     width: min(900px, 95vw);
     max-height: 90vh;
     overflow-y: auto;
@@ -45,7 +86,21 @@ th[data-sort]:hover {
     border-radius: 12px;
     padding: 25px;
 }
+#modalBackground {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.15;
+    filter: blur(12px);
+    transform: scale(1.1);
+    pointer-events: none;
+}
 
+#modalInner {
+    position: relative;
+    z-index: 1;
+}
 .modal-close {
     float: right;
     cursor: pointer;
@@ -54,10 +109,12 @@ th[data-sort]:hover {
 }
 
 .modal-thumb {
-    max-width: 250px;
-    max-height: 350px;
+    width: 250px;
+    height: 350px;
+    object-fit: contain;
+    background: rgba(255,255,255,0.05);
+    border-radius: 8px;
     display: block;
-    margin-bottom: 20px;
 }
 
 .modal-meta {
@@ -83,6 +140,22 @@ th[data-sort]:hover {
 
 <a href="../index.html">← Home</a>
 
+<div class="platform-hero">
+
+<div
+class="platform-hero-bg"
+style="
+background-image:url('../platform-fanart/nintendo-virtual-boy.jpg');
+">
+</div>
+
+<div class="platform-hero-content">
+
+<img
+class="platform-logo"
+src="../platform-logos/nintendo-virtual-boy.png"
+onerror="this.style.display='none';">
+
 <h1>Nintendo Virtual Boy</h1>
 
 
@@ -93,6 +166,9 @@ Released: 1995
 
 <p>41 games</p>
 
+</div>
+
+</div>
 
 <div class="platform-notes">
 <p>The Virtual Boy is a 32-bit table-top video game console developed and manufactured by Nintendo. Released in 1995, it was marketed as the first console capable of displaying stereoscopic 3D. The player uses the console in a manner similar to a head-mounted display, placing their head against the eyepiece to see a red monochrome display. The games use a parallax effect to create the illusion of depth. Sales failed to meet targets, and by early 1996, Nintendo ceased distribution and game development after shipping 1.26 million units and releasing 22 games.  Development of the Virtual Boy lasted four years, and began originally under the project name of VR32. Nintendo entered a licensing agreement to utilize a 3D LED eyepiece technology originally developed by U.S.-based company Reflection Technology. It also built a factory in China to be used exclusively for Virtual Boy manufacturing. Over the course of development, the console technology was down-scaled due to high costs and potential health concerns. Furthermore, an increasing amount of company resources were being re-allocated to Nintendo 64 development. Lead Nintendo game designer, Shigeru Miyamoto, had little involvement with the Virtual Boy software. The console was pushed to market in an unfinished state in 1995 to focus on Nintendo 64 development.  The Virtual Boy was panned by critics and was a commercial failure. Its failure has been cited as due to its high price, monochrome display, unimpressive 3D effect, lack of true portability, health concerns, and low quality games. Its negative reception was unaffected by continued price drops. 3D technology in video game consoles re-emerged in later years to more success, including in Nintendo's own 3DS handheld console. The Virtual Boy is Nintendo's second lowest-selling platform after the 64DD.</p>
@@ -133,8 +209,8 @@ data-developer="Chris Read"
 data-ra="17020"
 data-notes="A unique crosswords game, made for PVB Coding Competition 2013, that makes clever use of the third dimension for its puzzles."
 data-thumb="../thumbs/nintendo-virtual-boy/3d crosswords.jpg"
-data-media=""
-data-screenshot="Images/Nintendo Virtual Boy/Screenshot - Game Title/3D Crosswords (World) (Emulator Version) (Aftermarket).png">
+data-media="../media/nintendo-virtual-boy/3d crosswords.jpg"
+data-screenshot="../screenshots/nintendo-virtual-boy/3d crosswords.jpg">
 3D Crosswords
 </a>
 </td>
@@ -165,8 +241,8 @@ data-developer="HorvatM"
 data-ra="19567"
 data-notes="Advanced Pasta Cooking Simulator was published in 2013 as an April Fools joke. It was preseded by two similar projects that were posted on previous years\u2019 April Fools, namely Advanced Chromatography Simulator (2011, Windows, Dos) and Advanced Smoking Simulator (2012, DOS)."
 data-thumb="../thumbs/nintendo-virtual-boy/advanced pasta cooking simulator.jpg"
-data-media=""
-data-screenshot="Images/Nintendo Virtual Boy/Screenshot - Game Title/Advanced Pasta Cooking Simulator (USA) (HorvatM) (Aftermarket).png">
+data-media="../media/nintendo-virtual-boy/advanced pasta cooking simulator.jpg"
+data-screenshot="../screenshots/nintendo-virtual-boy/advanced pasta cooking simulator.jpg">
 Advanced Pasta Cooking Simulator
 </a>
 </td>
@@ -197,8 +273,8 @@ data-developer="KR155E"
 data-ra="13161"
 data-notes="On a faraway planet there lives a species called the Blobs. These Blobs love participating in puzzle contests. Bob the Blob is our hero. He looks confidently into the future and would like to win (depending upon degree of difficulty) the bronze (easy) silver (normal) or the gold medal (hard) in this contest."
 data-thumb="../thumbs/nintendo-virtual-boy/blox.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/nintendo-virtual-boy/blox.jpg"
+data-screenshot="../screenshots/nintendo-virtual-boy/blox.jpg">
 Blox
 </a>
 </td>
@@ -229,8 +305,8 @@ data-developer="KR155E"
 data-ra="17019"
 data-notes="BLOX 2 contains many new features, levels, languages and graphical updates compared to its predecessor. With over 1800 levels, BLOX 2 is one of the largest Virtual Boy homebrews. The levels from the original game are also available by entering a cheat code.\n\nBLOX 2 also includes \u201cMultiblox\u201d levels where two players work together to solve a level, each controlled by one of the directional pads. This game plays in nine different languages: English, German, Spanish, Swedish, French, Italian, Slovenian, Finnish and Czech. The original cartridge supported saves via internal battery."
 data-thumb="../thumbs/nintendo-virtual-boy/blox 2.jpg"
-data-media="Images/Nintendo Virtual Boy/Cart - Front/BLOX 2 (World) (Aftermarket).png"
-data-screenshot="Images/Nintendo Virtual Boy/Screenshot - Game Title/BLOX 2 (World) (Aftermarket).png">
+data-media="../media/nintendo-virtual-boy/blox 2.jpg"
+data-screenshot="../screenshots/nintendo-virtual-boy/blox 2.jpg">
 Blox 2
 </a>
 </td>
@@ -261,8 +337,8 @@ data-developer="Japan System Supply"
 data-ra="16580"
 data-notes="Originally developed by Japan System Supply, Nintendo liked the game idea of Bound High! and took over the project later. The game was, besides Dragon Hopper, going to be one of the games, which should have saved the system with a relaunch, but it was delayed again and again until it was cancelled because of the lack of success of the Virtual Boy. At this time, the game already was completely finished.\n\nIn Bound High!, Chalvo, the bouncing robot, travels through space In full 3d-D motion in pursuit of alien invaders that threaten the peaceful inhabitants of Earth. Angling from above, players control rolled up Chalvo, who must destroy all enemies on the playfield by landing on them and throwing them down from the playfield. Falling off the playfield himself, Chalvo will loose a life.\nThe playfield is in space, or high above the earth, and is made of many little squares, which are composed differently from level to level, once big plain areas, once many small, scattered blocks. Bouncing over the platforms can be quite incalculable and dangerous, while some are solid, other ones vanish after one hit or reveal puzzles, items or other objects and besides a lot of different enemies, Chalvo also has to carefully avoid winds, the deep crevices, sharp spikes and highly charged electric \"shockers\" that cause his demise. Adding to the difficulty is the rebound angle when you hit a moving enemy - you don't necessarily bounce straight up in the air.\nSometimes blocks lead to an \"Another Stage\", some kind of mirrored parallel universe with inverted colors and without the dangerous winds."
 data-thumb="../thumbs/nintendo-virtual-boy/bound high.jpg"
-data-media="Images/Nintendo Virtual Boy/Cart - Front/Bound High (Japan) (En) (Proto).png"
-data-screenshot="Images/Nintendo Virtual Boy/Screenshot - Game Title/Bound High (Japan) (En) (Proto).png">
+data-media="../media/nintendo-virtual-boy/bound high.jpg"
+data-screenshot="../screenshots/nintendo-virtual-boy/bound high.jpg">
 Bound High
 </a>
 </td>
@@ -293,8 +369,8 @@ data-developer="VirtualChris"
 data-ra="19564"
 data-notes="\u201cCastle of Doom\u201d is a platforming game in which you play as a man called Bob, who has been trapped in a castle and has to find his way out. The game consists of 16 single screen rooms, in each of which you have to make your way to the door leading to the next level, jumping over platforms and avoiding flying bat enemies."
 data-thumb="../thumbs/nintendo-virtual-boy/castle of doom.jpg"
-data-media="Images/Nintendo Virtual Boy/Cart - Front/Castle of Doom (USA) (VirtualChris) (Aftermarket).png"
-data-screenshot="Images/Nintendo Virtual Boy/Screenshot - Game Title/Castle of Doom (USA) (VirtualChris) (Aftermarket).png">
+data-media="../media/nintendo-virtual-boy/castle of doom.jpg"
+data-screenshot="../screenshots/nintendo-virtual-boy/castle of doom.jpg">
 Castle of Doom
 </a>
 </td>
@@ -325,8 +401,8 @@ data-developer="ThunderStruck"
 data-ra="13162"
 data-notes="Big fish eat small fish! In Fishbone you play as a fish called Bubbles and go for Highscores in a total of 4 levels by eating as many smaller fish as you can, while avoiding the ones bigger than you, bombs and other harmful things."
 data-thumb="../thumbs/nintendo-virtual-boy/fishbone.jpg"
-data-media="Images/Nintendo Virtual Boy/Cart - Front/Fishbone (World) (Aftermarket).png"
-data-screenshot="Images/Nintendo Virtual Boy/Screenshot - Game Title/Fishbone (World) (Aftermarket).png">
+data-media="../media/nintendo-virtual-boy/fishbone.jpg"
+data-screenshot="../screenshots/nintendo-virtual-boy/fishbone.jpg">
 Fishbone
 </a>
 </td>
@@ -357,8 +433,8 @@ data-developer="DogP"
 data-ra="19509"
 data-notes="\u201cFlappy Cheep Cheep\u201d is a clone of Flappy Bird, a simple but addictive mobile game that became a huge hit in 2013. It was made in a day for \u201cVirtual Fall\u201d Coding Competition, in which it took 6th place."
 data-thumb="../thumbs/nintendo-virtual-boy/flappy cheep cheep.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/nintendo-virtual-boy/flappy cheep cheep.jpg"
+data-screenshot="../screenshots/nintendo-virtual-boy/flappy cheep cheep.jpg">
 Flappy Cheep Cheep
 </a>
 </td>
@@ -389,8 +465,8 @@ data-developer="Intelligent Systems"
 data-ra="11702"
 data-notes="Prepare to enter the vast expanse of the Milky Way. Put your pinball skills to an interstellar test with four incredible space tables.\n\nBlast your pinball at rotating planets and turn them into dust in the Cosmic world. Send your puck flying through galactic formations in the deep-space Colony. Defeat an evil skeleton and hit the ultimate UFO jackpot! Knock down multiple rings and destroy wicked assailants in an Alien place. Defy arduous obstacles and save the world from impending devastation!"
 data-thumb="../thumbs/nintendo-virtual-boy/galactic pinball.jpg"
-data-media="Images/Nintendo Virtual Boy/Cart - Front/Galactic Pinball (Japan, USA) (En).png"
-data-screenshot="Images/Nintendo Virtual Boy/Screenshot - Game Title/Galactic Pinball (Japan, USA).png">
+data-media="../media/nintendo-virtual-boy/galactic pinball.jpg"
+data-screenshot="../screenshots/nintendo-virtual-boy/galactic pinball.jpg">
 Galactic Pinball
 </a>
 </td>
@@ -421,8 +497,8 @@ data-developer="ThunderStruck"
 data-ra="19858"
 data-notes=""
 data-thumb="../thumbs/nintendo-virtual-boy/game hero.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/nintendo-virtual-boy/game hero.jpg"
+data-screenshot="../screenshots/nintendo-virtual-boy/game hero.jpg">
 Game Hero
 </a>
 </td>
@@ -453,8 +529,8 @@ data-developer="T&E Soft"
 data-ra="14302"
 data-notes="Tee off for 18 holes of realistic 3-D links! Virtual Boy Golf elevates the game to an incredible new level!\n\nDetermine your strategy as you ponder the conditions. Check your position and the distance to the pin. Select a club and adjust your swing. Consider the wind factor carefully or you could end up out of bounds! Each dimensional fairway provides harrowing hazards to challenge players of all handicaps. Swing into action and go for a hole in one!"
 data-thumb="../thumbs/nintendo-virtual-boy/golf.jpg"
-data-media="Images/Nintendo Virtual Boy/Cart - Front/Golf (USA).png"
-data-screenshot="Images/Nintendo Virtual Boy/Screenshot - Game Title/Golf (USA).png">
+data-media="../media/nintendo-virtual-boy/golf.jpg"
+data-screenshot="../screenshots/nintendo-virtual-boy/golf.jpg">
 Golf
 </a>
 </td>
@@ -485,8 +561,8 @@ data-developer="VirtualChris"
 data-ra="19510"
 data-notes=""
 data-thumb="../thumbs/nintendo-virtual-boy/gosub.jpg"
-data-media="Images/Nintendo Virtual Boy/Cart - Front/GoSub (USA) (VirtualChris) (Aftermarket).png"
-data-screenshot="Images/Nintendo Virtual Boy/Screenshot - Game Title/GoSub (USA) (VirtualChris) (Aftermarket).png">
+data-media="../media/nintendo-virtual-boy/gosub.jpg"
+data-screenshot="../screenshots/nintendo-virtual-boy/gosub.jpg">
 GoSub
 </a>
 </td>
@@ -517,8 +593,8 @@ data-developer="VirtualChris"
 data-ra="22399"
 data-notes="\u201cHamburgers En Route To Switzerland\u201d is a side-scrolling Shoot\u2019em Up, where you play as a flying hamburger."
 data-thumb="../thumbs/nintendo-virtual-boy/hamburgers en route to switzerland.jpg"
-data-media="Images/Nintendo Virtual Boy/Cart - Front/Hamburgers En Route to Switzerland (World) (Aftermarket).png"
-data-screenshot="Images/Nintendo Virtual Boy/Screenshot - Game Title/Hamburgers En Route to Switzerland (World) (Aftermarket).png">
+data-media="../media/nintendo-virtual-boy/hamburgers en route to switzerland.jpg"
+data-screenshot="../screenshots/nintendo-virtual-boy/hamburgers en route to switzerland.jpg">
 HAMBURGERS EN ROUTE TO SWITZERLAND
 </a>
 </td>
@@ -549,8 +625,8 @@ data-developer="MK,"
 data-ra="17734"
 data-notes="An unlicensed port of Street Fighter II Turbo for the Virtual Boy.  Supports the (unreleased) link cable for 2 player head to head action."
 data-thumb="../thumbs/nintendo-virtual-boy/hyper fighting.jpg"
-data-media="Images/Nintendo Virtual Boy/Cart - Front/Hyper Fighting (World) (Aftermarket).png"
-data-screenshot="Images/Nintendo Virtual Boy/Screenshot - Game Title/Hyper Fighting (World) (Brightness Fix) (v1.0) (Guy Perfect) (Aftermarket).png">
+data-media="../media/nintendo-virtual-boy/hyper fighting.jpg"
+data-screenshot="../screenshots/nintendo-virtual-boy/hyper fighting.jpg">
 Hyper Fighting
 </a>
 </td>
@@ -581,8 +657,8 @@ data-developer="Be Top"
 data-ra="13041"
 data-notes="Innsmouth no Yakata is a first-person horror video game where players assume the role of a private detective in 1922 who must escape from a monster-infested mansion with an artifact called the Necronomicon. Each stage in the game consists of a floor within the mansion, and on each floor players must find a key and use it to open an exit door under a time limit, which varies between levels. It uses a twin-stick-style control scheme with two directional pads, one for movement and the other for the player-character's gun. Completing each stage will present players with a stage select screen, featuring branching level paths similar to the Darius series. The game automatically selects a floor based on how much time is left upon completion; finishing in under 30 seconds lets players move up a floor, while finishing in the last 30 seconds forces them to move down a floor. After completing one of the final floors, the player-character escapes and the game ends.\n\nThroughout the game, players encounter fishlike monsters that attempt to kill the player-character. These creatures can either be overcome with bullets or by fleeing. Additional ammunition as well as health pickups are found scattered throughout the various floors. A map screen shows players' current location and the layout of the floor, which will begin to reveal itself as players progress. Two kinds of collectible orbs can be found randomly placed on each floor. The white orbs reveal the entirety of the map, while the black orbs show the locations of items on that specific floor. The game features 45 different floors, though only 13 floors can be visited in a session. It features four different endings, including a \"joke\" ending that sends the player back to the start of the game."
 data-thumb="../thumbs/nintendo-virtual-boy/innsmouth no yakata.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/nintendo-virtual-boy/innsmouth no yakata.jpg"
+data-screenshot="../screenshots/nintendo-virtual-boy/innsmouth no yakata.jpg">
 Innsmouth no Yakata
 </a>
 </td>
@@ -613,8 +689,8 @@ data-developer="-"
 data-ra="13041"
 data-notes=""
 data-thumb="../thumbs/nintendo-virtual-boy/insmouth no yakata.jpg"
-data-media="Images/Nintendo Virtual Boy/Cart - Front/Insmouth no Yakata (Japan).png"
-data-screenshot="Images/Nintendo Virtual Boy/Screenshot - Game Title/Insmouth no Yakata (Japan).png">
+data-media="../media/nintendo-virtual-boy/insmouth no yakata.jpg"
+data-screenshot="../screenshots/nintendo-virtual-boy/insmouth no yakata.jpg">
 Insmouth no Yakata
 </a>
 </td>
@@ -645,8 +721,8 @@ data-developer="Betop"
 data-ra="13041"
 data-notes="Innsmouth no Yakata is an action game where the player must survive many mazes filled with mutated monsters. When starting a new game or loading a password the player starts with three hearts and six bullets for their revolver, but more health and ammunition can be found randomly in each maze. The goal of each maze is to first find a key and then locate the exit door while avoiding monsters when possible. Finishing a level quickly will put the player on the path of harder mazes as well as the best ending."
 data-thumb="../thumbs/nintendo-virtual-boy/insmouth no yakata.jpg"
-data-media="Images/Nintendo Virtual Boy/Cart - Front/Innsmouth no Yakata (Japan) (En) (v1.0) (Thunderstruck).png"
-data-screenshot="Images/Nintendo Virtual Boy/Screenshot - Game Title/Innsmouth no Yakata (Japan) [T+Eng].png">
+data-media="../media/nintendo-virtual-boy/insmouth no yakata.jpg"
+data-screenshot="../screenshots/nintendo-virtual-boy/insmouth no yakata.jpg">
 Insmouth no Yakata
 </a>
 </td>
@@ -677,8 +753,8 @@ data-developer="Atlus"
 data-ra="11700"
 data-notes="The portal between Earth and another mysterious dimension has opened, and the intrepid Jack Brothers have come through for an adventure in our world. Having lost track of time, they now have only one hour to return to their home or be banished forever. Help them battle hoards of loathsome enemies through six electrifying 3-D levels, each with many floors to explore and conquer. This is one phenomenal adventure you can't afford to miss!"
 data-thumb="../thumbs/nintendo-virtual-boy/jack bros.jpg"
-data-media="Images/Nintendo Virtual Boy/Cart - Front/Jack Bros. (USA) (De) (No-Debug) (v1.0) (KR155E,televandalist).png"
-data-screenshot="Images/Nintendo Virtual Boy/Screenshot - Game Title/Jack Bros. (USA).png">
+data-media="../media/nintendo-virtual-boy/jack bros.jpg"
+data-screenshot="../screenshots/nintendo-virtual-boy/jack bros.jpg">
 Jack Bros.
 </a>
 </td>
@@ -709,8 +785,8 @@ data-developer="Nintendo"
 data-ra="11171"
 data-notes="Mario finds himself pitted against a host of evil and nasty enemies. You must help him outwit the Spikes, Para-Goombahs, and other beasts and evils that lurk inside a tower that reaches to the clouds. After stunning a Koopa, he uses it as ammo against his enemies! The attack is relentless!\n\nBut watch out, there are also creatures made of fire and ice that must be avoided -- hazards at every turn. Even the narrow ledges on which Mario teeters and the pipes he races through must be traversed with caution!\n\nThe pace gets hotter at each level, and the action jumps right out at you! Hold on! This 3-D Virtual Boy game offers a white-knuckled adventure that will keep you on the edge of your seat!"
 data-thumb="../thumbs/nintendo-virtual-boy/mario clash.jpg"
-data-media="Images/Nintendo Virtual Boy/Cart - Front/Mario Clash (Japan, USA) (En).png"
-data-screenshot="Images/Nintendo Virtual Boy/Screenshot - Game Title/Mario Clash (Japan, USA).png">
+data-media="../media/nintendo-virtual-boy/mario clash.jpg"
+data-screenshot="../screenshots/nintendo-virtual-boy/mario clash.jpg">
 Mario Clash
 </a>
 </td>
@@ -741,8 +817,8 @@ data-developer="DogP"
 data-ra="13947"
 data-notes="Mario Kart: Virtual Cup is a homebrew game made for the Virtual Boy made by DogP in 2008. Though at one point, there was an official game in the series planned for the Virtual Boy in 1995 (tentatively titled VB Mario Kart), this is unrelated, and no known prototype for VB Mario Kart exists."
 data-thumb="../thumbs/nintendo-virtual-boy/mario kart virtual cup.jpg"
-data-media="Images/Nintendo Virtual Boy/Cart - Front/Mario Kart - Virtual Cup (World) (Aftermarket).png"
-data-screenshot="Images/Nintendo Virtual Boy/Screenshot - Game Title/Mario Kart - Virtual Cup (World) (Aftermarket).png">
+data-media="../media/nintendo-virtual-boy/mario kart virtual cup.jpg"
+data-screenshot="../screenshots/nintendo-virtual-boy/mario kart virtual cup.jpg">
 Mario Kart: Virtual Cup
 </a>
 </td>
@@ -773,8 +849,8 @@ data-developer="Nintendo"
 data-ra="12861"
 data-notes="Smashing tennis action with incredible depth on a realistic 3-D court! Experience the ultimate Virtual Boy sports game in either singles or doubles mode."
 data-thumb="../thumbs/nintendo-virtual-boy/mario s tennis.jpg"
-data-media="Images/Nintendo Virtual Boy/Cart - Front/Mario's Tennis (Japan, USA) (En).png"
-data-screenshot="Images/Nintendo Virtual Boy/Screenshot - Game Title/Mario's Tennis (Japan, USA).png">
+data-media="../media/nintendo-virtual-boy/mario s tennis.jpg"
+data-screenshot="../screenshots/nintendo-virtual-boy/mario s tennis.jpg">
 Mario's Tennis
 </a>
 </td>
@@ -805,8 +881,8 @@ data-developer="Saffire"
 data-ra="12595"
 data-notes="Nester, the one-time bad boy of comic fame, brings you the funkiest game of bowling you'll ever experience in 3-D. Finally fans can throw a strike without putting on ill-fitting shoes!\n\nHester, the unknown twin sister, makes her debut appearance. Watch out as the action picks up and the tensions build for these hot-headed bowlers. Their egos clash with outlandish gestures and funky expressions."
 data-thumb="../thumbs/nintendo-virtual-boy/nester s funky bowling.jpg"
-data-media="Images/Nintendo Virtual Boy/Cart - Front/Nester's Funky Bowling (USA).png"
-data-screenshot="Images/Nintendo Virtual Boy/Screenshot - Game Title/Nester's Funky Bowling (USA).png">
+data-media="../media/nintendo-virtual-boy/nester s funky bowling.jpg"
+data-screenshot="../screenshots/nintendo-virtual-boy/nester s funky bowling.jpg">
 Nester's Funky Bowling
 </a>
 </td>
@@ -837,8 +913,8 @@ data-developer="Hudson Soft"
 data-ra="12492"
 data-notes="Bomberman Blasts the Island of Ever Mist!\n\nGet ready for explosive puzzler action with Bomberman! Detonate the worlds of Scary Ruins, Sinister Forest, and Desert Desolation. Conquer the Island of Ever Mist and capture the three celestial models of power.\n\nDon't panic! Or you might get scorched by greedy Ms. Flashy or the deadly Count Dracu-Doom. Ignite the dreaded Doom Castle with bombastic moves and combustive strategy. Only then can you open the gates to the legendary Golden Statue of Bomberman. It's a puzzling blast!"
 data-thumb="../thumbs/nintendo-virtual-boy/panic bomber.jpg"
-data-media="Images/Nintendo Virtual Boy/Cart - Front/Panic Bomber (USA).png"
-data-screenshot="Images/Nintendo Virtual Boy/Screenshot - Game Title/Panic Bomber (USA).png">
+data-media="../media/nintendo-virtual-boy/panic bomber.jpg"
+data-screenshot="../screenshots/nintendo-virtual-boy/panic bomber.jpg">
 Panic Bomber
 </a>
 </td>
@@ -869,8 +945,8 @@ data-developer="VirtualChris"
 data-ra="13163"
 data-notes="Poor Quincy. All he wanted was a pineapple. But there aren\u2019t any. He checked the grocery store and there weren\u2019t any there, either. Will Quincy ever be able to find a pineapple?"
 data-thumb="../thumbs/nintendo-virtual-boy/pineapple 64.jpg"
-data-media=""
-data-screenshot="Images/Nintendo Virtual Boy/Screenshot - Game Title/Pineapple 64 (USA) (v2016-03-15) (VirtualChris) (Aftermarket).jpg">
+data-media="../media/nintendo-virtual-boy/pineapple 64.jpg"
+data-screenshot="../screenshots/nintendo-virtual-boy/pineapple 64.jpg">
 Pineapple 64
 </a>
 </td>
@@ -901,8 +977,8 @@ data-developer="T&E Soft"
 data-ra="13079"
 data-notes="Bursting through incredible dimensions of Virtual space the final mission is clear. Obliterate all enemies and obstacles created by KAOS and terminate this menacing battle system from within.\n\nEmploying an impressive arsenal of high-tech weapons and evasive maneuvers the Tech-Wing Fighter speeds on. Spinning deaths, spy pods and mosquito mechs appear from everywhere! The fate of humanity will soon be defined. Red Alarm! Red Alarm! Alarm Condition Red!!"
 data-thumb="../thumbs/nintendo-virtual-boy/red alarm.jpg"
-data-media="Images/Nintendo Virtual Boy/Cart - Front/Red Alarm (USA).png"
-data-screenshot="Images/Nintendo Virtual Boy/Screenshot - Game Title/Red Alarm (USA).png">
+data-media="../media/nintendo-virtual-boy/red alarm.jpg"
+data-screenshot="../screenshots/nintendo-virtual-boy/red alarm.jpg">
 Red Alarm
 </a>
 </td>
@@ -933,8 +1009,8 @@ data-developer="Kresna"
 data-ra="21681"
 data-notes="Red Square is a Yume Nikki Fan Game for the Nintendo Virtual Boy, created in 6 weeks for the 2019 Dream Diary Jam.\n\nIt is written entirely in NEC V810 assembly, with programming by Kresna and graphics by Nyrator.\n\nPlay as Nina and explore her dreams, collecting various effects along the way. Once all 4 effects have been collected the ending becomes available."
 data-thumb="../thumbs/nintendo-virtual-boy/red square.jpg"
-data-media="Images/Nintendo Virtual Boy/Cart - Front/Red Square (USA) (2019 Dream Diary Jam) (Kresna,Nyrator) (Aftermarket).png"
-data-screenshot="Images/Nintendo Virtual Boy/Screenshot - Game Title/Red Square (USA) (2019 Dream Diary Jam) (Kresna,Nyrator) (Aftermarket).png">
+data-media="../media/nintendo-virtual-boy/red square.jpg"
+data-screenshot="../screenshots/nintendo-virtual-boy/red square.jpg">
 Red Square
 </a>
 </td>
@@ -965,8 +1041,8 @@ data-developer="Locomotive"
 data-ra="12720"
 data-notes="SD Gundam Dimension War is a Strategy game, developed by Locomotive Corporation and published by Bandai, which was released in Japan in 1995."
 data-thumb="../thumbs/nintendo-virtual-boy/sd gundam dimension war.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/nintendo-virtual-boy/sd gundam dimension war.jpg"
+data-screenshot="../screenshots/nintendo-virtual-boy/sd gundam dimension war.jpg">
 SD Gundam Dimension War
 </a>
 </td>
@@ -997,8 +1073,8 @@ data-developer="HorvatM"
 data-ra="19874"
 data-notes="In Soviet Union 2010, you control a space ship that\u2019s equipped with a cannon. Your mission is to destroy as many USA-serving ships as possible, and get out alive while getting as many points as possible.\n\nThe game was created for the Planet Virtual Boy Coding Competition 2010, which ran from May 1 to November 1, 2010. It won the fourth place, but was only 1 vote short of third place.\n\nThe story: Some scientists from Vladivostok have invented a time machine and used it to go to back to the 1960s, the time of the Space Race between the USSR and USA. It worked, but on return to 2010, a malfunction sent them to a parallel universe where the Cold War is still going on. You\u2019re one of the members of the Red Army. Save the scientists!"
 data-thumb="../thumbs/nintendo-virtual-boy/soviet union 2010.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/nintendo-virtual-boy/soviet union 2010.jpg"
+data-screenshot="../screenshots/nintendo-virtual-boy/soviet union 2010.jpg">
 Soviet Union 2010
 </a>
 </td>
@@ -1029,8 +1105,8 @@ data-developer="Taito"
 data-ra="12910"
 data-notes="Attention all Earthlings! Relentless alien hordes have been identified near you. Prevent the dangerous Space Invaders from landing on your territory. Use your cannon to defend against waves of descending alien invaders. Don't let them hit the ground or it's all over for you and the Earth! Destroy them and score points!"
 data-thumb="../thumbs/nintendo-virtual-boy/space invaders virtual collection.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/nintendo-virtual-boy/space invaders virtual collection.jpg"
+data-screenshot="../screenshots/nintendo-virtual-boy/space invaders virtual collection.jpg">
 Space Invaders: Virtual Collection
 </a>
 </td>
@@ -1061,8 +1137,8 @@ data-developer="Intelligent Systems"
 data-ra="17749"
 data-notes="Space Pinball is a prototype of a Virtual Boy game that was renamed upon release to Galactic Pinball.\n\nAccording to magazines cited by Wikipedia: \"It has been called at varying points as Space Pinball, Virtual Pinball, and Pinball VB.\"\n\nAccording to Planet Virtual Boy, another working title for the game was Cosmic Pinball.\n\nAccording to Total! Issue 39 Mar 95 page 8, a \"half-complete at best\" \"Pinball VB\" prototype was shown at CES 1995 alongside \"Mario Bros VB\" and \"Telero Boxing\"."
 data-thumb="../thumbs/nintendo-virtual-boy/space pinball.jpg"
-data-media="Images/Nintendo Virtual Boy/Cart - Front/Space Pinball (Japan) (En) (Proto).png"
-data-screenshot="Images/Nintendo Virtual Boy/Screenshot - Game Title/Space Pinball (Japan) (En) (Proto).png">
+data-media="../media/nintendo-virtual-boy/space pinball.jpg"
+data-screenshot="../screenshots/nintendo-virtual-boy/space pinball.jpg">
 Space Pinball
 </a>
 </td>
@@ -1093,8 +1169,8 @@ data-developer="Tomcat System"
 data-ra="17013"
 data-notes="Space Squash is an Action game, developed by Tomcat System and published by Coconuts Japan, which was released in Japan in 1995."
 data-thumb="../thumbs/nintendo-virtual-boy/space squash.jpg"
-data-media="Images/Nintendo Virtual Boy/Cart - Front/Space Squash (Japan).png"
-data-screenshot="Images/Nintendo Virtual Boy/Screenshot - Game Title/Space Squash (Japan).png">
+data-media="../media/nintendo-virtual-boy/space squash.jpg"
+data-screenshot="../screenshots/nintendo-virtual-boy/space squash.jpg">
 Space Squash
 </a>
 </td>
@@ -1125,8 +1201,8 @@ data-developer="Nintendo"
 data-ra="12721"
 data-notes="In a savage display of pounding moves and lightning action, robotic boxers from around the globe step into a futuristic ring. Mirroring the movements of the humans in control, each Teleroboxer is capable of surviving defense matches unbearable to mankind.\n\nSlug it out to the staggering end to determine the true world champion. Created with specialized Techtronic powers and unique personalities, these responsive machines show no mercy on their way to the brutal top."
 data-thumb="../thumbs/nintendo-virtual-boy/teleroboxer.jpg"
-data-media="Images/Nintendo Virtual Boy/Cart - Front/Teleroboxer (Japan, USA) (En).png"
-data-screenshot="Images/Nintendo Virtual Boy/Screenshot - Game Title/Teleroboxer (Japan, USA).png">
+data-media="../media/nintendo-virtual-boy/teleroboxer.jpg"
+data-screenshot="../screenshots/nintendo-virtual-boy/teleroboxer.jpg">
 Teleroboxer
 </a>
 </td>
@@ -1157,8 +1233,8 @@ data-developer="Locomotive"
 data-ra="12935"
 data-notes="Tetris has always had depth, but with the Virtual Boy's stereoscopy, you can now see it.\n\nAt its core, this is just another version of Tetris with its own set of graphics, sounds, and other quirks. Rotate blocks, and when you've formed a complete line they disappear. Mode A is the familiar endless mode of play, where you'll keep going until you've let the pile reach too high. Mode B is another common mode, where there are a set number of lines you must clear before victory is declared. Mode C is the most unique in this game. The game field is twice as wide, but you only use half of it at once; the other half is displayed further away in the background. You can scroll left or right at any time, creating new possibilities for creating lines and strategies."
 data-thumb="../thumbs/nintendo-virtual-boy/v tetris.jpg"
-data-media="Images/Nintendo Virtual Boy/Cart - Front/V-Tetris (Japan) (En).png"
-data-screenshot="Images/Nintendo Virtual Boy/Screenshot - Game Title/V-Tetris (Japan) (En).png">
+data-media="../media/nintendo-virtual-boy/v tetris.jpg"
+data-screenshot="../screenshots/nintendo-virtual-boy/v tetris.jpg">
 V-Tetris
 </a>
 </td>
@@ -1189,8 +1265,8 @@ data-developer="M.K."
 data-ra="13164"
 data-notes=""
 data-thumb="../thumbs/nintendo-virtual-boy/vb racing.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/nintendo-virtual-boy/vb racing.jpg"
+data-screenshot="../screenshots/nintendo-virtual-boy/vb racing.jpg">
 VB Racing
 </a>
 </td>
@@ -1221,8 +1297,8 @@ data-developer="Hudson Soft"
 data-ra="11701"
 data-notes="Pilot a Futuristic Star Fighter in a Battle for Mankind!\n\nGALACTIC YEAR 210. The earth and its colonies face annihilation in a futuristic war against the human race. YOU have been chosen to pilot RAGNAROK, a star fighter from an advanced alien civilization.\n\nReinforced by fearless AI CHARACTERS, you must locate and destroy menacing fighters and enemy droids. With sheer VERTICAL FORCE blast your way into another dimension to the final Virtual frontier. This mission for mankind is brutal. Be prepared, for it has only just begun!"
 data-thumb="../thumbs/nintendo-virtual-boy/vertical force.jpg"
-data-media="Images/Nintendo Virtual Boy/Cart - Front/Vertical Force (USA) (Debug Menu) (v1.0) (Parasyte).png"
-data-screenshot="Images/Nintendo Virtual Boy/Screenshot - Game Title/Vertical Force (USA).png">
+data-media="../media/nintendo-virtual-boy/vertical force.jpg"
+data-screenshot="../screenshots/nintendo-virtual-boy/vertical force.jpg">
 Vertical Force
 </a>
 </td>
@@ -1253,8 +1329,8 @@ data-developer="Athena"
 data-ra="13078"
 data-notes="Virtual Bowling is a Sports game, developed and published by Athena, which was released in Japan in 1995."
 data-thumb="../thumbs/nintendo-virtual-boy/virtual bowling.jpg"
-data-media="Images/Nintendo Virtual Boy/Cart - Front/Virtual Bowling (Japan).png"
-data-screenshot="Images/Nintendo Virtual Boy/Screenshot - Game Title/Virtual Bowling (Japan).png">
+data-media="../media/nintendo-virtual-boy/virtual bowling.jpg"
+data-screenshot="../screenshots/nintendo-virtual-boy/virtual bowling.jpg">
 Virtual Bowling
 </a>
 </td>
@@ -1285,8 +1361,8 @@ data-developer="Nintendo R&D1"
 data-ra="11703"
 data-notes="Yikes!!! Get ready for a devious treasure hunt with the infamous scheming Wario. Capture the shining gold and vast treasures locked deep inside a hidden cave. But, beware of poison ponds, perilous prisons, endless walls and creepy woods! Make a quick change into Sea Dragon Wario, Eagle Wario or Bull Wario and utilize their mighty strengths. Blow away enemy cave defenders with body attacks and power actions. Succeed in this greedy plot to seize the riches of this underground world and find this key to freedom!"
 data-thumb="../thumbs/nintendo-virtual-boy/virtual boy wario land.jpg"
-data-media="Images/Nintendo Virtual Boy/Cart - Front/Virtual Boy Wario Land (Japan, USA) (En).png"
-data-screenshot="Images/Nintendo Virtual Boy/Screenshot - Game Title/Virtual Boy Wario Land (Japan, USA).png">
+data-media="../media/nintendo-virtual-boy/virtual boy wario land.jpg"
+data-screenshot="../screenshots/nintendo-virtual-boy/virtual boy wario land.jpg">
 Virtual Boy Wario Land
 </a>
 </td>
@@ -1317,8 +1393,8 @@ data-developer="Locomotive"
 data-ra="17014"
 data-notes="Virtual Fishing is a Sports game, developed by Locomotive Corporation and published by Pack-In-Video, which was released in Japan in 1995."
 data-thumb="../thumbs/nintendo-virtual-boy/virtual fishing.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/nintendo-virtual-boy/virtual fishing.jpg"
+data-screenshot="../screenshots/nintendo-virtual-boy/virtual fishing.jpg">
 Virtual Fishing
 </a>
 </td>
@@ -1349,8 +1425,8 @@ data-developer="Nacoty"
 data-ra="17015"
 data-notes="Virtual Lab is a Miscellaneous game, developed and published by J-Wing, which was released in Japan in 1995."
 data-thumb="../thumbs/nintendo-virtual-boy/virtual lab.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/nintendo-virtual-boy/virtual lab.jpg"
+data-screenshot="../screenshots/nintendo-virtual-boy/virtual lab.jpg">
 Virtual Lab
 </a>
 </td>
@@ -1381,8 +1457,8 @@ data-developer="KR155E"
 data-ra="19544"
 data-notes="A Virtual Boy version of the classic action puzzle game \u201cSnake\u201d. In it the player maneuvers a snake consisting of a line of squares through a rectangular playfield, trying to eat randomly popping up dots, which lengthen the snake by an additional square each, while avoiding collisions with the playfield\u2019s outer border and the snake itself, which gets harder as the snake lengthens. The longer the player\u2019s snake when a collision occurs, the longer the resulting score.\n\n\u201cVUE Snake\u201d offers four modes of play:\n\n- Normal Mode: Try to eat as many dots as you can before the inevitable collision happens.\n\n- Marathon Mode: Like Normal Mode, but you play three consecutive rounds.\n\n- Double Mode: Like Normal Mode, but you play two snakes, each controlled with one of the two D-Pads.\n\nEach game mode can be played in three different variants, \u201cSlow\u201d, \u201cMedium\u201d and \u201cFast\u201d. Depending on the variant, the speed of the snake, as well as the points each eaten dot awards the player, change.  The game supports SRAM to save highscores for each combination of mode and speed. Saving, however, works only on emulators."
 data-thumb="../thumbs/nintendo-virtual-boy/vue snake.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/nintendo-virtual-boy/vue snake.jpg"
+data-screenshot="../screenshots/nintendo-virtual-boy/vue snake.jpg">
 VUE Snake
 </a>
 </td>
@@ -1413,8 +1489,8 @@ data-developer="Ocean Software"
 data-ra="13077"
 data-notes="THE DEACON AWAITS!\n\nThe Deacon will stop at nothing to control the world's most precious resource...\n\nAnd he's turned his blood-thirsty Smokers loose on the Atoller civilization in a frantic search for Enola - the tattooed girl who holds the secret to Dryland. Only you can smoke the Smokers and deck the Deacon!\n\nWaterworld brings your Virtual Boy screaming to life with incredibly smooth and realistic 3D animations, particle effects and texture mapped rendered graphics. So step into this action packed arcade experience today and learn what 3D gaming is all about."
 data-thumb="../thumbs/nintendo-virtual-boy/waterworld.jpg"
-data-media="Images/Nintendo Virtual Boy/Cart - Front/Waterworld (USA).png"
-data-screenshot="Images/Nintendo Virtual Boy/Screenshot - Game Title/Waterworld (USA).png">
+data-media="../media/nintendo-virtual-boy/waterworld.jpg"
+data-screenshot="../screenshots/nintendo-virtual-boy/waterworld.jpg">
 Waterworld
 </a>
 </td>
@@ -1436,7 +1512,8 @@ Waterworld
 <div id="gameModal" class="modal-overlay">
 
 <div class="modal-content">
-
+<div id="modalBackground"></div>
+<div id="modalInner">
 <span class="modal-close" onclick="closeGame()">&times;</span>
 
 <h2 id="modalTitle"></h2>
@@ -1461,7 +1538,11 @@ onerror="this.onerror=null;this.src='../assets/no-boxart.png';">
 id="modalMedia"
 class="modal-thumb"
 style="
-max-width:180px;
+width:250px;
+height:350px;
+object-fit:contain;
+background:rgba(255,255,255,0.05);
+border-radius:8px;
 display:none;
 "
 src=""
@@ -1470,8 +1551,11 @@ onerror="this.style.display='none';">
 <img
 id="modalScreenshot"
 style="
-max-width:400px;
-max-height:350px;
+width:250px;
+height:350px;
+object-fit:contain;
+background:rgba(255,255,255,0.05);
+border-radius:8px;
 display:none;
 border-radius:6px;
 "
@@ -1525,7 +1609,7 @@ font-weight:bold;
 
 </div>
 <div class="modal-notes" id="modalNotes"></div>
-
+</div>
 </div>
 
 </div>
@@ -1640,21 +1724,24 @@ const img =
         "modalThumb"
     );
 
-img.src =
-    link.dataset.thumb;
-
 img.style.display =
     "block";
 
+img.onerror = function() {
+    this.onerror = null;
+    this.src = "../assets/no-boxart.png";
+};
+
+img.src =
+    link.dataset.thumb;
 const media =
     document.getElementById(
         "modalMedia"
     );
 
-if(link.dataset.media){
+if(link.dataset.media && link.dataset.media !== ""){
 
     media.src =
-        "../" +
         link.dataset.media;
 
     media.style.display =
@@ -1671,10 +1758,9 @@ const screenshot =
         "modalScreenshot"
     );
 
-if(link.dataset.screenshot){
+if(link.dataset.screenshot && link.dataset.screenshot !== ""){
 
     screenshot.src =
-        "../" +
         link.dataset.screenshot;
 
     screenshot.style.display =

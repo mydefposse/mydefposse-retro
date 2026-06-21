@@ -19,6 +19,44 @@ th[data-sort] {
 th[data-sort]:hover {
     color: #7fb7ff;
 }
+.platform-hero {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    min-height: 250px;
+}
+
+.platform-hero-bg {
+    position: absolute;
+    inset: 0;
+
+    background-size: cover;
+    background-position: center;
+
+    filter: blur(12px);
+    transform: scale(1.1);
+
+    opacity: 0.35;
+}
+
+.platform-hero-content {
+    position: relative;
+    z-index: 1;
+
+    text-align: center;
+
+    padding: 40px 20px;
+}
+
+.platform-logo {
+    max-height: 90px;
+    max-width: 500px;
+
+    object-fit: contain;
+
+    margin-bottom: 15px;
+}
 .game-link {
     color: #7fb7ff;
     text-decoration: none;
@@ -37,6 +75,9 @@ th[data-sort]:hover {
 }
 
 .modal-content {
+    position: relative;
+    overflow: hidden;
+
     width: min(900px, 95vw);
     max-height: 90vh;
     overflow-y: auto;
@@ -45,7 +86,21 @@ th[data-sort]:hover {
     border-radius: 12px;
     padding: 25px;
 }
+#modalBackground {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.15;
+    filter: blur(12px);
+    transform: scale(1.1);
+    pointer-events: none;
+}
 
+#modalInner {
+    position: relative;
+    z-index: 1;
+}
 .modal-close {
     float: right;
     cursor: pointer;
@@ -54,10 +109,12 @@ th[data-sort]:hover {
 }
 
 .modal-thumb {
-    max-width: 250px;
-    max-height: 350px;
+    width: 250px;
+    height: 350px;
+    object-fit: contain;
+    background: rgba(255,255,255,0.05);
+    border-radius: 8px;
     display: block;
-    margin-bottom: 20px;
 }
 
 .modal-meta {
@@ -83,6 +140,22 @@ th[data-sort]:hover {
 
 <a href="../index.html">← Home</a>
 
+<div class="platform-hero">
+
+<div
+class="platform-hero-bg"
+style="
+background-image:url('../platform-fanart/tiger-game-com.jpg');
+">
+</div>
+
+<div class="platform-hero-content">
+
+<img
+class="platform-logo"
+src="../platform-logos/tiger-game-com.png"
+onerror="this.style.display='none';">
+
 <h1>Tiger Game.com</h1>
 
 
@@ -93,6 +166,9 @@ Released: 1997
 
 <p>22 games</p>
 
+</div>
+
+</div>
 
 <div class="platform-notes">
 <p>The Game.com is a fifth-generation handheld game console released by Tiger Electronics in August 1997. A smaller version, the Game.com Pocket Pro, was released in mid-1999. The first version of the Game.com can be connected to a 14.4 kbit/s modem for Internet connectivity, hence its name referencing the top level domain .com. It was the first video game console to include a touchscreen and the first handheld console to include Internet connectivity. The Game.com sold less than 300,000 units and was discontinued in 2000 because of poor sales. While the Game.com was a commercial failure, similar features were later used with great success by Nintendo in their DS handheld console. The Game.com was the first to include basic PDA-functions, the first to allow two game carts to be inserted at once, and the first handheld to allow internet access.</p>
@@ -133,8 +209,8 @@ data-developer="Tiger Electronics"
 data-ra=""
 data-notes="Batman & Robin for Tiger.com was developed by Tiger.  as a handheld version & simpler 2D action platformer compared to its PlayStation counterpart  a third-person action-adventure game developed by Probe and published by Acclaim for the PlayStation on August 7, 1998. Loosely based on the 1997 film of the same name, players explore the open-world Gotham City as Batman, Robin, or Batgirl, as they fight thugs and analyze clues to foil the villanous trio of Mr. Freeze, Poison Ivy, and Bane."
 data-thumb="../thumbs/tiger-game-com/batman robin.jpg"
-data-media="Images/Tiger Game.com/Cart - Front/North America/Batman & Robin-01.png"
-data-screenshot="">
+data-media="../media/tiger-game-com/batman robin.jpg"
+data-screenshot="../screenshots/tiger-game-com/batman robin.jpg">
 Batman & Robin
 </a>
 </td>
@@ -165,8 +241,8 @@ data-developer="Tiger Electronics"
 data-ra=""
 data-notes="A prototype of the unreleased Castlevania: Symphony of the Night port for the Tiger Electronics Game.com.\n\nBased on Castlevania: Symphony of the Night which was originally released around the same time on both the Sony PlayStation and Sega Saturn in 1997. Most of the text has been implemented. The game retains the castle and reverse castle, and can be played from start to finish. Alucard can collect his Bat and Mist forms, but not his Wolf form. Alucard can use one of two familiars: Bat or Ghost. Each level up. Canceled for unknown reasons."
 data-thumb="../thumbs/tiger-game-com/castlevania symphony of the night.jpg"
-data-media="Images/Tiger Game.com/Cart - Front/Castlevania_ Symphony of the Night-01.png"
-data-screenshot="">
+data-media="../media/tiger-game-com/castlevania symphony of the night.jpg"
+data-screenshot="../screenshots/tiger-game-com/castlevania symphony of the night.jpg">
 Castlevania: Symphony of the Night
 </a>
 </td>
@@ -197,8 +273,8 @@ data-developer="Tiger Electronics"
 data-ra=""
 data-notes="Centipede is a vertically oriented fixed shooter arcade game produced by Atari, Inc. in 1980. The game was designed by Ed Logg and Dona Bailey. It was one of the most commercially successful games from the video arcade's golden age."
 data-thumb="../thumbs/tiger-game-com/centipede.jpg"
-data-media="Images/Tiger Game.com/Cart - Front/North America/Centipede-01.png"
-data-screenshot="">
+data-media="../media/tiger-game-com/centipede.jpg"
+data-screenshot="../screenshots/tiger-game-com/centipede.jpg">
 Centipede
 </a>
 </td>
@@ -229,8 +305,8 @@ data-developer="Tiger Electronics"
 data-ra=""
 data-notes="Hi-octane action at your fingertips! It's up to Duke Nukem to save the planet. Pull out your shotgun and start blasting as storms of aliens gun for your head. Will you survive? Only if you can think fast and shoot faster. Remember: it's a frag-or-be-fragged world."
 data-thumb="../thumbs/tiger-game-com/duke nukem 3d.jpg"
-data-media="Images/Tiger Game.com/Cart - Front/North America/Duke Nukem 3D-01.png"
-data-screenshot="">
+data-media="../media/tiger-game-com/duke nukem 3d.jpg"
+data-screenshot="../screenshots/tiger-game-com/duke nukem 3d.jpg">
 Duke Nukem 3D
 </a>
 </td>
@@ -261,8 +337,8 @@ data-developer="Tiger Electronics"
 data-ra=""
 data-notes="It's Virtua Fighter 2 versus Fighting Vipers! Two arcade smash hits, smashing into each other in the ultimate battle for supremacy. It's cutting edge combat. It's also filled with surprises - try to unlock your favourite characters from Daytona USA and Virtua Cop! This is fighting like you've never experienced before!"
 data-thumb="../thumbs/tiger-game-com/fighters megamix.jpg"
-data-media="Images/Tiger Game.com/Cart - Front/North America/Fighters Megamix-01.png"
-data-screenshot="">
+data-media="../media/tiger-game-com/fighters megamix.jpg"
+data-screenshot="../screenshots/tiger-game-com/fighters megamix.jpg">
 Fighters Megamix
 </a>
 </td>
@@ -293,8 +369,8 @@ data-developer="Tiger Electronics"
 data-ra=""
 data-notes="Frogger is a 1981 arcade game developed by Konami. It is regarded as a classic from the golden age of video arcade games, noted for its novel gameplay and theme. The object of the game is to direct frogs to their homes one by one by crossing a busy road and navigating a river full of hazards."
 data-thumb="../thumbs/tiger-game-com/frogger.jpg"
-data-media="Images/Tiger Game.com/Cart - Front/North America/Frogger-01.png"
-data-screenshot="">
+data-media="../media/tiger-game-com/frogger.jpg"
+data-screenshot="../screenshots/tiger-game-com/frogger.jpg">
 Frogger
 </a>
 </td>
@@ -325,8 +401,8 @@ data-developer="Tiger Electronics"
 data-ra=""
 data-notes="Link your game.com system to text-based Internet and email services. Contains communications cart and cable. Also required (not included):\n- 14.4 (or faster) modem\n- Subscription to an appropriate Internet Service Provider (subscription information included)\n- game.com system"
 data-thumb="../thumbs/tiger-game-com/game com internet.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/tiger-game-com/game com internet.jpg"
+data-screenshot="../screenshots/tiger-game-com/game com internet.jpg">
 Game.com Internet
 </a>
 </td>
@@ -357,8 +433,8 @@ data-developer="Tiger Electronics"
 data-ra=""
 data-notes="This is a match game using sound and pictures. You have 16 buttons with sounds and pictures under them, given a clue you have to match a sound and picture. If you find a match the button will light, get 4 lights and the game is over. If you found the last one you when if not then your opponent wins. There are 3 game modes:\n\n* Practice - Compete against yourself to get use to the game.\n* Single - This pits you against Henry.\n* Two Players - You can play against another person by alternating turns.\n\nYou also have the option to play with or without sound clues or visual clues."
 data-thumb="../thumbs/tiger-game-com/henry.jpg"
-data-media="Images/Tiger Game.com/Cart - Front/North America/Henry-01.png"
-data-screenshot="">
+data-media="../media/tiger-game-com/henry.jpg"
+data-screenshot="../screenshots/tiger-game-com/henry.jpg">
 Henry
 </a>
 </td>
@@ -389,8 +465,8 @@ data-developer="Tiger Electronics"
 data-ra=""
 data-notes="Start your engines! Then zoom around the curves and navigate the thrills of the Indianapolis Motor Speedway. Heart pounding action. Nerve defying risks. Punch it into high as you race to win! Real speech! Killer sound and animation. Choice of cars and other game play options. Realistic hazards and weather conditions. Hidden cars and other bonuses."
 data-thumb="../thumbs/tiger-game-com/indy 500.jpg"
-data-media="Images/Tiger Game.com/Cart - Front/North America/Indy 500-01.png"
-data-screenshot="">
+data-media="../media/tiger-game-com/indy 500.jpg"
+data-screenshot="../screenshots/tiger-game-com/indy 500.jpg">
 Indy 500
 </a>
 </td>
@@ -421,8 +497,8 @@ data-developer="Tiger Electronics"
 data-ra=""
 data-notes="Jeopardy! for the Game.Com is an adaptation of the popular TV quiz show in which contestants must provide the questions for the answers given.\n\nThe game is for one or two players (via compete.com cable). At the start of the game, players can select their appearance from a choice of five male and five female options and can enter their name. The game is played using a touch interface. Selecting the next answer from the board, buzzing in and entering the questions is all done by tapping the appropriate icons. \n\nThe game follows the rules of the show, with regular, double and final rounds and hidden daily doubles. The overall time limit for the rounds can be turned off, as can voice samples. The game includes hundreds of answers and questions."
 data-thumb="../thumbs/tiger-game-com/jeopardy.jpg"
-data-media="Images/Tiger Game.com/Cart - Front/North America/Jeopardy-01.png"
-data-screenshot="">
+data-media="../media/tiger-game-com/jeopardy.jpg"
+data-screenshot="../screenshots/tiger-game-com/jeopardy.jpg">
 Jeopardy
 </a>
 </td>
@@ -453,8 +529,8 @@ data-developer="Tiger Electronics"
 data-ra=""
 data-notes="Based on Tiger's hit electronic toy, Lights Out is an expanded edition of the original brain-teaser and came bundled with the Game.com handheld game console released in 1997. \n\nPlayers face a 6x6 grid (as opposed to the original's 5x5 grid) with a select number of lights lit and their goal, as in the original game, is to turn all the lights out (hopefully in the fewest possible moves). The player does this by using the stylus to touch the desired light, which will toggle it and adjacent lights on/off. Each puzzle has a certain minimum amount of steps for the player to perform in order to turn all the lights out (beginning at three and increasing by one every six puzzles). After that amount has been exceeded, the player has 10 steps to complete the puzzle or he/she will fail the puzzle and be forced to try again.\n\nIn addition to original Lights Out, two other modes of play are available - Lit Only, which only allows the use of lights that are lit, and Toggle, where the player must press a light that is lit, then a light that is not, and so on, until the puzzle is either solved or failed. There's also a Random option for all three modes, where players encounter one of up to 60 billion puzzles to solve."
 data-thumb="../thumbs/tiger-game-com/lights out.jpg"
-data-media="Images/Tiger Game.com/Cart - Front/North America/Lights Out-01.png"
-data-screenshot="">
+data-media="../media/tiger-game-com/lights out.jpg"
+data-screenshot="../screenshots/tiger-game-com/lights out.jpg">
 Lights Out
 </a>
 </td>
@@ -485,8 +561,8 @@ data-developer="Tiger Electronics"
 data-ra=""
 data-notes="Rich Uncle Pennybags is your animated Master of Ceremonies as Depression-era Atlantic City comes to life - from the rolling lawns of Park Place to the lowly backyards of Baltic Avenue! Perform all the wheeling and dealing feats that have made the MONOPOLY game the most popular in the world."
 data-thumb="../thumbs/tiger-game-com/monopoly.jpg"
-data-media="Images/Tiger Game.com/Cart - Front/North America/Monopoly-01.png"
-data-screenshot="">
+data-media="../media/tiger-game-com/monopoly.jpg"
+data-screenshot="../screenshots/tiger-game-com/monopoly.jpg">
 Monopoly
 </a>
 </td>
@@ -517,8 +593,8 @@ data-developer="Tiger Electronics"
 data-ra=""
 data-notes="The game was a launch release for the Game.com handheld console. The game includes a multiplayer mode, accessible only with the compete.com game link cable (to link two Game.com consoles together). Only 13 characters (Cyrax, Ermac, Jade, Mileena, Sektor, Kitana, Motaro, Nightwolf, Noob Saibot, Raiden, Reptile and Shao Kahn) and 10 Kombat Zones remain in this version (screenshots of early releases showed a different assortment of characters). In addition, each character only has two special moves and four finishing moves: one Fatality, Babality, Friendship, and Brutality. In this version, each finishing move has the same command for every character."
 data-thumb="../thumbs/tiger-game-com/mortal kombat trilogy.jpg"
-data-media="Images/Tiger Game.com/Cart - Front/North America/Mortal Kombat Trilogy-01.png"
-data-screenshot="">
+data-media="../media/tiger-game-com/mortal kombat trilogy.jpg"
+data-screenshot="../screenshots/tiger-game-com/mortal kombat trilogy.jpg">
 Mortal Kombat Trilogy
 </a>
 </td>
@@ -549,8 +625,8 @@ data-developer="Tiger Electronics"
 data-ra=""
 data-notes="Based on the electronic game that was made by Tiger, Quiz Wiz: Cyber Trivia challenges up to three players to answer a series of questions in five categories: Sports, Famous People, Film and TV, Potpourri, and General Knowledge."
 data-thumb="../thumbs/tiger-game-com/quiz wiz cyber trivia.jpg"
-data-media="Images/Tiger Game.com/Cart - Front/North America/Quiz Wiz_ Cyber Trivia-01.png"
-data-screenshot="">
+data-media="../media/tiger-game-com/quiz wiz cyber trivia.jpg"
+data-screenshot="../screenshots/tiger-game-com/quiz wiz cyber trivia.jpg">
 Quiz Wiz: Cyber Trivia
 </a>
 </td>
@@ -581,8 +657,8 @@ data-developer="Tiger Electronics"
 data-ra=""
 data-notes="Zombies have overtaken the city. It's now up to you, a sworn officer of the law, to stop them. It's one terrifyingly evil encounter after another. Can you survive the horror?\n\nIn the history of the franchise, it is the first game to be rated \"T\" for Teen by the ESRB, as opposed to the more typical \"M\" for Mature. This rating can be attributed to the Game.com's inability to render the same level of graphic violence as the original game."
 data-thumb="../thumbs/tiger-game-com/resident evil 2.jpg"
-data-media="Images/Tiger Game.com/Cart - Front/North America/Resident Evil 2-01.png"
-data-screenshot="">
+data-media="../media/tiger-game-com/resident evil 2.jpg"
+data-screenshot="../screenshots/tiger-game-com/resident evil 2.jpg">
 Resident Evil 2
 </a>
 </td>
@@ -613,8 +689,8 @@ data-developer="Tiger Electronics"
 data-ra=""
 data-notes="The World's Best-Loved Word Game is now the ultimate interactive world game! Enhanced features like 3-D board graphics, Mini-Games, multiple skill levels and pop-up screen menus give you more ways to have fun while getting your highest score ever! It's everything you love about the Scrabble"
 data-thumb="../thumbs/tiger-game-com/scrabble.jpg"
-data-media="Images/Tiger Game.com/Cart - Front/North America/Scrabble-01.png"
-data-screenshot="">
+data-media="../media/tiger-game-com/scrabble.jpg"
+data-screenshot="../screenshots/tiger-game-com/scrabble.jpg">
 Scrabble
 </a>
 </td>
@@ -645,8 +721,8 @@ data-developer="Tiger Electronics"
 data-ra=""
 data-notes="Everyone's favourite hedgehog is at it again - and he's jammin' Join Sonic on his action packed adventure. It's high speed, non stop fun as the best of Sonic merges. Play classic levels of Sonic 2, 3 and Sonic and Knuckles."
 data-thumb="../thumbs/tiger-game-com/sonic jam.jpg"
-data-media="Images/Tiger Game.com/Cart - Front/North America/Sonic Jam-01.png"
-data-screenshot="">
+data-media="../media/tiger-game-com/sonic jam.jpg"
+data-screenshot="../screenshots/tiger-game-com/sonic jam.jpg">
 Sonic Jam
 </a>
 </td>
@@ -677,8 +753,8 @@ data-developer="Tiger Electronics"
 data-ra=""
 data-notes="The Lost World: Jurassic Park is an action-platformer game made by Tiger Electronics for the Game.com in 1997. It is based on the film of the same name."
 data-thumb="../thumbs/tiger-game-com/the lost world jurassic park.jpg"
-data-media=""
-data-screenshot="">
+data-media="../media/tiger-game-com/the lost world jurassic park.jpg"
+data-screenshot="../screenshots/tiger-game-com/the lost world jurassic park.jpg">
 The Lost World: Jurassic Park
 </a>
 </td>
@@ -709,8 +785,8 @@ data-developer="Tiger Electronics"
 data-ra=""
 data-notes="Step in and place your bets. You've just entered the Tiger Casino, where you can test your luck on the classics: Video Poker, Video Blackjack, Roulette, Video Hi-Low (War) and two video slot machines. Practise your poker face. Hone your skill. Place your bets. Win!"
 data-thumb="../thumbs/tiger-game-com/tiger casino.jpg"
-data-media="Images/Tiger Game.com/Cart - Front/North America/Tiger Casino-01.png"
-data-screenshot="">
+data-media="../media/tiger-game-com/tiger casino.jpg"
+data-screenshot="../screenshots/tiger-game-com/tiger casino.jpg">
 Tiger Casino
 </a>
 </td>
@@ -741,8 +817,8 @@ data-developer="Tiger Electronics"
 data-ra=""
 data-notes="Experience all the vowel buying fun of America's number one Game Show! Seven Hundred and Fifty puzzles! Realistic game play and sound effects. Built in speech."
 data-thumb="../thumbs/tiger-game-com/wheel of fortune.jpg"
-data-media="Images/Tiger Game.com/Cart - Front/North America/Wheel of Fortune-01.png"
-data-screenshot="">
+data-media="../media/tiger-game-com/wheel of fortune.jpg"
+data-screenshot="../screenshots/tiger-game-com/wheel of fortune.jpg">
 Wheel of Fortune
 </a>
 </td>
@@ -773,8 +849,8 @@ data-developer="Tiger Electronics"
 data-ra=""
 data-notes="See what it's like to be a contestant on America's game! Features spin for all new fantasy prizes and solve 2,500 new puzzles. Take a sample contestant exam. Beat the clock in exciting new Bonus Rounds. Unlock bonus interviews with Vanna White. Watch backstage video clips and interviews. Choose from all-new fantasy prizes. Play classic, solo or tournament-style game modes."
 data-thumb="../thumbs/tiger-game-com/wheel of fortune 2.jpg"
-data-media="Images/Tiger Game.com/Cart - Front/North America/Wheel of Fortune 2-01.png"
-data-screenshot="">
+data-media="../media/tiger-game-com/wheel of fortune 2.jpg"
+data-screenshot="../screenshots/tiger-game-com/wheel of fortune 2.jpg">
 Wheel of Fortune 2
 </a>
 </td>
@@ -805,8 +881,8 @@ data-developer="Tiger Electronics"
 data-ra=""
 data-notes="Five of the greatest arcade hits of all time - now available in one portable collection: Joust, Defender, Robotron, Defender 2 (Stargate), Sinistar! Classic game play, radical fun. Full versions of the biggest hits in coin op history! Animation and sound effects from the originals. Staying power to the max: these classics launched an industry!"
 data-thumb="../thumbs/tiger-game-com/williams arcade classics.jpg"
-data-media="Images/Tiger Game.com/Cart - Front/North America/Williams Arcade Classics-01.png"
-data-screenshot="">
+data-media="../media/tiger-game-com/williams arcade classics.jpg"
+data-screenshot="../screenshots/tiger-game-com/williams arcade classics.jpg">
 Williams Arcade Classics
 </a>
 </td>
@@ -828,7 +904,8 @@ Williams Arcade Classics
 <div id="gameModal" class="modal-overlay">
 
 <div class="modal-content">
-
+<div id="modalBackground"></div>
+<div id="modalInner">
 <span class="modal-close" onclick="closeGame()">&times;</span>
 
 <h2 id="modalTitle"></h2>
@@ -853,7 +930,11 @@ onerror="this.onerror=null;this.src='../assets/no-boxart.png';">
 id="modalMedia"
 class="modal-thumb"
 style="
-max-width:180px;
+width:250px;
+height:350px;
+object-fit:contain;
+background:rgba(255,255,255,0.05);
+border-radius:8px;
 display:none;
 "
 src=""
@@ -862,8 +943,11 @@ onerror="this.style.display='none';">
 <img
 id="modalScreenshot"
 style="
-max-width:400px;
-max-height:350px;
+width:250px;
+height:350px;
+object-fit:contain;
+background:rgba(255,255,255,0.05);
+border-radius:8px;
 display:none;
 border-radius:6px;
 "
@@ -917,7 +1001,7 @@ font-weight:bold;
 
 </div>
 <div class="modal-notes" id="modalNotes"></div>
-
+</div>
 </div>
 
 </div>
@@ -1032,21 +1116,24 @@ const img =
         "modalThumb"
     );
 
-img.src =
-    link.dataset.thumb;
-
 img.style.display =
     "block";
 
+img.onerror = function() {
+    this.onerror = null;
+    this.src = "../assets/no-boxart.png";
+};
+
+img.src =
+    link.dataset.thumb;
 const media =
     document.getElementById(
         "modalMedia"
     );
 
-if(link.dataset.media){
+if(link.dataset.media && link.dataset.media !== ""){
 
     media.src =
-        "../" +
         link.dataset.media;
 
     media.style.display =
@@ -1063,10 +1150,9 @@ const screenshot =
         "modalScreenshot"
     );
 
-if(link.dataset.screenshot){
+if(link.dataset.screenshot && link.dataset.screenshot !== ""){
 
     screenshot.src =
-        "../" +
         link.dataset.screenshot;
 
     screenshot.style.display =
