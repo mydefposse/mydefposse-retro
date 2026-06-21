@@ -1611,6 +1611,7 @@ Last updated: 21 June 2026
     </div>
 
 </div>
+
 <script>
 
 let allGames = null;
@@ -1631,9 +1632,7 @@ async function loadGames(){
     return allGames;
 }
 
-async function showPublisher(
-    name
-){
+window.showPublisher = async function(name){
 
     const games =
         (await loadGames())
@@ -1641,17 +1640,14 @@ async function showPublisher(
             g => g.publisher === name
         );
 
-alert(
-    name + "
-" +
-    games.length +
-    " games"
-);
+    alert(
+        name + "\n" +
+        games.length +
+        " games"
+    );
 }
 
-async function showDeveloper(
-    name
-){
+window.showDeveloper = async function(name){
 
     const games =
         (await loadGames())
@@ -1659,17 +1655,14 @@ async function showDeveloper(
             g => g.developer === name
         );
 
-alert(
-    name + "
-" +
-    games.length +
-    " games"
-);
+    alert(
+        name + "\n" +
+        games.length +
+        " games"
+    );
 }
 
-async function showGenre(
-    name
-){
+window.showGenre = async function(name){
 
     const games =
         (await loadGames())
@@ -1677,14 +1670,14 @@ async function showGenre(
             g => g.genre.includes(name)
         );
 
-alert(
-    name + "
-" +
-    games.length +
-    " games"
-);
+    alert(
+        name + "\n" +
+        games.length +
+        " games"
+    );
 }
 
 </script>
+
 </body>
 </html>
