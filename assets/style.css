@@ -148,3 +148,57 @@ h2 {
 .featured-grid {
     margin-bottom: 80px;
 }
+
+.profile-links {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin: 25px 0;
+}
+
+.profile-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    min-width: 220px;
+
+    padding: 12px 16px;
+
+    background: #202020;
+    border: 1px solid #333;
+    border-radius: 12px;
+
+    color: white;
+    text-decoration: none;
+
+    transition:
+        transform 0.15s ease,
+        border-color 0.15s ease;
+}
+
+.profile-card:hover {
+    transform: translateY(-3px);
+    border-color: #7fb7ff;
+}
+
+.profile-card img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.profile-card div {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-card strong {
+    font-size: 15px;
+}
+
+.profile-card span {
+    color: #aaa;
+    font-size: 13px;
+}
