@@ -202,7 +202,9 @@ data-ra=""
 data-notes=""
 data-thumb="../thumbs/sega-advanced-pico-beena/pocket monsters advanced generation pokemon suuji battle.jpg"
 data-media="../media/sega-advanced-pico-beena/pocket monsters advanced generation pokemon suuji battle.jpg"
-data-screenshot="../screenshots/sega-advanced-pico-beena/pocket monsters advanced generation pokemon suuji battle.jpg">
+data-screenshot="../screenshots/sega-advanced-pico-beena/pocket monsters advanced generation pokemon suuji battle.jpg"
+data-logo="../logos/sega-advanced-pico-beena/pocket monsters advanced generation pokemon suuji battle.png"
+data-fanart="../fanart/sega-advanced-pico-beena/pocket monsters advanced generation pokemon suuji battle.jpg">
 Pocket Monsters Advanced Generation Pokemon Suuji Battle!!
 </a>
 </td>
@@ -234,7 +236,9 @@ data-ra=""
 data-notes=""
 data-thumb="../thumbs/sega-advanced-pico-beena/pocket monsters best wishes chinou ikusei pokemon daiundoukai.jpg"
 data-media="../media/sega-advanced-pico-beena/pocket monsters best wishes chinou ikusei pokemon daiundoukai.jpg"
-data-screenshot="../screenshots/sega-advanced-pico-beena/pocket monsters best wishes chinou ikusei pokemon daiundoukai.jpg">
+data-screenshot="../screenshots/sega-advanced-pico-beena/pocket monsters best wishes chinou ikusei pokemon daiundoukai.jpg"
+data-logo="../logos/sega-advanced-pico-beena/pocket monsters best wishes chinou ikusei pokemon daiundoukai.png"
+data-fanart="../fanart/sega-advanced-pico-beena/pocket monsters best wishes chinou ikusei pokemon daiundoukai.jpg">
 Pocket Monsters Best Wishes! Chinou Ikusei Pokemon Daiundoukai
 </a>
 </td>
@@ -266,7 +270,9 @@ data-ra=""
 data-notes=""
 data-thumb="../thumbs/sega-advanced-pico-beena/pocket monsters diamond pearl pokemon o sagase meiro de daibouken.jpg"
 data-media="../media/sega-advanced-pico-beena/pocket monsters diamond pearl pokemon o sagase meiro de daibouken.jpg"
-data-screenshot="../screenshots/sega-advanced-pico-beena/pocket monsters diamond pearl pokemon o sagase meiro de daibouken.jpg">
+data-screenshot="../screenshots/sega-advanced-pico-beena/pocket monsters diamond pearl pokemon o sagase meiro de daibouken.jpg"
+data-logo="../logos/sega-advanced-pico-beena/pocket monsters diamond pearl pokemon o sagase meiro de daibouken.png"
+data-fanart="../fanart/sega-advanced-pico-beena/pocket monsters diamond pearl pokemon o sagase meiro de daibouken.jpg">
 Pocket Monsters Diamond & Pearl Pokemon o Sagase! Meiro de Daibouken!
 </a>
 </td>
@@ -298,7 +304,9 @@ data-ra=""
 data-notes=""
 data-thumb="../thumbs/sega-advanced-pico-beena/pocket monsters diamond pearl pokemon o sagase meiro de daibouken.jpg"
 data-media="../media/sega-advanced-pico-beena/pocket monsters diamond pearl pokemon o sagase meiro de daibouken.jpg"
-data-screenshot="../screenshots/sega-advanced-pico-beena/pocket monsters diamond pearl pokemon o sagase meiro de daibouken.jpg">
+data-screenshot="../screenshots/sega-advanced-pico-beena/pocket monsters diamond pearl pokemon o sagase meiro de daibouken.jpg"
+data-logo="../logos/sega-advanced-pico-beena/pocket monsters diamond pearl pokemon o sagase meiro de daibouken.png"
+data-fanart="../fanart/sega-advanced-pico-beena/pocket monsters diamond pearl pokemon o sagase meiro de daibouken.jpg">
 Pocket Monsters Diamond & Pearl: Pokemon o Sagase! Meiro de Daibouken!
 </a>
 </td>
@@ -324,8 +332,21 @@ Pocket Monsters Diamond & Pearl: Pokemon o Sagase! Meiro de Daibouken!
 <div id="modalInner">
 <span class="modal-close" onclick="closeGame()">&times;</span>
 
+<div id="modalTitleContainer">
+
+<img
+id="modalLogo"
+style="
+display:none;
+max-height:100px;
+max-width:500px;
+object-fit:contain;
+margin-bottom:10px;
+">
+
 <h2 id="modalTitle"></h2>
 
+</div>
 <div
 id="modalImages"
 style="
@@ -428,6 +449,43 @@ function showGame(link) {
 
     document.getElementById("modalTitle").textContent =
         link.dataset.title;
+
+    const title =
+        document.getElementById(
+            "modalTitle"
+        );
+
+    const logo =
+        document.getElementById(
+            "modalLogo"
+        );
+    const background =
+        document.getElementById(
+            "modalBackground"
+        );
+    title.textContent =
+        link.dataset.title;
+
+    logo.src =
+        link.dataset.logo;
+    background.style.backgroundImage =
+        "url('" +
+        link.dataset.fanart +
+        "')";
+    logo.style.display =
+        "block";
+
+    title.style.display =
+        "none";
+
+    logo.onerror = function(){
+
+        logo.style.display =
+            "none";
+
+        title.style.display =
+            "block";
+};
 
     document.getElementById("modalYear").textContent =
         link.dataset.year;
